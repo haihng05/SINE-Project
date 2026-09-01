@@ -75,3 +75,17 @@ python run_single_test.py
 1. **Compilation ($C$):** Biên dịch cú pháp Ink qua `inklecate.exe` không lỗi.
 2. **Playability ($P$):** Thuật toán BFS tìm được đường đi từ đầu tới kết thúc (`-> END`).
 3. **Fidelity ($Q$):** Giữ nguyên 100% nội dung câu hỏi và các lựa chọn đáp án từ Seed.
+
+---
+
+## 💡 Lưu ý kỹ thuật nội bộ (Dành cho Team Dev)
+
+### 1. Vấn đề "Cạn kiệt nhánh" (Choice Exhaustion) trong Ink
+Trong quá trình thử nghiệm, hệ thống gặp lỗi người chơi trả lời sai 2 lần là game tự động văng (kết thúc đột ngột). Nguyên nhân là do cú pháp mặc định của ngôn ngữ Ink:
+- Dấu `*`: Là lựa chọn dùng 1 lần (Fallback choice). Người chơi nhấn xong là nhánh đó tự động bị xóa vĩnh viễn khỏi game.
+- Dấu `+`: Là lựa chọn vĩnh viễn (Sticky choice). Nhánh luôn tồn tại kể cả khi quay lại nhiều lần.
+
+**Giải pháp đã áp dụng:** Trong file `src/agents.py`, toàn bộ **System Prompt** của Generator và Fixer đã được nâng cấp để bắt buộc AI chỉ sử dụng dấu `+` cho các câu hỏi và các nhánh `[Thử lại]`. Các thành viên **KHÔNG** thay đổi lại thành dấu `*` để tránh phá vỡ luồng đánh giá Playability ($P$).
+
+### 2. Cấu trúc Prompting
+Hệ thống hiện đang dùng chiến lược **Reasoning Required** (S3). AI bắt buộc phải viết dàn ý trong thẻ `<think>` trước khi xuất mã Ink. Khi tinh chỉnh Prompt, hãy cẩn thận không để lại các ký tự như `...` trong ví dụ mẫu vì các mô hình 7B rất dễ bắt chước (copy literal) dẫn tới bỏ sót nội dung câu hỏi (lỗi Fidelity $Q$).

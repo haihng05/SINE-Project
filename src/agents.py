@@ -31,14 +31,14 @@ VÍ DỤ CẤU TRÚC KỊCH BẢN INK CHUẨN MẪU:
 
 === location_start ===
 Bạn bước vào căn phòng âm thanh cũ kỹ. Không gian tĩnh lặng, chỉ có tiếng kim đĩa than rè rè.
-* [Kiểm tra bàn điều khiển] -> task_01_knot
++ [Kiểm tra bàn điều khiển] -> task_01_knot
 
 === task_01_knot ===
 Hệ màu nào sau đây được sử dụng chủ yếu trong kỹ thuật in ấn thương mại?
-* [RGB] -> task_01_fail
-* [CMYK] -> task_01_success
-* [HSV] -> task_01_fail
-* [Lab] -> task_01_fail
++ [RGB] -> task_01_fail
++ [CMYK] -> task_01_success
++ [HSV] -> task_01_fail
++ [Lab] -> task_01_fail
 
 === task_01_success ===
 Chính xác! Bàn điều khiển bật sáng đèn xanh, mở ra cánh cửa dẫn đến phòng tiếp theo.
@@ -46,7 +46,7 @@ Chính xác! Bàn điều khiển bật sáng đèn xanh, mở ra cánh cửa d�
 
 === task_01_fail ===
 Sai rồi! Báo động đỏ kêu vang.
-* [Thử lại câu hỏi này] -> task_01_knot
++ [Thử lại câu hỏi này] -> task_01_knot
 
 === location_next ===
 ... (tiếp tục dẫn tới câu hỏi tiếp theo) ...
@@ -57,7 +57,8 @@ CÁC NGUYÊN TẮC BẮT BUỘC:
 1. Viết toàn bộ câu chuyện và lời thoại bằng TIẾNG VIỆT tự nhiên, hấp dẫn.
 2. BẮT BUỘC in NGUYÊN VĂN câu hỏi (stem) và tất cả phương án lựa chọn (options) từ Seed, không được tự ý tóm tắt hay bỏ bớt.
 3. Đáp án đúng (correct index) phải chuyển tới knot thành công (`_success`), đáp án sai chuyển tới knot thất bại (`_fail`) cho phép thử lại.
-4. Cuối game phải có đường dẫn tới `-> END`.
+4. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt khi chọn sai nhiều lần.
+5. Cuối game phải có đường dẫn tới `-> END`.
 
 ĐỊNH DẠNG ĐẦU RA:
 Hãy suy luận ngắn gọn kế hoạch cốt truyện trong <think>...</think>, sau đó xuất toàn bộ mã nguồn trong khối ```ink ... ```.
@@ -97,7 +98,8 @@ DỮ LIỆU SEED GỐC:
 HƯỚNG DẪN SỬA LỖI:
 1. Hãy đảm bảo IN ĐẦY ĐỦ VÀ CHÍNH XÁC TỪNG CHỮ của các câu hỏi (stem) và các lựa chọn (options) trong Seed.
 2. Đảm bảo mọi nhánh lựa chọn đều có đích đến hợp lệ và có đường đi đến `-> END`.
-3. Xuất kịch bản đã sửa hoàn chỉnh trong khối ```ink ... ```.
+3. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt (hết content) khi chọn sai nhiều lần.
+4. Xuất kịch bản đã sửa hoàn chỉnh trong khối ```ink ... ```.
 """
         response = self.llm.create_chat_completion(
             messages=[
