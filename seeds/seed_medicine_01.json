@@ -1,0 +1,41 @@
+{
+  "seed_id": "seed_med_l3_t2_001",
+  "topic": "medicine",
+  "locations": [
+    {"id": "location_triage", "name": "Triage Station"},
+    {"id": "location_pharmacy", "name": "Central Pharmacy"},
+    {"id": "location_icu", "name": "Intensive Care Unit"}
+  ],
+  "tasks": [
+    {
+      "id": "task_med_012",
+      "seq": 1,
+      "location_ref": "location_triage",
+      "question": {
+        "stem": "What is the normal resting heart rate range for an adult?",
+        "options": [
+          "40-60 bpm",
+          "60-100 bpm",
+          "100-140 bpm",
+          "120-160 bpm"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_med_034",
+      "seq": 2,
+      "location_ref": "location_pharmacy",
+      "question": {
+        "stem": "Which organ is primarily responsible for filtering blood in the human body?",
+        "options": [
+          "Lungs",
+          "Kidneys",
+          "Pancreas",
+          "Stomach"
+        ],
+        "correct": 1
+      }
+    }
+  ]
+}

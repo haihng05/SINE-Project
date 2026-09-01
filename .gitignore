@@ -1,0 +1,26 @@
+# Python Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large LLM Model Files (Rất quan trọng: Không push file model nặng nhiều GB lên Git)
+models/*.gguf
+*.gguf
+*.bin
+
+# Temporary & Output files
+output/temp_trial.ink
+temp_test.ink
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

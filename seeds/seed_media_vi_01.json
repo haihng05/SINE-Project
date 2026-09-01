@@ -1,0 +1,41 @@
+{
+  "seed_id": "seed_media_vi_l3_t2_001",
+  "topic": "truyenthong_da_phuong_tien",
+  "locations": [
+    {"id": "location_phong_thu_am", "name": "Phòng Thu Âm Cũ"},
+    {"id": "location_phong_dung_phim", "name": "Phòng Dựng Phim Kỹ Thuật Số"},
+    {"id": "location_kho_luu_tru", "name": "Kho Lưu Trữ Băng Từ"}
+  ],
+  "tasks": [
+    {
+      "id": "task_media_vi_001",
+      "seq": 1,
+      "location_ref": "location_phong_thu_am",
+      "question": {
+        "stem": "Hệ màu nào sau đây được sử dụng chủ yếu trong kỹ thuật in ấn thương mại?",
+        "options": [
+          "RGB",
+          "CMYK",
+          "HSV",
+          "Lab"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_media_vi_002",
+      "seq": 2,
+      "location_ref": "location_phong_dung_phim",
+      "question": {
+        "stem": "Tần số lấy mẫu (sample rate) tiêu chuẩn của âm thanh chất lượng đĩa CD là bao nhiêu?",
+        "options": [
+          "22.05 kHz",
+          "44.1 kHz",
+          "48.0 kHz",
+          "96.0 kHz"
+        ],
+        "correct": 1
+      }
+    }
+  ]
+}
