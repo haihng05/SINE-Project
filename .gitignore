@@ -3,6 +3,9 @@ venv/
 env/
 ENV/
 .venv/
+.env
+.env.local
+*.env
 
 # Byte-compiled / optimized files
 __pycache__/

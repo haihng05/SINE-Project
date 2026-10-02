@@ -1,91 +1,100 @@
 # SINE: Serious Interactive Narrative Engine
-> **Chuyên đề nghiên cứu khoa học - Phát triển ứng dụng đa phương tiện**  
-> Thành viên: **Hải & Thiện**
 
-Hệ thống tự động hóa sinh và đánh giá kịch bản trò chơi nghiêm túc dạng tương tác văn bản (Interactive Fiction Serious Games - IF-SG) từ kịch bản gốc (Structured Seeds) sử dụng các mô hình Open-Weight LLMs (Qwen 2.5) và ngôn ngữ kịch bản Ink.
+> **Dự án Nghiên cứu khoa học - Phát triển ứng dụng đa phương tiện**
 
----
-
-## 📁 Cấu trúc thư mục dự án
-
-```
-SINE_Project/
-├── models/                  # Nơi lưu trữ mô hình .gguf (chạy download_model.py để tải)
-├── tools/                   # Trình biên dịch inklecate.exe
-│   └── inklecate.exe
-├── seeds/                   # Tập dữ liệu kịch bản gốc (JSON)
-│   ├── seed_media_vi_01.json
-│   ├── seed_media_01.json
-│   └── seed_medicine_01.json
-├── src/                     # Mã nguồn cốt lõi của pipeline
-│   ├── agents.py            # Generator & Fixer Agent (LLM)
-│   └── validator.py         # Bộ xác thực tự động (C, P, Q)
-├── output/                  # Chứa kịch bản game sinh ra (.ink)
-├── download_model.py        # Script tải model GGUF tự động
-├── test_environment.py      # Script kiểm tra môi trường
-├── run_single_test.py       # Script chạy thử nghiệm 1 kịch bản
-└── requirements.txt         # Thư viện Python cần thiết
-```
+Hệ thống SINE (Serious Interactive Narrative Engine) là một công cụ đột phá cho phép tự động hóa hoàn toàn quá trình chuyển đổi các đề thi/bài tập trắc nghiệm khô khan thành một tựa game tương tác nhập vai (Interactive Fiction Serious Games - IF-SG). Hệ thống sử dụng sức mạnh của các mô hình Ngôn ngữ Lớn (LLMs) và ngôn ngữ kịch bản Ink.
 
 ---
 
-## 🚀 Hướng dẫn cài đặt nhanh (Dành cho thành viên nhóm)
+##  Các tính năng nổi bật
 
-### 1. Khởi tạo môi trường ảo Python (Python 3.11)
-```powershell
-# Tạo và kích hoạt venv
-py -3.11 -m venv venv
-.\venv\Scripts\activate
+1. **Trích xuất Đề thi Thông minh (Document Extraction):**
+   - Hỗ trợ đọc file PDF, Word (`.docx`).
+   - Tích hợp AI Thị giác (Vision LLM) để tự động đọc và trích xuất dữ liệu kể cả khi đề thi là ảnh scan mờ hoặc chứa công thức toán học phức tạp.
+2. **Sáng tác Game Tự động (AI Generation):**
+   - Đóng vai một Game Designer, AI tự động sáng tạo bối cảnh, cốt truyện, và lồng ghép các câu hỏi trắc nghiệm vào từng thử thách trong game.
+   - Sử dụng tư duy phân tích `<think>` để đảm bảo tính logic và liền mạch.
+3. **Cơ chế Đánh giá Tự động (CPQ Validation):**
+   - **Compilation (C):** Đảm bảo mã nguồn Ink biên dịch thành công 100%.
+   - **Playability (P):** Đảm bảo trò chơi không bị kẹt (dead-end) và người chơi luôn có thể chơi đến phá đảo.
+   - **Fidelity (Q):** Đảm bảo 100% nội dung câu hỏi và đáp án gốc của giáo viên không bị AI xuyên tạc hay rút gọn.
+4. **Minh họa Trực quan (Visual Illustration):**
+   - Tự động trích xuất từ khóa bối cảnh và tải ảnh minh họa tương ứng từ Wikipedia hoặc ảnh phong cảnh chất lượng cao.
+5. **Giao diện Trực quan & Đóng gói Web Player:**
+   - Cung cấp phần mềm giao diện (GUI) thân thiện cho giáo viên (không cần biết code).
+   - Tự động xuất ra một thư mục Game hoàn chỉnh chạy trực tiếp trên trình duyệt Web.
 
-# Cài đặt thư viện phụ trợ
-pip install -r requirements.txt
+---
 
-# Cài đặt llama-cpp-python (Bản Pre-built wheel cho CPU)
-pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-```
+##  Cấu trúc thư mục
 
-### 2. Tải mô hình LLM (Qwen 2.5 7B GGUF)
-```powershell
-python download_model.py
-```
-
-### 3. Kiểm tra môi trường
-```powershell
-python test_environment.py
+```text
+SINE-Project/
+├── Game_Export/             # Thư mục chứa các game đã được đóng gói ra Web (dành cho học sinh)
+├── output/                  # Chứa kịch bản mã nguồn Ink được AI sinh ra
+├── seeds/                   # Chứa dữ liệu câu hỏi (JSON) đã được trích xuất
+├── src/                     # Mã nguồn cốt lõi của hệ thống
+│   ├── agents.py            # AI Generator & Fixer Agents (Xử lý prompt, gọi API)
+│   └── validator.py         # Module kiểm thử tự động (C, P, Q)
+├── tools/                   # Chứa trình biên dịch inklecate.exe
+├── extract_seed_from_doc.py # Script đọc PDF/Docx và trích xuất câu hỏi bằng AI
+├── run_single_test.py       # Script chạy tự động hoá pipeline từ CLI
+├── sine_gui.py              # Phần mềm giao diện (GUI) thân thiện dành cho giáo viên
+└── requirements.txt         # Các thư viện Python cần thiết
 ```
 
 ---
 
-## 🎮 Cách chạy sinh kịch bản và chơi thử game
+##  Hướng dẫn Cài đặt
 
-### Sinh kịch bản game tự động:
-```powershell
-python run_single_test.py
-```
+Yêu cầu hệ thống: Máy tính cài đặt **Python 3.10** hoặc **3.11**.
 
-### Chơi thử tương tác trực tiếp trên Terminal:
-```powershell
-.\tools\inklecate.exe -p output\game_seed_media_vi_01.ink
-```
-*(Dùng các phím số `1`, `2`, `3`... và `Enter` để chọn hành động).*
+1. **Tạo môi trường ảo (Virtual Environment):**
+   ```powershell
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
 
----
+2. **Cài đặt thư viện:**
+   ```powershell
+   pip install -r requirements.txt
+   ```
 
-## 📊 Bộ tiêu chí đánh giá tự động ($S = C \cdot P \cdot Q$)
-1. **Compilation ($C$):** Biên dịch cú pháp Ink qua `inklecate.exe` không lỗi.
-2. **Playability ($P$):** Thuật toán BFS tìm được đường đi từ đầu tới kết thúc (`-> END`).
-3. **Fidelity ($Q$):** Giữ nguyên 100% nội dung câu hỏi và các lựa chọn đáp án từ Seed.
+3. **Cấu hình API Key:**
+   - Hệ thống hiện đang sử dụng OpenRouter API và Google Gemini API. Đảm bảo bạn đã cấu hình các biến môi trường hoặc nhập Key trực tiếp vào mã nguồn tại `extract_seed_from_doc.py` và `src/agents.py`.
 
 ---
 
-## 💡 Lưu ý kỹ thuật nội bộ (Dành cho Team Dev)
+##  Hướng dẫn Sử dụng
 
-### 1. Vấn đề "Cạn kiệt nhánh" (Choice Exhaustion) trong Ink
-Trong quá trình thử nghiệm, hệ thống gặp lỗi người chơi trả lời sai 2 lần là game tự động văng (kết thúc đột ngột). Nguyên nhân là do cú pháp mặc định của ngôn ngữ Ink:
-- Dấu `*`: Là lựa chọn dùng 1 lần (Fallback choice). Người chơi nhấn xong là nhánh đó tự động bị xóa vĩnh viễn khỏi game.
-- Dấu `+`: Là lựa chọn vĩnh viễn (Sticky choice). Nhánh luôn tồn tại kể cả khi quay lại nhiều lần.
+### Dành cho Giáo viên (Sử dụng Giao diện 1-Click)
+1. Chạy tệp giao diện:
+   ```powershell
+   python sine_gui.py
+   ```
+2. Giao diện phần mềm sẽ hiện ra. Bạn chỉ cần:
+   - Nhập tên bài học (Ví dụ: `LsuDly6`).
+   - Bấm **Chọn file PDF / Word** để nạp đề thi.
+   - Bấm **Tự động tạo Game**.
+3. Pha một tách cà phê và đợi khoảng 2-3 phút.
+4. Mở thư mục `Game_Export/Game_LsuDly6` và chạy file `Choi_Game_Truc_Quan.bat` để trải nghiệm game trên trình duyệt!
 
-**Giải pháp đã áp dụng:** Trong file `src/agents.py`, toàn bộ **System Prompt** của Generator và Fixer đã được nâng cấp để bắt buộc AI chỉ sử dụng dấu `+` cho các câu hỏi và các nhánh `[Thử lại]`. Các thành viên **KHÔNG** thay đổi lại thành dấu `*` để tránh phá vỡ luồng đánh giá Playability ($P$).
+### Dành cho Lập trình viên (Chạy bằng lệnh CLI)
+1. Trích xuất câu hỏi từ file PDF:
+   ```powershell
+   python extract_seed_from_doc.py --doc path/to/file.pdf --topic my_topic
+   ```
+2. Sinh kịch bản và kiểm thử tự động:
+   ```powershell
+   python run_single_test.py --seed seed_my_topic.json
+   ```
+3. Test kịch bản trực tiếp trên terminal:
+   ```powershell
+   .\tools\inklecate.exe -p output\game_seed_my_topic.ink
+   ```
 
-### 2. Cấu trúc Prompting
-Hệ thống hiện đang dùng chiến lược **Reasoning Required** (S3). AI bắt buộc phải viết dàn ý trong thẻ `<think>` trước khi xuất mã Ink. Khi tinh chỉnh Prompt, hãy cẩn thận không để lại các ký tự như `...` trong ví dụ mẫu vì các mô hình 7B rất dễ bắt chước (copy literal) dẫn tới bỏ sót nội dung câu hỏi (lỗi Fidelity $Q$).
+---
+
+##  Giới hạn hiện tại & Lưu ý
+- Để tránh việc AI bị quá tải và "ảo giác" (hallucination) dẫn đến lỗi mã nguồn, hệ thống hiện đang được cài đặt **tự động cắt giảm và chọn lọc tối đa 10 câu hỏi** cho mỗi ván game. Đây là con số lý tưởng để cân bằng giữa sự ổn định của hệ thống và sự tập trung của học sinh.
+- Các công thức toán học (`{`, `}`) đã được cấu hình tự động escape (`\{`, `\}`) để tương thích với trình biên dịch Ink.

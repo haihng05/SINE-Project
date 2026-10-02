@@ -1,0 +1,279 @@
+{
+  "topic": "LsuDly6",
+  "locations": [
+    {
+      "id": "location_lich_su_001"
+    },
+    {
+      "id": "location_lich_su_002"
+    },
+    {
+      "id": "location_lich_su_003"
+    },
+    {
+      "id": "location_lich_su_004"
+    },
+    {
+      "id": "location_lich_su_005"
+    },
+    {
+      "id": "location_lich_su_006"
+    },
+    {
+      "id": "location_lich_su_007"
+    },
+    {
+      "id": "location_lich_su_008"
+    },
+    {
+      "id": "location_dia_li_001"
+    },
+    {
+      "id": "location_dia_li_002"
+    },
+    {
+      "id": "location_dia_li_003"
+    },
+    {
+      "id": "location_dia_li_004"
+    },
+    {
+      "id": "location_dia_li_005"
+    },
+    {
+      "id": "location_dia_li_006"
+    },
+    {
+      "id": "location_dia_li_007"
+    },
+    {
+      "id": "location_dia_li_008"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_LsuDly6_001",
+      "seq": 1,
+      "question": {
+        "stem": "Dấu tích đầu tiên của Người tối cổ trên lãnh thổ Việt Nam được tìm thấy dưới dạng công cụ đá ghè đẽo thô sơ tại đâu?",
+        "options": [
+          "An Khê (Gia Lai) và Núi Đọ (Thanh Hóa)",
+          "Hang Con Moong (Thanh Hóa)",
+          "Văn hóa Đông Sơn (Thanh Hóa)",
+          "Văn hóa Sa Huỳnh (Quảng Ngãi)"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_002",
+      "seq": 2,
+      "question": {
+        "stem": "Tổ chức xã hội đầu tiên của loài người sau khi tiến hóa thành Người tinh khôn là gì?",
+        "options": [
+          "Thị tộc và bộ lạc",
+          "Nhà nước sơ khai",
+          "Thành bang cổ đại",
+          "Gia đình phụ hệ"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_003",
+      "seq": 3,
+      "question": {
+        "stem": "Nền văn minh Ai Cập cổ đại đã hình thành và phát triển gắn liền với dòng sông nào?",
+        "options": [
+          "Sông Nin (Nile)",
+          "Sông Ti-gơ-rơ",
+          "Sông Ấn (Indus)",
+          "Sông Hoàng Hà"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_004",
+      "seq": 4,
+      "question": {
+        "stem": "Thành tựu văn hóa tiêu biểu nào sau đây của cư dân Lưỡng Hà cổ đại có ý nghĩa pháp lí lớn nhất đối với lịch sử nhân loại?",
+        "options": [
+          "Bộ luật Ham-mu-ra-bi",
+          "Kim tự tháp Kê-ốp",
+          "Chữ viết tượng hình trên giấy Pa-pi-rút",
+          "Hệ thống số La Mã"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_005",
+      "seq": 5,
+      "question": {
+        "stem": "Chế độ phân biệt đẳng cấp khắc nghiệt Vác-na (Varna) là đặc trưng xã hội của quốc gia cổ đại nào?",
+        "options": [
+          "Ấn Độ cổ đại",
+          "Hy Lạp cổ đại",
+          "Trung Quốc cổ đại",
+          "La Mã cổ đại"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_006",
+      "seq": 6,
+      "question": {
+        "stem": "Ai là người có công đánh dẹp 6 nước chư hầu, chấm dứt thời Chiến quốc và lập nên triều đại phong kiến tập quyền đầu tiên ở Trung Quốc?",
+        "options": [
+          "Tần Thủy Hoàng",
+          "Hán Cao Tổ Lưu Bang",
+          "Khổng Tử",
+          "Tần Nhị Thế"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_007",
+      "seq": 7,
+      "question": {
+        "stem": "Kinh đô của nhà nước Văn Lang - nhà nước đầu tiên trong lịch sử dân tộc Việt Nam đặt tại đâu?",
+        "options": [
+          "Phong Châu (Phú Thọ ngày nay)",
+          "Cổ Loa (Đông Anh, Hà Nội)",
+          "Hoa Lư (Ninh Bình)",
+          "Mê Linh (Hà Nội)"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_008",
+      "seq": 8,
+      "question": {
+        "stem": "Thành tựu quân sự kiệt xuất chứng minh đỉnh cao của kĩ thuật luyện kim và kiến trúc quân sự thời Âu Lạc là:",
+        "options": [
+          "Thành Cổ Loa và nỏ liên châu bắn nhiều mũi tên",
+          "Thành nhà Hồ và súng thần cơ",
+          "Trận địa cọc Bạch Đằng",
+          "Trống đồng Ngọc Lũ"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_009",
+      "seq": 9,
+      "question": {
+        "stem": "Trong hệ Mặt Trời, theo thứ tự xa dần Mặt Trời, Trái Đất nằm ở vị trí thứ mấy?",
+        "options": [
+          "Thứ ba",
+          "Thứ nhất",
+          "Thứ hai",
+          "Thứ tư"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_010",
+      "seq": 10,
+      "question": {
+        "stem": "Trái Đất có dạng hình gì?",
+        "options": [
+          "Hình cầu (hơi dẹt ở hai cực)",
+          "Hình tròn dẹt",
+          "Hình bầu dục hoàn hảo",
+          "Hình nón cụt"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_011",
+      "seq": 11,
+      "question": {
+        "stem": "Hiện tượng ngày đêm luân phiên kế tiếp nhau trên Trái Đất là do nguyên nhân nào sau đây?",
+        "options": [
+          "Trái Đất có hình cầu và tự quay quanh trục từ Tây sang Đông",
+          "Trái Đất chuyển động tịnh tiến quanh Mặt Trời",
+          "Mặt Trời mọc ở hướng Đông và lặn ở hướng Tây",
+          "Trục Trái Đất luôn nghiêng 66 độ 33 phút so với mặt phẳng quỹ đạo"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_012",
+      "seq": 12,
+      "question": {
+        "stem": "Nếu ở khu vực giờ gốc (GMT/UTC, kinh tuyến số 0) đang là 12 giờ trưa thì ở Thủ đô Hà Nội (Việt Nam thuộc múi giờ số 7) lúc đó là mấy giờ?",
+        "options": [
+          "19 giờ cùng ngày",
+          "5 giờ sáng cùng ngày",
+          "24 giờ đêm",
+          "7 giờ sáng"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_013",
+      "seq": 13,
+      "question": {
+        "stem": "Trên quả Địa Cầu, đường xích đạo (vĩ tuyến 0 độ) có đặc điểm nào sau đây?",
+        "options": [
+          "Là vĩ tuyến dài nhất, chia Trái Đất thành bán cầu Bắc và bán cầu Nam",
+          "Là kinh tuyến gốc đi qua đài thiên văn Grin-uýt",
+          "Là vòng cực Bắc có băng tuyết bao phủ",
+          "Nối liền hai điểm cực Bắc và cực Nam"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_014",
+      "seq": 14,
+      "question": {
+        "stem": "Cấu tạo bên trong của Trái Đất gồm có mấy lớp chính (tính từ ngoài vào trong)?",
+        "options": [
+          "3 lớp: Vỏ Trái Đất, man-ti và nhân Trái Đất",
+          "2 lớp: Lớp vỏ và lớp lõi kim loại",
+          "4 lớp: Thạch quyển, khí quyển, thủy quyển và sinh quyển",
+          "5 lớp trầm tích biến chất"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_015",
+      "seq": 15,
+      "question": {
+        "stem": "Quá trình nội lực sinh ra các hiện tượng nào sau đây trên bề mặt Trái Đất?",
+        "options": [
+          "Động đất, núi lửa và các đứt gãy uốn nếp nâng hạ địa hình",
+          "Quá trình phong hóa đá do nhiệt độ và nước mưa",
+          "Quá trình bồi tụ phù sa tạo nên đồng bằng châu thổ",
+          "Quá trình xâm thực do dòng chảy sông ngòi"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_LsuDly6_016",
+      "seq": 16,
+      "question": {
+        "stem": "Kí hiệu đường xá, ranh giới quốc gia, sông ngòi trên bản đồ thuộc loại kí hiệu nào?",
+        "options": [
+          "Kí hiệu đường",
+          "Kí hiệu điểm",
+          "Kí hiệu diện tích",
+          "Kí hiệu hình học"
+        ],
+        "correct": 1
+      }
+    }
+  ]
+}
