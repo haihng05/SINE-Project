@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SINE Game</title>
+    <script src="https://unpkg.com/inkjs/dist/ink.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #f0f0f0; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        #game-container { max-width: 800px; width: 100%; margin-top: 20px; background: #2a2a2a; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        #story { padding: 20px; min-height: 150px; font-size: 18px; line-height: 1.6; }
+        .choice { display: block; margin: 10px 20px; padding: 15px; background: #3a5a7a; color: #fff; text-decoration: none; border-radius: 8px; cursor: pointer; transition: 0.2s; font-weight: bold; }
+        .choice:hover { background: #4a7a9a; transform: translateX(5px); }
+        .math-tex { font-family: 'Courier New', Courier, monospace; background: #333; padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+                <div id="story"></div>
+        <div id="choices"></div>
+    </div>
+    <script>
+        fetch('story.json').then(response => response.text()).then(storyContent => {
+            var story = new inkjs.Story(storyContent);
+            var storyContainer = document.getElementById('story');
+            var choicesContainer = document.getElementById('choices');
+            function continueStory() {
+                storyContainer.innerHTML = '';
+                choicesContainer.innerHTML = '';
+                var allTags = [];
+                while(story.canContinue) {
+                    var paragraphText = story.Continue();
+                    if (story.currentTags) {
+                        allTags = allTags.concat(story.currentTags);
+                    }
+                    if(paragraphText.trim() !== '') {
+                        var p = document.createElement('p');
+                        p.innerHTML = paragraphText.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
+                        storyContainer.appendChild(p);
+                    }
+                }
+                story.currentChoices.forEach(function(choice) {
+                    var button = document.createElement('a');
+                    button.innerHTML = choice.text.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
+                    button.className = 'choice';
+                    button.onclick = function(e) {
+                        e.preventDefault();
+                        story.ChooseChoiceIndex(choice.index);
+                        continueStory();
+                    };
+                    choicesContainer.appendChild(button);
+                });
+            }
+            continueStory();
+        }).catch(err => {
+            document.getElementById('story').innerHTML = "<p style='color:red;'>Lỗi tải game: Vui lòng click đúp vào file Choi_Game_Truc_Quan.bat để chơi.</p>";
+        });
+    </script>
+</body>
+</html>

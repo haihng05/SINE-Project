@@ -1,0 +1,719 @@
+{
+  "topic": "tienganh",
+  "locations": [
+    {
+      "id": "location_phong_thi_nghiem"
+    },
+    {
+      "id": "location_thu_vien"
+    },
+    {
+      "id": "location_truong_hoc"
+    },
+    {
+      "id": "location_nha_hang"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_tienganh_001",
+      "seq": 1,
+      "question": {
+        "stem": "Hong and Mike are in the school canteen.\n- Hong: “______?”\n- Mike: “Here you are.”",
+        "options": [
+          "Can you sit here",
+          "Can you play basketball",
+          "Can you speak Japanese, please",
+          "Can you pass the salt, please"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_002",
+      "seq": 2,
+      "question": {
+        "stem": "Peter and Khanh are talking about learning foreign languages.\n- Peter: “I think students should learn two foreign languages when they are at school.”\n- Khanh: “______. It helps them communicate with more people and broaden their minds.”",
+        "options": [
+          "I quite agree with you",
+          "I don’t think it’s a good idea",
+          "That’s not a good idea",
+          "I quite disagree with you"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_003",
+      "seq": 3,
+      "question": {
+        "stem": "Mark the letter A, B, C, or D on your answer sheet to indicate the word whose underlined part differs from the other three in pronunciation in each of the following questions.",
+        "options": [
+          "post",
+          "cold",
+          "sport",
+          "home"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_004",
+      "seq": 4,
+      "question": {
+        "stem": "Mark the letter A, B, C, or D on your answer sheet to indicate the word whose underlined part differs from the other three in pronunciation in each of the following questions.",
+        "options": [
+          "chorus",
+          "chairman",
+          "chicken",
+          "children"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_005",
+      "seq": 5,
+      "question": {
+        "stem": "Mark the letter A, B, C, or D on your answer sheet to indicate the word that differs from the other three in the position of stress in each of the following questions.",
+        "options": [
+          "important",
+          "terrific",
+          "exciting",
+          "confident"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_006",
+      "seq": 6,
+      "question": {
+        "stem": "Mark the letter A, B, C, or D on your answer sheet to indicate the word that differs from the other three in the position of stress in each of the following questions.",
+        "options": [
+          "arrive",
+          "require",
+          "connect",
+          "follow"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_007",
+      "seq": 7,
+      "question": {
+        "stem": "Returning home after the earthquake, Simon saw that his house was extremely chaotic.",
+        "options": [
+          "organised",
+          "tidy",
+          "messy",
+          "neat"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_008",
+      "seq": 8,
+      "question": {
+        "stem": "My uncle dreams of having a new house, so he plans to save up for it.",
+        "options": [
+          "leaves",
+          "moves",
+          "intends",
+          "quits"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_009",
+      "seq": 9,
+      "question": {
+        "stem": "He had some business to do in a foreign country, but his company denied responsibility to pay for his expenses.",
+        "options": [
+          "accepted",
+          "refused",
+          "avoided",
+          "neglected"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_010",
+      "seq": 10,
+      "question": {
+        "stem": "I think you should apologise to Mary. What you commented on her new hairstyle yesterday was really below the belt.",
+        "options": [
+          "fair and unkind",
+          "fair and cruel",
+          "fair and kind",
+          "cruel and kind"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_011",
+      "seq": 11,
+      "question": {
+        "stem": "The Youth International Conference ______ by a lot of young people from around the world.",
+        "options": [
+          "was attending",
+          "attended",
+          "attends",
+          "was attended"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_012",
+      "seq": 12,
+      "question": {
+        "stem": "The man ______ home when his car broke down.",
+        "options": [
+          "was driving",
+          "drives",
+          "has driven",
+          "is driving"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_013",
+      "seq": 13,
+      "question": {
+        "stem": "Although the students in my class have been learning English for three months, they can ______ confidently with foreigners.",
+        "options": [
+          "communicative",
+          "communicate",
+          "communicatively",
+          "communication"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_014",
+      "seq": 14,
+      "question": {
+        "stem": "We have travelled to almost every tourist attraction in ______ Africa.",
+        "options": [
+          "the",
+          "an",
+          "Ø (no article)",
+          "a"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_015",
+      "seq": 15,
+      "question": {
+        "stem": "Binh is 1.80 meters tall, and Linh is 1.65 meters tall. Binh is ______ Linh.",
+        "options": [
+          "younger than",
+          "older than",
+          "taller than",
+          "shorter than"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_016",
+      "seq": 16,
+      "question": {
+        "stem": "Her parents are working on the farm, ______?",
+        "options": [
+          "are they",
+          "don’t they",
+          "do they",
+          "aren’t they"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_017",
+      "seq": 17,
+      "question": {
+        "stem": "The foreign teacher was speaking so fast. Nga couldn’t ______ the main contents of his lesson.",
+        "options": [
+          "call for",
+          "go on",
+          "note down",
+          "make up"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_018",
+      "seq": 18,
+      "question": {
+        "stem": "The journalist is talking about having a new ______ published in the local newspaper next week.",
+        "options": [
+          "editor",
+          "documentary",
+          "cartoon",
+          "article"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_019",
+      "seq": 19,
+      "question": {
+        "stem": "It’s not difficult ______ her to go to work because the office is near her home.",
+        "options": [
+          "on",
+          "for",
+          "towards",
+          "to"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_020",
+      "seq": 20,
+      "question": {
+        "stem": "______ a job in a small company, he turned it down and kept on applying for a more suitable one.",
+        "options": [
+          "Offered",
+          "Having offered",
+          "Offering",
+          "To offer"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_021",
+      "seq": 21,
+      "question": {
+        "stem": "Before you decide to purchase that car, it is crucial that you should look into it carefully. It’s unwise to buy a pig ______.",
+        "options": [
+          "in a pack",
+          "in a roll",
+          "in a rack",
+          "in a poke"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_022",
+      "seq": 22,
+      "question": {
+        "stem": "Nam is trying to break the ______ of staying up too late.",
+        "options": [
+          "sound",
+          "habit",
+          "option",
+          "race"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_023",
+      "seq": 23,
+      "question": {
+        "stem": "She promised ______ to my birthday party, but she didn’t.",
+        "options": [
+          "to come",
+          "come",
+          "coming",
+          "to coming"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_024",
+      "seq": 24,
+      "question": {
+        "stem": "It is uncommon for the director to ______ power to his finance manager to make financial.",
+        "options": [
+          "authorise",
+          "stimulate",
+          "navigate",
+          "delegate"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_025",
+      "seq": 25,
+      "question": {
+        "stem": "We will inform you ______.",
+        "options": [
+          "as soon as we have the interview result",
+          "as soon as we were having the interview result",
+          "as soon as we had the interview result",
+          "as soon as we had had the interview result"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_026",
+      "seq": 26,
+      "question": {
+        "stem": "The boy band had just finished their first live performance. All the audiences at the theatre gave them a loud round of applause.",
+        "options": [
+          "No matter when the boy band finished their first live performance did all the audiences at the theatre give them a loud round of applause.",
+          "Had it not been for the boy band’s first live performance, all the audiences at the theatre would have given them a loud round of applause.",
+          "Not until all the audiences at the theatre gave them a loud round of applause did the boy band finish their first live performance.",
+          "Barely had the boy band finished their first live performance when all the audiences at the theatre gave them a loud round of applause."
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_027",
+      "seq": 27,
+      "question": {
+        "stem": "The gold ring was expensive. I couldn’t afford to buy it.",
+        "options": [
+          "If the gold ring had been cheaper, I can’t have afforded to buy it.",
+          "If the gold ring had been less expensive, I could have afforded to buy it.",
+          "If the gold ring had been cheaper, I couldn’t have afforded to buy it.",
+          "If the gold ring had been more expensive, I could have afforded to buy it."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_028",
+      "seq": 28,
+      "question": {
+        "stem": "Mark started learning Spanish seven years ago.",
+        "options": [
+          "Mark has learned Spanish for seven years.",
+          "Mark has started learning Spanish since seven years.",
+          "Mark has learned Spanish since he was seven years old.",
+          "Mark started learning Spanish when he was seven years old."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_029",
+      "seq": 29,
+      "question": {
+        "stem": "“I helped the old lady cross the road,” said the teacher.",
+        "options": [
+          "The teacher said I helped the old lady cross the road.",
+          "The teacher said she helped the old lady cross the road.",
+          "The teacher said she would help the old lady cross the road.",
+          "The teacher said she had helped the old lady cross the road."
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_030",
+      "seq": 30,
+      "question": {
+        "stem": "Students are not allowed to bring food into the computer room.",
+        "options": [
+          "Students wouldn’t bring food into the computer room.",
+          "Students won’t bring food into the computer room.",
+          "Students mustn’t bring food into the computer room.",
+          "Students needn’t bring food into the computer room."
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_031",
+      "seq": 31,
+      "question": {
+        "stem": "Their pioneering research showed that the learning motivation of the two groups of learners was quite distinctive from each other, and the comparative group whose learning motivation was stronger performed better than the control group.",
+        "options": [
+          "distinctive",
+          "comparative",
+          "control",
+          "learners"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_032",
+      "seq": 32,
+      "question": {
+        "stem": "The man bought the old painting and then resold them to a collector at a higher price.",
+        "options": [
+          "them",
+          "bought",
+          "resold",
+          "painting"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_033",
+      "seq": 33,
+      "question": {
+        "stem": "They give a good presentation on how to adopt a green lifestyle last week.",
+        "options": [
+          "give",
+          "presentation",
+          "adopt",
+          "last week"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_tienganh_034",
+      "seq": 34,
+      "question": {
+        "stem": "Future employers like to know about their work experience (34) ______ they think is important for them in the process of recruiting employees.",
+        "options": [
+          "who",
+          "which",
+          "when",
+          "where"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_035",
+      "seq": 35,
+      "question": {
+        "stem": "And young people get the chance to consider (35) ______ possibilities for a future career with working professionals.",
+        "options": [
+          "each",
+          "many",
+          "none",
+          "one"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_036",
+      "seq": 36,
+      "question": {
+        "stem": "they will find these professionals’ advice specially helpful when thinking about the different choices they will have to (36) ______.",
+        "options": [
+          "build",
+          "fill",
+          "do",
+          "make"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_037",
+      "seq": 37,
+      "question": {
+        "stem": "Work experience often involves uncomfortable situations, (37) ______ people who are in such situations can learn how to behave appropriately in front of clients and how to respond to things in the workplace.",
+        "options": [
+          "nor",
+          "for",
+          "but",
+          "either"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_038",
+      "seq": 38,
+      "question": {
+        "stem": "Appearance is also important and they need to dress suitably whether they are going for a job as an engineer or an IT specialist, or a job which is perhaps less technical but equally (38) ______, such as medical doctor or a teacher.",
+        "options": [
+          "confusing",
+          "commanding",
+          "demanding",
+          "understanding"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_039",
+      "seq": 39,
+      "question": {
+        "stem": "The passage is mainly about ______.",
+        "options": [
+          "the development of device-centred communication",
+          "the impact of device-centred communication",
+          "the definition of device-centred communication",
+          "the misunderstanding of device-centred communication"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_040",
+      "seq": 40,
+      "question": {
+        "stem": "The word They in paragraph 2 refers to ______.",
+        "options": [
+          "mobile phones",
+          "tablets",
+          "mobile devices",
+          "laptops"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_041",
+      "seq": 41,
+      "question": {
+        "stem": "In paragraph 2, in her statement about the advantages of communicating in person, Mary Peters mentioned all of the following EXCEPT ______.",
+        "options": [
+          "body language",
+          "eye contact",
+          "handshake",
+          "tone of voice"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_042",
+      "seq": 42,
+      "question": {
+        "stem": "The word meet up in paragraph 3 is closest in meaning to ______.",
+        "options": [
+          "come down",
+          "get together",
+          "get away",
+          "come away"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_043",
+      "seq": 43,
+      "question": {
+        "stem": "According to paragraph 4, deep understanding appears when ______.",
+        "options": [
+          "we communicate through social networking",
+          "we interact with modern technology",
+          "we care about our virtual friends",
+          "we see the reactions on the faces of other people"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_044",
+      "seq": 44,
+      "question": {
+        "stem": "Which of the following can be the main idea of the passage?",
+        "options": [
+          "Thorough research on teenagers’ online games and outdoor activities",
+          "Teenagers’ free-time activity preferences and adults' concerns",
+          "Viewpoints on teenagers’ free-time adventures and online games",
+          "Fears and tensions encountered by teenagers and adults' concerns"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_045",
+      "seq": 45,
+      "question": {
+        "stem": "The word fulfilling in paragraph 1 is closest in meaning to ______.",
+        "options": [
+          "frightening",
+          "satisfying",
+          "devastating",
+          "discouraging"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_046",
+      "seq": 46,
+      "question": {
+        "stem": "The word advances in paragraph 2 is closest in meaning to ______.",
+        "options": [
+          "movements",
+          "advantages",
+          "barriers",
+          "developments"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_047",
+      "seq": 47,
+      "question": {
+        "stem": "The word they in paragraph 3 refers to ______.",
+        "options": [
+          "outdoor activities",
+          "young people",
+          "older generations",
+          "surveyed adults"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_tienganh_048",
+      "seq": 48,
+      "question": {
+        "stem": "According to paragraph 3, the older generations are worried about ______.",
+        "options": [
+          "the young’s preferences for outdoor activities",
+          "the young’s reliance on virtual reality",
+          "the young’s ignorance about virtual reality",
+          "the young’s lack of indoor activities"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_tienganh_049",
+      "seq": 49,
+      "question": {
+        "stem": "Which of the following is NOT TRUE according to the passage?",
+        "options": [
+          "One fourth of the surveyed teenagers believed online experiences in their free time were as pleasing as real life.",
+          "The older generations surveyed thought that today’s teenagers were more protected than they had been.",
+          "The majority of teenagers surveyed enjoyed real outdoor activities in their leisure time.",
+          "Researchers do not put all the blame on technology for causing teenagers’ lack of real-life experiences."
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_tienganh_050",
+      "seq": 50,
+      "question": {
+        "stem": "Which of the following can be inferred from the passage?",
+        "options": [
+          "Many adults think that the present world is as dangerous as it used to be.",
+          "Many adults are doubtful about their children’s ability to take care of themselves.",
+          "Virtual life is considered to be more and more challenging for teenagers in the present world.",
+          "The majority of teenagers surveyed believed virtual reality was as interesting as the real life."
+        ],
+        "correct": 2
+      }
+    }
+  ]
+}

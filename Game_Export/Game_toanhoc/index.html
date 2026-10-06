@@ -23,11 +23,9 @@
             var story = new inkjs.Story(storyContent);
             var storyContainer = document.getElementById('story');
             var choicesContainer = document.getElementById('choices');
-
             function continueStory() {
                 storyContainer.innerHTML = '';
                 choicesContainer.innerHTML = '';
-                
                 var allTags = [];
                 while(story.canContinue) {
                     var paragraphText = story.Continue();
@@ -40,9 +38,6 @@
                         storyContainer.appendChild(p);
                     }
                 }
-                
-
-
                 story.currentChoices.forEach(function(choice) {
                     var button = document.createElement('a');
                     button.innerHTML = choice.text.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');

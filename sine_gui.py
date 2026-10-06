@@ -52,8 +52,11 @@ class SINEApp:
         threading.Thread(target=self.run_pipeline, args=(self.selected_file, topic), daemon=True).start()
     def run_pipeline(self, filepath, topic):
         try:
+            venv_python = os.path.join(os.path.dirname(os.path.abspath(__file__)), "venv", "Scripts", "python.exe")
+            py_exec = venv_python if os.path.exists(venv_python) else sys.executable
+            
             self.log(f"\n[BƯỚC 1/3] AI Đang đọc đề thi và tách câu hỏi...")
-            cmd_extract = [sys.executable, "extract_seed_from_doc.py", filepath, "--topic", topic]
+            cmd_extract = [py_exec, "extract_seed_from_doc.py", filepath, "--topic", topic]
             self.run_command(cmd_extract)
             seed_filename = f"seed_{topic}_auto.json"
             seed_path = os.path.join("seeds", seed_filename)
@@ -63,7 +66,7 @@ class SINEApp:
                 return
             self.log(f" Đã trích xuất xong bộ câu hỏi: {seed_filename}")
             self.log(f"\n[BƯỚC 2/3] AI Đang sáng tác cốt truyện và lập trình game (Quá trình này có thể mất 1-2 phút)...")
-            cmd_generate = [sys.executable, "run_single_test.py", "--seed", seed_filename]
+            cmd_generate = [py_exec, "run_single_test.py", "--seed", seed_filename]
             self.run_command(cmd_generate)
             ink_filename = f"game_seed_{topic}_auto.ink"
             ink_path = os.path.join("output", ink_filename)
@@ -116,9 +119,22 @@ class SINEApp:
                         storyContainer.appendChild(p);
                     }
                 }
+                if (story.currentChoices.length === 0 && !story.canContinue) {
+                    var endP = document.createElement('p');
+                    endP.style.textAlign = 'center';
+                    endP.style.color = '#4CAF50';
+                    endP.style.fontWeight = 'bold';
+                    endP.innerHTML = '🎉 Chúc mừng bạn đã hoàn thành bài học!';
+                    storyContainer.appendChild(endP);
+                }
                 story.currentChoices.forEach(function(choice) {
                     var button = document.createElement('a');
-                    button.innerHTML = choice.text.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
+                    var label = choice.text.trim();
+                    if (!label) {
+                        var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+                        label = 'Lựa chọn ' + (letters[choice.index] || (choice.index + 1));
+                    }
+                    button.innerHTML = label.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
                     button.className = 'choice';
                     button.onclick = function(e) {
                         e.preventDefault();

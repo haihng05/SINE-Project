@@ -1,0 +1,415 @@
+{
+  "topic": "dialy",
+  "locations": [
+    {
+      "id": "location_vietnam"
+    },
+    {
+      "id": "location_mekong_delta"
+    },
+    {
+      "id": "location_red_river"
+    },
+    {
+      "id": "location_forest_protection"
+    },
+    {
+      "id": "location_population"
+    },
+    {
+      "id": "location_urbanization"
+    },
+    {
+      "id": "location_economic_structure"
+    },
+    {
+      "id": "location_central_coast"
+    },
+    {
+      "id": "location_red_river_delta"
+    },
+    {
+      "id": "location_transportation"
+    },
+    {
+      "id": "location_tourism"
+    },
+    {
+      "id": "location_economic_components"
+    },
+    {
+      "id": "location_agriculture"
+    },
+    {
+      "id": "location_ho_chi_minh_city"
+    },
+    {
+      "id": "location_central_economic_zone"
+    },
+    {
+      "id": "location_south_china_sea"
+    },
+    {
+      "id": "location_marine_economy"
+    },
+    {
+      "id": "location_southern_vietnam"
+    },
+    {
+      "id": "location_southeast_vietnam"
+    },
+    {
+      "id": "location_mekong_delta_climate"
+    },
+    {
+      "id": "location_coastal_economy"
+    },
+    {
+      "id": "location_labour_structure"
+    },
+    {
+      "id": "location_industrial_centers"
+    },
+    {
+      "id": "location_agricultural_processing"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_dialy_001",
+      "seq": 1,
+      "question": {
+        "stem": "Vị trí địa lí nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu quy định đặc điểm cơ bản nào của thiên nhiên nước ta?",
+        "options": [
+          "Khí hậu mang tính chất nhiệt đới ẩm gió mùa, nền nhiệt cao, chan hòa ánh nắng quanh năm.",
+          "Khí hậu hàn đới băng tuyết bao phủ quanh năm.",
+          "Cảnh quan hoang mạc xích đạo khô nóng tuyệt đối.",
+          "Khí hậu ôn đới lục địa sâu sắc."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_002",
+      "seq": 2,
+      "question": {
+        "stem": "Hiện tượng xâm nhập mặn sâu vào đất liền trong mùa khô ở Đồng bằng sông Cửu Long chịu ảnh hưởng mạnh nhất bởi nhân tố nào?",
+        "options": [
+          "Mùa khô kéo dài sâu sắc kết hợp với triều cường và lưu lượng nước từ thượng nguồn sông Mê Công đổ về suy giảm.",
+          "Các đợt gió mùa Đông Bắc lạnh buốt thổi mạnh.",
+          "Hiện tượng sạt lở bờ biển do bão nhiệt đới mùa hè.",
+          "Lượng mưa mùa khô quá lớn làm vỡ đê ngăn mặn."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_003",
+      "seq": 3,
+      "question": {
+        "stem": "Vùng có tiềm năng thủy điện lớn nhất nước ta tập trung ở hệ thống sông nào?",
+        "options": [
+          "Hệ thống sông Hồng (trên sông Đà: Thủy điện Sơn La, Hòa Bình, Lai Châu).",
+          "Hệ thống sông Mã.",
+          "Hệ thống sông Cả.",
+          "Hệ thống sông Thu Bồn."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_004",
+      "seq": 4,
+      "question": {
+        "stem": "Biện pháp hàng đầu để bảo vệ và phát triển bền vững tài nguyên rừng phòng hộ ở nước ta là:",
+        "options": [
+          "Bảo vệ diện tích hiện có kết hợp trồng rừng mới, phòng chống cháy rừng trên các sườn dốc đầu nguồn.",
+          "Khai thác triệt để các loài gỗ quý để tăng thu ngân sách.",
+          "Chuyển toàn bộ rừng phòng hộ sang đất canh tác trồng trọt cao su.",
+          "Đốt thực bì để lấy đất nuôi tôm ven biển."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_005",
+      "seq": 5,
+      "question": {
+        "stem": "Dân số nước ta hiện nay đang trải qua giai đoạn chuyển đổi nhân khẩu học với đặc điểm nổi bật nào?",
+        "options": [
+          "Quy mô dân số đông (>100 triệu dân), cơ cấu dân số vàng và đang bước nhanh vào giai đoạn già hóa dân số.",
+          "Tỉ lệ gia tăng tự nhiên đang bùng nổ vượt mức 3%/năm.",
+          "Tỉ lệ dân thành thị đã chiếm trên 85% tổng dân số cả nước.",
+          "Lực lượng lao động suy giảm nghiêm trọng thiếu người làm việc."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_006",
+      "seq": 6,
+      "question": {
+        "stem": "Đô thị hóa ở nước ta hiện nay có vai trò chiến lược nào đối với nền kinh tế?",
+        "options": [
+          "Tạo động lực lan tỏa thúc đẩy chuyển dịch cơ cấu kinh tế, thu hút đầu tư và tạo nhiều việc làm phi nông nghiệp.",
+          "Tạo ra các dòng người di cư thất nghiệp về quê.",
+          "Làm suy giảm hoàn toàn ngành thương mại dịch vụ.",
+          "Chỉ phát triển các ngành tiểu thủ công nghiệp truyền thống."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_007",
+      "seq": 7,
+      "question": {
+        "stem": "Xu hướng chuyển dịch cơ cấu ngành kinh tế của nước ta theo hướng công nghiệp hóa, hiện đại hóa thể hiện ở điểm nào?",
+        "options": [
+          "Giảm tỉ trọng khu vực nông - lâm - thủy sản, tăng tỉ trọng khu vực công nghiệp - xây dựng và dịch vụ.",
+          "Tăng tối đa tỉ trọng nông nghiệp tự cung tự cấp.",
+          "Xóa bỏ hoàn toàn khu vực dịch vụ.",
+          "Giảm tỉ trọng của công nghiệp chế biến chế tạo."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_008",
+      "seq": 8,
+      "question": {
+        "stem": "Cây công nghiệp lâu năm được trồng với diện tích và sản lượng lớn nhất ở vùng Tây Nguyên là cây nào?",
+        "options": [
+          "Cây cà phê (đặc biệt là cà phê Robusta).",
+          "Cây chè búp.",
+          "Cây hồi và quế.",
+          "Cây thuốc lá."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_009",
+      "seq": 9,
+      "question": {
+        "stem": "Điều kiện tự nhiên thuận lợi nhất để vùng Duyên hải Nam Trung Bộ phát triển nghề làm muối hạt chất lượng cao là gì?",
+        "options": [
+          "Nhiệt độ cao quanh năm, nhiều nắng gió, lượng mưa rất ít và ít có sông lớn đổ ra biển (Cà Ná, Sa Huỳnh).",
+          "Có mạng lưới sông ngòi dày đặc đổ ra nhiều phù sa đục.",
+          "Thời tiết lạnh có sương giá thường xuyên.",
+          "Vùng biển nông nhiều bãi bùn lầy."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_010",
+      "seq": 10,
+      "question": {
+        "stem": "Vùng Đồng bằng sông Hồng có thế mạnh nổi bật hàng đầu nào sau đây so với các vùng khác trong cả nước?",
+        "options": [
+          "Lực lượng lao động dồi dào với trình độ học vấn, chuyên môn kĩ thuật cao nhất và mạng lưới đô thị dày đặc.",
+          "Diện tích đất đỏ bazan rộng lớn nhất nước.",
+          "Trữ lượng dầu khí dồi dào nhất thềm lục địa.",
+          "Tài nguyên rừng nguyên sinh bạt ngàn."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_011",
+      "seq": 11,
+      "question": {
+        "stem": "Nguyên nhân chủ yếu làm cho ngành giao thông vận tải đường bộ nước ta phát triển nhanh chóng và hiện đại hóa vượt bậc là:",
+        "options": [
+          "Đầu tư mạnh mẽ vào các tuyến cao tốc huyết mạch Bắc - Nam và kết nối các vùng kinh tế trọng điểm.",
+          "Số lượng xe đạp và xe máy tăng đột biến.",
+          "Không còn sử dụng vận tải đường thủy.",
+          "Địa hình nước ta hoàn toàn bằng phẳng không có sông núi cản trở."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_012",
+      "seq": 12,
+      "question": {
+        "stem": "Ngành du lịch nước ta phát triển bùng nổ trong những năm gần đây nhờ vào nhân tố chủ yếu nào?",
+        "options": [
+          "Tài nguyên du lịch phong phú, chính sách mở cửa visa thông thoáng, cơ sở hạ tầng dịch vụ lưu trú hiện đại.",
+          "Giá vé máy bay luôn rẻ nhất thế giới.",
+          "Chỉ đón khách du lịch nội địa.",
+          "Khí hậu quanh năm không bao giờ có mưa bão."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_013",
+      "seq": 13,
+      "question": {
+        "stem": "Cơ cấu kinh tế theo thành phần kinh tế ở nước ta hiện nay bao gồm các khu vực nào?",
+        "options": [
+          "Kinh tế nhà nước, kinh tế tập thể, kinh tế tư nhân và kinh tế có vốn đầu tư nước ngoài (FDI).",
+          "Chỉ gồm kinh tế nhà nước và kinh tế cá thể.",
+          "Chỉ gồm các tập đoàn đa quốc gia nước ngoài.",
+          "Kinh tế hợp tác xã đơn thuần."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_014",
+      "seq": 14,
+      "question": {
+        "stem": "Để nâng cao giá trị gia tăng và khả năng cạnh tranh của nông sản xuất khẩu, giải pháp hàng đầu của ngành nông nghiệp nước ta là:",
+        "options": [
+          "Đẩy mạnh ứng dụng công nghệ cao, phát triển nông nghiệp hữu cơ và công nghiệp chế biến sâu sau thu hoạch.",
+          "Mở rộng tối đa diện tích đất gieo trồng bằng mọi giá.",
+          "Chỉ xuất khẩu nông sản thô chưa qua sơ chế.",
+          "Lạm dụng tối đa thuốc bảo vệ thực vật để diệt trừ sâu bệnh."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_015",
+      "seq": 15,
+      "question": {
+        "stem": "Trung tâm kinh tế, tài chính, khoa học công nghệ và dịch vụ hiện đại có quy mô lớn nhất nước ta hiện nay là:",
+        "options": [
+          "Thành phố Hồ Chí Minh.",
+          "Thành phố Đà Nẵng.",
+          "Thành phố Cần Thơ.",
+          "Thành phố Hải Phòng."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_016",
+      "seq": 16,
+      "question": {
+        "stem": "Vùng kinh tế trọng điểm miền Trung gồm các tỉnh/thành phố ven biển từ:",
+        "options": [
+          "Thừa Thiên Huế, Đà Nẵng, Quảng Nam, Quảng Ngãi, Bình Định.",
+          "Thanh Hóa, Nghệ An, Hà Tĩnh.",
+          "Khánh Hòa, Ninh Thuận, Bình Thuận.",
+          "Phú Yên, Đắk Lắk, Gia Lai."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_017",
+      "seq": 17,
+      "question": {
+        "stem": "Ý nghĩa kinh tế - an ninh quốc phòng to lớn nhất của các đảo và quần đảo trên Biển Đông đối với nước ta là gì?",
+        "options": [
+          "Là tiền tiêu bảo vệ chủ quyền biên giới biển đảo, căn cứ để tiến ra khai thác kinh tế biển sâu và kiểm soát các tuyến hàng hải.",
+          "Là nơi xây dựng các nhà máy công nghiệp luyện thép nặng.",
+          "Cung cấp toàn bộ nguồn nước ngọt sinh hoạt cho đất liền.",
+          "Ngăn chặn hoàn toàn các cơn bão nhiệt đới từ Thái Bình Dương đổ bộ."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_018",
+      "seq": 18,
+      "question": {
+        "stem": "Bốn ngành kinh tế biển then chốt trong 'Chiến lược phát triển bền vững kinh tế biển Việt Nam đến năm 2030, tầm nhìn 2045' là:",
+        "options": [
+          "Du lịch biển; kinh tế hàng hải (cảng biển); khai thác dầu khí và khoáng sản biển; nuôi trồng và khai thác hải sản.",
+          "Luyện kim màu, cơ khí đóng tàu, khai khoáng bauxit và may mặc.",
+          "Sản xuất ô tô, điện tử viễn thông, hóa chất và giấy.",
+          "Trồng lúa nước ngập mặn, làm gốm sứ và đan lát."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_019",
+      "seq": 19,
+      "question": {
+        "stem": "Đặc điểm khí hậu phân hóa sâu sắc thành hai mùa mưa - khô rõ rệt ở miền Nam nước ta là do tác động của:",
+        "options": [
+          "Gió mùa Tây Nam (mùa mưa) và Tín phong bán cầu Bắc (mùa khô).",
+          "Gió mùa Đông Bắc lạnh khô thổi quanh năm.",
+          "Dòng biển lạnh chạy dọc sát bờ biển.",
+          "Địa hình chắn gió của dãy núi Hoàng Liên Sơn."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_020",
+      "seq": 20,
+      "question": {
+        "stem": "Thế mạnh tự nhiên lớn nhất để phát triển ngành công nghiệp nhiệt điện khí ở vùng Đông Nam Bộ là:",
+        "options": [
+          "Nguồn khí tự nhiên dồi dào từ các bể trầm tích thềm lục địa Cửu Long và Nam Côn Sơn (cụm Phú Mỹ, Nhơn Trạch).",
+          "Mỏ than đá Quảng Ninh phong phú.",
+          "Hệ thống sông suối có độ dốc lớn thuận lợi làm thủy điện.",
+          "Tiềm năng quặng uranium dồi dào."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_021",
+      "seq": 21,
+      "question": {
+        "stem": "Biến đổi khí hậu toàn cầu đang gây ra thách thức môi trường nghiêm trọng nhất nào sau đây đối với vùng Đồng bằng sông Cửu Long?",
+        "options": [
+          "Nguy cơ sụt lún đất, nước biển dâng ngập úng và hạn mặn xâm nhập sâu vào nội đồng.",
+          "Hiện tượng hoang mạc hóa do cát bay bao phủ.",
+          "Hiện tượng núi lửa phun trào nham thạch.",
+          "Bão tuyết và băng giá xuất hiện thường xuyên."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_022",
+      "seq": 22,
+      "question": {
+        "stem": "Nguyên nhân chủ yếu làm cho cơ cấu sử dụng lao động theo ngành ở nước ta chuyển dịch theo hướng tích cực là:",
+        "options": [
+          "Quá trình công nghiệp hóa, hiện đại hóa đất nước và thu hút mạnh dòng vốn đầu tư trực tiếp nước ngoài (FDI).",
+          "Chính sách hạn chế người dân làm việc trong các khu công nghiệp.",
+          "Lao động thanh niên không còn thích học nghề kĩ thuật.",
+          "Sự gia tăng nhanh chóng của tỉ lệ lao động trong nông nghiệp."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_023",
+      "seq": 23,
+      "question": {
+        "stem": "Nhân tố kinh tế - xã hội nào sau đây có ý nghĩa quyết định nhất đến việc phân bố các trung tâm công nghiệp lớn ở nước ta?",
+        "options": [
+          "Thị trường tiêu thụ rộng lớn, nguồn lao động lành nghề dồi dào và cơ sở hạ tầng giao thông đồng bộ.",
+          "Sự phong phú tuyệt đối của tài nguyên khoáng sản tại chỗ.",
+          "Địa hình đồi núi dốc hiểm trở.",
+          "Điều kiện thời tiết mát mẻ quanh năm."
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_dialy_024",
+      "seq": 24,
+      "question": {
+        "stem": "Đẩy mạnh công nghiệp chế biến lương thực - thực phẩm ở các vùng chuyên canh nông nghiệp nước ta có tác dụng chủ yếu nào?",
+        "options": [
+          "Nâng cao giá trị thương phẩm nông sản, dễ bảo quản vận chuyển, tăng khả năng cạnh tranh và thúc đẩy sản xuất hàng hóa.",
+          "Làm giảm chất lượng dinh dưỡng của nông sản tươi.",
+          "Khiến nông dân bỏ ruộng đất hoang hóa.",
+          "Tăng giá thành vận tải đường biển quốc tế."
+        ],
+        "correct": 1
+      }
+    }
+  ]
+}

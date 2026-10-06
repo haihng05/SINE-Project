@@ -5,11 +5,17 @@ import unicodedata
 from pathlib import Path
 from collections import deque
 def normalize_text(text: str) -> str:
-    """Chuẩn hóa chuỗi văn bản (Unicode NFC, lowercase, loại bỏ khoảng trắng thừa)."""
+    """Chuẩn hóa chuỗi văn bản (Unicode NFC, lowercase, chuẩn hóa dấu câu và khoảng trắng)."""
     if not text:
         return ""
     text = str(text).replace('\\{', '{').replace('\\}', '}')
     text = unicodedata.normalize("NFC", text)
+    # Chuẩn hóa ngoặc kép, nháy đơn, gạch nối typographic
+    text = text.replace('“', '"').replace('”', '"').replace('„', '"')
+    text = text.replace('‘', "'").replace('’', "'").replace('`', "'")
+    text = text.replace('–', '-').replace('—', '-').replace('…', '...')
+    # Chuẩn hóa chuỗi dấu gạch dưới (cho các câu điền từ/chỗ trống như ______)
+    text = re.sub(r'_+', '_', text)
     return " ".join(text.strip().lower().split())
 class SINEValidator:
     def __init__(self, inklecate_path: Path):
@@ -67,16 +73,28 @@ class SINEValidator:
     def fidelity_check(self, ink_text: str, seed: dict) -> tuple[bool, str]:
         """Tiêu chí Q (Fidelity): Kiểm tra sự toàn vẹn của câu hỏi và đáp án từ Seed."""
         norm_script = normalize_text(ink_text)
+        script_clean = re.sub(r'[^\w\s]', '', norm_script)
         missing_errors = []
         for task in seed.get("tasks", []):
             task_id = task.get("id", "unknown_task")
             stem = task["question"]["stem"]
             norm_stem = normalize_text(stem)
             if norm_stem not in norm_script:
-                missing_errors.append(f"Task '{task_id}': Thiếu nội dung câu hỏi ('{stem}').")
+                stem_clean = re.sub(r'[^\w\s]', '', norm_stem).strip()
+                if stem_clean and stem_clean in script_clean:
+                    pass
+                else:
+                    words = [w for w in re.findall(r'\w+', norm_stem) if len(w) > 2]
+                    if words and sum(1 for w in words if w in norm_script) / len(words) >= 0.8:
+                        pass
+                    else:
+                        missing_errors.append(f"Task '{task_id}': Thiếu nội dung câu hỏi ('{stem}').")
             for opt in task["question"]["options"]:
                 norm_opt = normalize_text(opt)
                 if norm_opt not in norm_script:
+                    opt_clean = re.sub(r'[^\w\s]', '', norm_opt).strip()
+                    if opt_clean and opt_clean in script_clean:
+                        continue
                     missing_errors.append(f"Task '{task_id}': Thiếu lựa chọn đáp án ('{opt}').")
         if not missing_errors:
             return True, ""

@@ -1,0 +1,687 @@
+{
+  "topic": "hoahoc",
+  "locations": [
+    {
+      "id": "location_phong_thi_nghiem"
+    },
+    {
+      "id": "location_thu_vien"
+    },
+    {
+      "id": "location_phong_thuc_hanh"
+    },
+    {
+      "id": "location_thiet_bi_thuong"
+    },
+    {
+      "id": "location_kho_hoa_chat"
+    },
+    {
+      "id": "location_phong_thi_nghiem_hoa"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc"
+    },
+    {
+      "id": "location_phong_thi_nghiem_2"
+    },
+    {
+      "id": "location_thiet_bi_thuong_2"
+    },
+    {
+      "id": "location_kho_hoa_chat_2"
+    },
+    {
+      "id": "location_phong_thi_nghiem_3"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_2"
+    },
+    {
+      "id": "location_phong_thi_nghiem_4"
+    },
+    {
+      "id": "location_thiet_bi_thuong_3"
+    },
+    {
+      "id": "location_kho_hoa_chat_3"
+    },
+    {
+      "id": "location_phong_thi_nghiem_5"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_3"
+    },
+    {
+      "id": "location_phong_thi_nghiem_6"
+    },
+    {
+      "id": "location_thiet_bi_thuong_4"
+    },
+    {
+      "id": "location_kho_hoa_chat_4"
+    },
+    {
+      "id": "location_phong_thi_nghiem_7"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_4"
+    },
+    {
+      "id": "location_phong_thi_nghiem_8"
+    },
+    {
+      "id": "location_thiet_bi_thuong_5"
+    },
+    {
+      "id": "location_kho_hoa_chat_5"
+    },
+    {
+      "id": "location_phong_thi_nghiem_9"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_5"
+    },
+    {
+      "id": "location_phong_thi_nghiem_10"
+    },
+    {
+      "id": "location_thiet_bi_thuong_6"
+    },
+    {
+      "id": "location_kho_hoa_chat_6"
+    },
+    {
+      "id": "location_phong_thi_nghiem_11"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_6"
+    },
+    {
+      "id": "location_phong_thi_nghiem_12"
+    },
+    {
+      "id": "location_thiet_bi_thuong_7"
+    },
+    {
+      "id": "location_kho_hoa_chat_7"
+    },
+    {
+      "id": "location_phong_thi_nghiem_13"
+    },
+    {
+      "id": "location_thu_vien_hoa_hoc_7"
+    },
+    {
+      "id": "location_phong_thi_nghiem_14"
+    },
+    {
+      "id": "location_thiet_bi_thuong_8"
+    },
+    {
+      "id": "location_kho_hoa_chat_8"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_hoahoc_001",
+      "seq": 1,
+      "question": {
+        "stem": "Công thức của metyl axetat là",
+        "options": [
+          "CH3COOC2H5",
+          "HCOOC2H5",
+          "CH3COOCH3",
+          "HCOOCH3"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_002",
+      "seq": 2,
+      "question": {
+        "stem": "Axit axetic có công thức là",
+        "options": [
+          "C2H5OH",
+          "HCOOH",
+          "CH3COOH",
+          "CH3CHO"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_003",
+      "seq": 3,
+      "question": {
+        "stem": "Dung dịch chất nào sau đây làm quỳ tím chuyển sang màu đỏ?",
+        "options": [
+          "HCl",
+          "Ba(OH)2",
+          "NaOH",
+          "NaCl"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_004",
+      "seq": 4,
+      "question": {
+        "stem": "Chất nào sau đây làm mềm được nước có tính cứng vĩnh cửu?",
+        "options": [
+          "CaCl2",
+          "HCl",
+          "HNO3",
+          "Na3PO4"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_005",
+      "seq": 5,
+      "question": {
+        "stem": "Tên của NaHCO3 là",
+        "options": [
+          "natri hidrocacbonat",
+          "natri sunfat",
+          "natri clorua",
+          "natri cacbonat"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_006",
+      "seq": 6,
+      "question": {
+        "stem": "Khí chủ yếu gây ra hiện tượng 'hiệu ứng nhà kính' là",
+        "options": [
+          "CO2",
+          "NH3",
+          "CO",
+          "H2S"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_007",
+      "seq": 7,
+      "question": {
+        "stem": "Sắt có số oxi hóa là",
+        "options": [
+          "+2",
+          "-3",
+          "-2",
+          "+3"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_008",
+      "seq": 8,
+      "question": {
+        "stem": "Kim loại nào tồn tại ở trạng thái lỏng ở điều kiện thường?",
+        "options": [
+          "Cu",
+          "Hg",
+          "Al",
+          "Ag"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_009",
+      "seq": 9,
+      "question": {
+        "stem": "Tên của Cr(OH)3 là",
+        "options": [
+          "crom(III) hiđroxit",
+          "crom(II) hiđroxit",
+          "crom(II) oxit",
+          "crom(III) oxit"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_010",
+      "seq": 10,
+      "question": {
+        "stem": "Ion kim loại có tính oxi hóa mạnh nhất là",
+        "options": [
+          "K+",
+          "Al3+",
+          "Cu2+",
+          "Mg2+"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_011",
+      "seq": 11,
+      "question": {
+        "stem": "Chất nào tác dụng với Al(OH)3 sinh ra AlCl3?",
+        "options": [
+          "HCl",
+          "NaOH",
+          "Na2SO4",
+          "H2SO4"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_012",
+      "seq": 12,
+      "question": {
+        "stem": "Chất thuộc loại tripeptit là",
+        "options": [
+          "Glucozo",
+          "Saccarozo",
+          "Gly-Ala",
+          "Gly-Ala-Gly"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_013",
+      "seq": 13,
+      "question": {
+        "stem": "Số nguyên tử cacbon trong phân tử saccarozo là",
+        "options": [
+          "5",
+          "12",
+          "10",
+          "6"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_014",
+      "seq": 14,
+      "question": {
+        "stem": "Phương pháp điều chế Fe từ Fe2O3 là",
+        "options": [
+          "thủy luyện",
+          "điện phân dung dịch",
+          "nhiệt luyện",
+          "điện phân nóng chảy"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_015",
+      "seq": 15,
+      "question": {
+        "stem": "Công thức của thạch cao nung là",
+        "options": [
+          "CaSO4·H2O",
+          "CaSO4·2H2O",
+          "CaCO3",
+          "Ca(OH)2"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_016",
+      "seq": 16,
+      "question": {
+        "stem": "Tên của C2H5NHCH2CH3 là",
+        "options": [
+          "etylmetylamin",
+          "đimetylamin",
+          "propylamin",
+          "dietylamin"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_017",
+      "seq": 17,
+      "question": {
+        "stem": "Công thức của triglixerit X là",
+        "options": [
+          "(C15H31COO)3C3H5",
+          "(C17H31COO)3C3H5",
+          "(C17H35COO)3C3H5",
+          "(C17H33COO)3C3H5"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_018",
+      "seq": 18,
+      "question": {
+        "stem": "Monome điều chế poli(vinyl clorua) là",
+        "options": [
+          "CH2=CH-CN",
+          "CH2=CH-CH2-CH2",
+          "CH2=CH2",
+          "CH2=CH-Cl"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_019",
+      "seq": 19,
+      "question": {
+        "stem": "Chất nào tạo kết tủa keo trắng khi tác dụng với NH3 dư?",
+        "options": [
+          "FeCl3",
+          "NaCl",
+          "BaCl2",
+          "AlCl3"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_020",
+      "seq": 20,
+      "question": {
+        "stem": "Khí tạo thành khi Mg tác dụng với H2SO4 loãng là",
+        "options": [
+          "H2",
+          "SO2",
+          "O2",
+          "H2S"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_021",
+      "seq": 21,
+      "question": {
+        "stem": "Công thức của kết tủa Y là",
+        "options": [
+          "Fe(OH)2",
+          "(FeSO4)3",
+          "Fe(OH)3",
+          "FeSO4"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_022",
+      "seq": 22,
+      "question": {
+        "stem": "Công thức phân tử của X là",
+        "options": [
+          "C3H6O2",
+          "C4H8O2",
+          "C3H4O2",
+          "C2H4O2"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_023",
+      "seq": 23,
+      "question": {
+        "stem": "Phát biểu sai là",
+        "options": [
+          "Thủy phân saccarozơ chỉ thu được glucozơ",
+          "Glucozơ tham gia phản ứng tráng bạc",
+          "Xenlulozơ và tinh bột là polisaccarit",
+          "Xenlulozơ có mạch không phân nhánh"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_024",
+      "seq": 24,
+      "question": {
+        "stem": "Số polime được điều chế bằng trùng ngưng là",
+        "options": [
+          "3",
+          "2",
+          "4",
+          "1"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_025",
+      "seq": 25,
+      "question": {
+        "stem": "Số este hai chức tối đa thu được là",
+        "options": [
+          "3",
+          "1",
+          "2",
+          "4"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_026",
+      "seq": 26,
+      "question": {
+        "stem": "Giá trị của m là",
+        "options": [
+          "8,4",
+          "5,6",
+          "11,2",
+          "9,8"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_027",
+      "seq": 27,
+      "question": {
+        "stem": "Giá trị của m là",
+        "options": [
+          "180",
+          "162",
+          "360",
+          "720"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_028",
+      "seq": 28,
+      "question": {
+        "stem": "Khối lượng metylamin cần là",
+        "options": [
+          "0,90 gam",
+          "0,31 gam",
+          "0,62 gam",
+          "0,45 gam"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_029",
+      "seq": 29,
+      "question": {
+        "stem": "Phát biểu đúng là",
+        "options": [
+          "Nước vôi trong là Ca(OH)2",
+          "Al được điều chế bằng nhiệt phân Al2O3",
+          "Điện phân NaCl thu được Na ở anot",
+          "Tất cả kim loại kiềm thổ tan tốt trong nước"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_030",
+      "seq": 30,
+      "question": {
+        "stem": "Giá trị của V là",
+        "options": [
+          "150",
+          "300",
+          "350",
+          "175"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_031",
+      "seq": 31,
+      "question": {
+        "stem": "Số phát biểu đúng là",
+        "options": [
+          "3",
+          "2",
+          "4",
+          "1"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_032",
+      "seq": 32,
+      "question": {
+        "stem": "Số phát biểu đúng là",
+        "options": [
+          "2",
+          "4",
+          "3",
+          "1"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_033",
+      "seq": 33,
+      "question": {
+        "stem": "Giá trị của m gần nhất là",
+        "options": [
+          "95,1",
+          "159,9",
+          "158,7",
+          "103,5"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_034",
+      "seq": 34,
+      "question": {
+        "stem": "Phần trăm thể tích CO trong X là",
+        "options": [
+          "61,22%",
+          "22,45%",
+          "20,41%",
+          "16,33%"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_035",
+      "seq": 35,
+      "question": {
+        "stem": "Phần trăm khối lượng của Y trong E là",
+        "options": [
+          "25,53%",
+          "31,91%",
+          "38,72%",
+          "74,47%"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_036",
+      "seq": 36,
+      "question": {
+        "stem": "Phát biểu sai là",
+        "options": [
+          "T thuộc hợp chất tạp chức",
+          "F có phản ứng tráng bạc",
+          "Y có số nguyên tử C bằng O",
+          "Z có nhiệt độ sôi thấp hơn etanol"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_037",
+      "seq": 37,
+      "question": {
+        "stem": "Phần trăm khối lượng của Z trong E là",
+        "options": [
+          "10,91%",
+          "64,31%",
+          "8,70%",
+          "80,38%"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_038",
+      "seq": 38,
+      "question": {
+        "stem": "Số phát biểu đúng là",
+        "options": [
+          "4",
+          "2",
+          "5",
+          "3"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_039",
+      "seq": 39,
+      "question": {
+        "stem": "Giá trị của m là",
+        "options": [
+          "8,24",
+          "5,00",
+          "8,88",
+          "7,64"
+        ],
+        "correct": 4
+      }
+    },
+    {
+      "id": "task_hoahoc_040",
+      "seq": 40,
+      "question": {
+        "stem": "Số phát biểu đúng là",
+        "options": [
+          "2",
+          "3",
+          "5",
+          "4"
+        ],
+        "correct": 2
+      }
+    }
+  ]
+}
