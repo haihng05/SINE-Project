@@ -17,10 +17,11 @@ class SINEGenerator:
         self.model_name = model_name
     def generate(self, seed: dict) -> tuple[str, str]:
         """Sinh kịch bản ban đầu theo chiến lược S3 (Reasoning Required + Few-Shot)."""
-        prompt = f"""Bạn là một chuyên gia thiết kế game giáo dục tương tác văn bản (Interactive Fiction Serious Game) bằng ngôn ngữ Ink (.ink).
+        seed_json_str = json.dumps(seed, ensure_ascii=False, indent=2)
+        prompt = """Bạn là một chuyên gia thiết kế game giáo dục tương tác văn bản (Interactive Fiction Serious Game) bằng ngôn ngữ Ink (.ink).
 Hãy dựa vào dữ liệu SEED JSON dưới đây để tạo ra một kịch bản game Ink hoàn chỉnh:
 DỮ LIỆU SEED (JSON):
-{json.dumps(seed, ensure_ascii=False, indent=2)}
+__SEED_JSON_PLACEHOLDER__
 VÍ DỤ CẤU TRÚC KỊCH BẢN INK CHUẨN MẪU:
 ```ink
 -> location_start
@@ -49,6 +50,7 @@ CÁC NGUYÊN TẮC BẮT BUỘC:
 3. Đáp án đúng (correct index) phải chuyển tới knot thành công (`_success`), đáp án sai chuyển tới knot thất bại (`_fail`) cho phép thử lại.
 4. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt khi chọn sai nhiều lần.
 5. Cuối game phải có đường dẫn tới `-> END`.
+6. BẮT BUỘC đặt tên knot của câu hỏi CHÍNH XÁC theo id của task trong Seed (ví dụ: task id là task_lichsu_001 thì knot là `=== task_lichsu_001 ===`, chuyển tiếp đúng là `task_lichsu_001_success` và sai là `task_lichsu_001_fail`), KHÔNG được tự ý bỏ số 0 hay thay đổi tiền tố.
 LƯU Ý CỰC KỲ QUAN TRỌNG CHO CÁC MÔN CÓ CÔNG THỨC:
 Trong công thức LaTeX Toán học, bạn sẽ thấy rất nhiều dấu ngoặc nhọn {  và } . 
 TUY NHIÊN, trong ngôn ngữ Ink, dấu ngoặc nhọn {  ... }  được dùng cho logic code. Nếu bạn viết nguyên si {  hoặc }  vào file Ink, trình biên dịch sẽ LỖI NGAY LẬP TỨC!
@@ -57,8 +59,9 @@ Ví dụ: \frac{ 1} { 2}  PHẢI ĐƯỢC VIẾT THÀNH \frac\{ 1\} \{ 2\}
 Ví dụ: { -5; 1/5}  PHẢI ĐƯỢC VIẾT THÀNH \{ -5; 1/5\} 
 ĐỊNH DẠNG ĐẦU RA:
 Hãy suy luận ngắn gọn kế hoạch cốt truyện trong <think>...</think>, sau đó xuất toàn bộ mã nguồn trong khối ```ink ... ```.
-"""
+""".replace("__SEED_JSON_PLACEHOLDER__", seed_json_str)
         import time
+        max_tokens_val = 32768 if "gemini" in self.model_name.lower() else 8192
         for attempt in range(10):
             try:
                 response = self.client.chat.completions.create(
@@ -69,7 +72,7 @@ Hãy suy luận ngắn gọn kế hoạch cốt truyện trong <think>...</think
                     ],
                     temperature=0.3,
                     top_p=0.9,
-                    max_tokens=8192
+                    max_tokens=max_tokens_val
                 )
                 break
             except Exception as e:
@@ -105,6 +108,7 @@ HƯỚNG DẪN SỬA LỖI:
 4. Xuất kịch bản đã sửa hoàn chỉnh trong khối ```ink ... ```.
 """
         import time
+        max_tokens_val = 32768 if "gemini" in self.model_name.lower() else 8192
         for attempt in range(10):
             try:
                 response = self.client.chat.completions.create(
@@ -115,7 +119,7 @@ HƯỚNG DẪN SỬA LỖI:
                     ],
                     temperature=0.2,
                     top_p=0.9,
-                    max_tokens=8192
+                    max_tokens=max_tokens_val
                 )
                 break
             except Exception as e:

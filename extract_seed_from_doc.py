@@ -1,5 +1,11 @@
 import os
 import sys
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 import json
 import re
 import argparse
@@ -52,27 +58,38 @@ def extract_json_from_text(text: str) -> str:
     if match:
         return match.group(1).strip()
     return text.strip()
-def get_openrouter_api_key() -> str:
-    key = os.environ.get("OPENROUTER_API_KEY")
-    if key:
-        return key
+def get_api_client_and_model():
+    """Tự động kết nối API: Ưu tiên Gemini nếu có GEMINI_API_KEY, ngược lại dùng OpenRouter."""
     env_file = PROJECT_ROOT / ".env"
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
     if env_file.exists():
         with open(env_file, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
-                if line.startswith("OPENROUTER_API_KEY="):
-                    return line.split("=", 1)[1].strip().strip('"').strip("'")
-    return ""
+                if line.startswith("GEMINI_API_KEY=") and not gemini_key:
+                    gemini_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                elif line.startswith("OPENROUTER_API_KEY=") and not openrouter_key:
+                    openrouter_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if gemini_key:
+        print(" [AI Engine] Đang kết nối Google Gemini API (gemini-3-flash-preview)...")
+        client = OpenAI(
+            base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+            api_key=gemini_key
+        )
+        return client, "gemini-3-flash-preview"
+    elif openrouter_key:
+        print(" [AI Engine] Đang kết nối OpenRouter API (qwen/qwen3-14b)...")
+        client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=openrouter_key
+        )
+        return client, "qwen/qwen3-14b"
+    else:
+        raise ValueError("Chưa thiết lập GEMINI_API_KEY hoặc OPENROUTER_API_KEY trong file .env!")
 
 def generate_seed_with_ai(file_path: str, text_content: str, topic_name: str, use_vision: bool = False) -> dict:
-    api_key = get_openrouter_api_key()
-    if not api_key:
-        raise ValueError("Chưa thiết lập OPENROUTER_API_KEY! Vui lòng cấu hình biến môi trường hoặc khai báo trong file .env.")
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=api_key
-    )
+    client, model_to_use = get_api_client_and_model()
     prompt = f"""Bạn là một trợ lý AI chuyên phân tích đề thi và trích xuất dữ liệu.
 Nhiệm vụ của bạn là đọc nội dung (văn bản hoặc hình ảnh) dưới đây, tự động bỏ qua các phần không phải là câu hỏi trắc nghiệm (ví dụ: tiêu đề, lời mở đầu, hướng dẫn). 
 Sau đó, trích xuất tất cả các câu hỏi trắc nghiệm có trong đó và chuyển đổi chúng thành định dạng JSON Seed (SINE format).
@@ -82,23 +99,23 @@ YÊU CẦU:
 3. Trả về DUY NHẤT một khối JSON theo cấu trúc mẫu sau (nằm trong ```json ... ```):
 VÍ DỤ CẤU TRÚC JSON:
 ```json
-{ 
+{{ 
   "topic": "{topic_name}",
   "locations": [
-    { "id": "location_s001"} 
+    {{ "id": "location_s001"}} 
   ],
   "tasks": [
-    { 
+    {{ 
       "id": "task_{topic_name}_001",
       "seq": 1,
-      "question": { 
+      "question": {{ 
         "stem": "Nội dung câu hỏi 1 là gì?",
-        "options": ["Lựa chọn A", "Lựa chọn B", "Lựa chọn C", "Lựa chọn D"],
+        "options": ["Phương án A", "Phương án B", "Phương án C", "Phương án D"],
         "correct": 1
-      } 
-    } 
+      }} 
+    }} 
   ]
-} 
+}}
 ```
 """
     content_list = [{"type": "text", "text": prompt}]
@@ -110,10 +127,8 @@ VÍ DỤ CẤU TRÚC JSON:
                 "type": "image_url",
                 "image_url": {"url": f"data:image/png;base64,{b64}"}
             })
-        model_to_use = "qwen/qwen3-14b"
     else:
         content_list.append({"type": "text", "text": f"\\nNỘI DUNG VĂN BẢN:\\n{text_content}"})
-        model_to_use = "qwen/qwen3-14b"
     print(f" Đang gửi dữ liệu cho AI (Model: {model_to_use}) để trích xuất...")
     import time
     for attempt in range(10):
@@ -124,7 +139,8 @@ VÍ DỤ CẤU TRÚC JSON:
                     {"role": "system", "content": "Bạn là công cụ trích xuất dữ liệu sang JSON. Chỉ trả lời bằng JSON."},
                     {"role": "user", "content": content_list}
                 ],
-                temperature=0.1
+                temperature=0.1,
+                max_tokens=8192
             )
             break
         except Exception as e:
@@ -166,5 +182,6 @@ def main():
         print(f" Số câu hỏi: {len(seed_json.get('tasks', []))}")
     except Exception as e:
         print(f" Quá trình tạo Seed thất bại: {e}")
+        sys.exit(1)
 if __name__ == "__main__":
     main()

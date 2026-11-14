@@ -1,0 +1,358 @@
+{
+  "topic": "lichsu",
+  "locations": [
+    {
+      "id": "location_bao_tang_lich_su"
+    },
+    {
+      "id": "location_hoi_truong_thong_nhat"
+    },
+    {
+      "id": "location_quang_truong_ba_dinh"
+    },
+    {
+      "id": "location_dien_bien_phu"
+    },
+    {
+      "id": "location_dao_truong_sa"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_lichsu_001",
+      "seq": 1,
+      "question": {
+        "stem": "Trật tự thế giới hai cực I-an-ta (hình thành sau Hội nghị Ianta 1945) bị chi phối bởi hai siêu cường đại diện cho hai hệ tư tưởng đối lập nào?",
+        "options": [
+          "Mỹ (tư bản chủ nghĩa) và Liên Xô (xã hội chủ nghĩa).",
+          "Anh và Pháp.",
+          "Mỹ và Trung Quốc.",
+          "Liên Xô và Đức."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_002",
+      "seq": 2,
+      "question": {
+        "stem": "Mục tiêu bao trùm cao nhất của tổ chức Liên hợp quốc được nêu rõ trong Hiến chương là gì?",
+        "options": [
+          "Duy trì hòa bình và an ninh quốc tế, phát triển quan hệ hữu nghị hợp tác giữa các quốc gia.",
+          "Thiết lập liên minh quân sự chống lại các nước nghèo.",
+          "Thống nhất tiền tệ trên quy mô toàn cầu.",
+          "Xóa bỏ hoàn toàn biên giới các quốc gia."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_003",
+      "seq": 3,
+      "question": {
+        "stem": "Cơ quan nào của Liên hợp quốc giữ vai trò trọng yếu trong việc duy trì hòa bình và an ninh thế giới, với 5 nước ủy viên thường trực có quyền phủ quyết?",
+        "options": [
+          "Hội đồng Bảo an.",
+          "Đại hội đồng.",
+          "Ban Thư kí.",
+          "Tòa án Công lí Quốc tế."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_004",
+      "seq": 4,
+      "question": {
+        "stem": "Hiệp hội các quốc gia Đông Nam Á (ASEAN) được thành lập vào ngày 8/8/1967 tại Băng Cốc (Thái Lan) với sự tham gia của 5 nước sáng lập đầu tiên là:",
+        "options": [
+          "In-đô-nê-xi-a, Ma-lai-xi-a, Phi-líp-pin, Xin-ga-po và Thái Lan.",
+          "Việt Nam, Lào, Cam-pu-chia, Mi-an-ma và Thái Lan.",
+          "Bru-nây, Xin-ga-po, Thái Lan, In-đô-nê-xi-a và Việt Nam.",
+          "Ma-lai-xi-a, Xin-ga-po, Đông Ti-mo, Lào và Thái Lan."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_005",
+      "seq": 5,
+      "question": {
+        "stem": "Văn kiện pháp lí nền tảng xác định mục tiêu xây dựng Đông Nam Á thành khu vực hòa bình, tự do và trung lập (ZOPFAN) là:",
+        "options": [
+          "Tuyên bố Băng Cốc và Tuyên bố Cua-la Lăm-pơ (1971).",
+          "Hiệp ước Ba-li năm 1976.",
+          "Hiến chương ASEAN năm 2007.",
+          "Kế hoạch Colombo."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_006",
+      "seq": 6,
+      "question": {
+        "stem": "Năm 1995 ghi dấu mốc lịch sử đặc biệt nào trong quan hệ đối ngoại và hội nhập khu vực của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam?",
+        "options": [
+          "Việt Nam chính thức gia nhập ASEAN và bình thường hóa quan hệ ngoại giao với Hoa Kỳ.",
+          "Việt Nam gia nhập Tổ chức Thương mại Thế giới (WTO).",
+          "Việt Nam kí Hiệp định Thương mại Tự do EVFTA.",
+          "Việt Nam được bầu làm Ủy viên không thường trực Hội đồng Bảo an LHQ."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_007",
+      "seq": 7,
+      "question": {
+        "stem": "Sự sụp đổ của Trật tự hai cực I-an-ta và sự tan rã của Liên Xô (1991) đã thúc đẩy trật tự thế giới chuyển biến theo xu thế nào?",
+        "options": [
+          "Xu thế đa cực, nhiều trung tâm, hợp tác và cạnh tranh hòa bình.",
+          "Trật tự đơn cực do một mình Hoa Kỳ thống trị tuyệt đối vĩnh viễn.",
+          "Một cuộc chiến tranh thế giới thứ ba bùng nổ toàn diện ngay lập tức.",
+          "Tất cả các nước đóng cửa biên giới ngừng giao thương."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_008",
+      "seq": 8,
+      "question": {
+        "stem": "Tổ chức liên kết kinh tế - chính trị khu vực lớn nhất và có mức độ hội nhập sâu rộng nhất hành tinh hiện nay là:",
+        "options": [
+          "Liên minh châu Âu (EU).",
+          "Hiệp hội các quốc gia Đông Nam Á (ASEAN).",
+          "Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương (APEC).",
+          "Thị trường chung Nam Mỹ (MERCOSUR)."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_009",
+      "seq": 9,
+      "question": {
+        "stem": "Đại hội đại biểu toàn quốc lần thứ VI của Đảng Cộng sản Việt Nam (tháng 12/1986) đã đề ra đường lối có tính bước ngoặt lịch sử nào?",
+        "options": [
+          "Đường lối Đổi mới toàn diện đất nước, trọng tâm là đổi mới kinh tế.",
+          "Đường lối công nghiệp hóa ưu tiên phát triển công nghiệp nặng.",
+          "Chủ trương đóng cửa kinh tế để tự cung tự cấp.",
+          "Chuyển ngay lập tức sang kinh tế thị trường tự do hoàn toàn không có sự quản lí của Nhà nước."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_010",
+      "seq": 10,
+      "question": {
+        "stem": "Một trong những nội dung cốt lõi của đổi mới kinh tế ở Việt Nam từ năm 1986 đến nay là gì?",
+        "options": [
+          "Xóa bỏ cơ chế tập trung quan liêu bao cấp, phát triển nền kinh tế thị trường định hướng xã hội chủ nghĩa nhiều thành phần.",
+          "Quốc hữu hóa toàn bộ các xí nghiệp tư nhân và cơ sở kinh doanh cá thể.",
+          "Chỉ phát triển duy nhất kinh tế quốc doanh và tập thể.",
+          "Dừng mọi hoạt động xuất khẩu lương thực ra thế giới."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_011",
+      "seq": 11,
+      "question": {
+        "stem": "Ba chương trình kinh tế lớn được Đại hội VI của Đảng (1986) xác định tập trung thực hiện là:",
+        "options": [
+          "Lương thực - thực phẩm, hàng tiêu dùng và hàng xuất khẩu.",
+          "Năng lượng, luyện kim và cơ khí chế tạo.",
+          "Giao thông vận tải, bưu chính viễn thông và du lịch.",
+          "Công nghệ cao, hóa dược và đóng tàu biển."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_012",
+      "seq": 12,
+      "question": {
+        "stem": "Chính sách đối ngoại nhất quán của Đảng và Nhà nước ta trong công cuộc Đổi mới và hội nhập quốc tế là:",
+        "options": [
+          "Độc lập, tự chủ, hòa bình, hữu nghị, hợp tác và phát triển; đa phương hóa, đa dạng hóa quan hệ đối ngoại.",
+          "Chỉ liên minh quân sự chặt chẽ với một cường quốc duy nhất.",
+          "Không quan hệ ngoại giao với các nước có chế độ chính trị khác biệt.",
+          "Ưu tiên đối đầu quân sự để giải quyết tranh chấp biên giới."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_013",
+      "seq": 13,
+      "question": {
+        "stem": "Đến nay, Việt Nam đã thiết lập quan hệ ngoại giao với gần 200 quốc gia và nâng cấp quan hệ lên Đối tác Chiến lược Toàn diện với các cường quốc hàng đầu thế giới gồm:",
+        "options": [
+          "Trung Quốc, Nga, Ấn Độ, Hàn Quốc, Hoa Kỳ, Nhật Bản, Australia, Pháp...",
+          "Chỉ duy nhất có 2 nước láng giềng.",
+          "Chỉ các quốc gia thuộc châu Âu.",
+          "Chỉ các nước trong khối xã hội chủ nghĩa trước đây."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_014",
+      "seq": 14,
+      "question": {
+        "stem": "Năm 2007, Việt Nam chính thức trở thành thành viên thứ 150 của tổ chức kinh tế toàn cầu nào?",
+        "options": [
+          "Tổ chức Thương mại Thế giới (WTO).",
+          "Quỹ Tiền tệ Quốc tế (IMF).",
+          "Ngân hàng Thế giới (WB).",
+          "Tổ chức Hợp tác và Phát triển Kinh tế (OECD)."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_015",
+      "seq": 15,
+      "question": {
+        "stem": "Chiến lược 'Ngoại giao Cây tre' của Việt Nam mang đặc trưng nổi bật nào sau đây?",
+        "options": [
+          "Gốc vững, thân chắc, cành uyển chuyển; kiên định về nguyên tắc, linh hoạt về sách lược.",
+          "Dễ dàng ngả nghiêng theo lợi ích trước mắt của các nước lớn.",
+          "Cứng nhắc không bao giờ đàm phán thỏa hiệp.",
+          "Xa lánh các diễn đàn đa phương khu vực."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_016",
+      "seq": 16,
+      "question": {
+        "stem": "Khẩu hiệu hành động xuyên suốt của nhân dân ta trong giai đoạn Toàn quốc kháng chiến chống thực dân Pháp (1946) là:",
+        "options": [
+          "'Quyết tử để Tổ quốc quyết sinh'.",
+          "'Không có gì quý hơn độc lập, tự do'.",
+          "'Tất cả cho tiền tuyến, tất cả để đánh thắng giặc Mỹ xâm lược'.",
+          "'Độc lập hay là chết'."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_017",
+      "seq": 17,
+      "question": {
+        "stem": "Thắng lợi quân sự nào của quân và dân ta đã làm phá sản hoàn toàn Kế hoạch Nava của thực dân Pháp có sự can thiệp của Mỹ năm 1954?",
+        "options": [
+          "Chiến dịch Điện Biên Phủ.",
+          "Chiến dịch Biên giới Thu Đông 1950.",
+          "Chiến thắng Việt Bắc Thu Đông 1947.",
+          "Chiến dịch Thượng Lào 1953."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_018",
+      "seq": 18,
+      "question": {
+        "stem": "Chiến thắng quân sự nào mở đầu cho cao trào 'Tìm Mỹ mà đánh, lùng ngụy mà diệt' ở miền Nam năm 1965?",
+        "options": [
+          "Chiến thắng Vạn Tường (Quảng Ngãi).",
+          "Chiến thắng Ấp Bắc (Mỹ Tho).",
+          "Chiến thắng Ba Gia.",
+          "Chiến dịch Đồng Xoài."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_019",
+      "seq": 19,
+      "question": {
+        "stem": "Hiệp định Pa-ri năm 1973 về chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam đã buộc Hoa Kỳ phải thực hiện cam kết mấu chốt nào?",
+        "options": [
+          "Tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt Nam, rút hết quân viễn chinh về nước.",
+          "Tiếp tục viện trợ quân sự không giới hạn cho chính quyền Sài Gòn.",
+          "Duy trì các căn cứ quân sự Mỹ lâu dài ở miền Nam.",
+          "Được quyền can thiệp vào bầu cử tự do của nhân dân miền Nam."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_020",
+      "seq": 20,
+      "question": {
+        "stem": "Cuộc Tổng tiến công và nổi dậy Xuân 1975 đã toàn thắng sau bao nhiêu ngày đêm tiến công thần tốc?",
+        "options": [
+          "55 ngày đêm (từ 4/3 đến 30/4/1975).",
+          "81 ngày đêm bảo vệ Thành cổ Quảng Trị.",
+          "12 ngày đêm Điện Biên Phủ trên không.",
+          "100 ngày đêm chiến dịch Tây Nguyên."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_021",
+      "seq": 21,
+      "question": {
+        "stem": "Kì họp thứ nhất Quốc hội khóa VI (tháng 6 - 7/1976) đã hoàn thành nhiệm vụ lịch sử to lớn nào sau ngày giải phóng?",
+        "options": [
+          "Thống nhất đất nước về mặt nhà nước, đặt tên nước là Cộng hòa Xã hội Chủ nghĩa Việt Nam, Thủ đô là Hà Nội.",
+          "Kì hiệp ước liên minh phòng thủ quân sự Đông Dương.",
+          "Ban hành Hiến pháp năm 1992.",
+          "Bắt đầu thực hiện công cuộc Đổi mới."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_022",
+      "seq": 22,
+      "question": {
+        "stem": "Tuyên ngôn Độc lập ngày 2/9/1945 trích dẫn câu mở đầu trong bản Tuyên ngôn Độc lập năm 1776 của nước nào và Tuyên ngôn Nhân quyền, Dân quyền năm 1789 của nước nào?",
+        "options": [
+          "Nước Mỹ và nước Pháp.",
+          "Nước Anh và nước Nga.",
+          "Nước Đức và nước Ý.",
+          "Nước Trung Quốc và Ấn Độ."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_023",
+      "seq": 23,
+      "question": {
+        "stem": "Trách nhiệm công dân thiêng liêng cao cả nhất của thế hệ trẻ học sinh hiện nay trong sự nghiệp bảo vệ chủ quyền biển đảo thiêng liêng của Tổ quốc là gì?",
+        "options": [
+          "Không ngừng học tập nâng cao tri thức, rèn luyện bản lĩnh chính trị, nắm vững luật pháp quốc tế và tuyên truyền bảo vệ chủ quyền biên giới hải đảo.",
+          "Tự ý kích động biểu tình bạo lực trên mạng xã hội.",
+          "Thờ ơ không quan tâm đến các vấn đề chủ quyền đất nước.",
+          "Chỉ tập trung vào lợi ích cá nhân."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_024",
+      "seq": 24,
+      "question": {
+        "stem": "Xu thế phát triển chung của thế giới ngày nay sau Chiến tranh Lạnh là gì?",
+        "options": [
+          "Hòa bình, hữu nghị, hợp tác cùng phát triển và lấy phát triển kinh tế làm trọng tâm.",
+          "Chạy đua vũ trang hạt nhân chuẩn bị thế chiến.",
+          "Phân chia thế giới thành các phe khối quân sự đối đầu nghẹt thở.",
+          "Áp đặt trừng phạt đơn phương và bế quan tỏa cảng."
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

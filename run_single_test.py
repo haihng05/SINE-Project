@@ -20,18 +20,35 @@ sys.path.append(str(PROJECT_ROOT / "src"))
 from validator import SINEValidator
 from agents import SINEGenerator, SINEFixer
 from openai import OpenAI
-def get_openrouter_api_key() -> str:
-    key = os.environ.get("OPENROUTER_API_KEY")
-    if key:
-        return key
+def get_api_client_and_model():
+    """Tự động kết nối API: Ưu tiên Gemini nếu có GEMINI_API_KEY, ngược lại dùng OpenRouter."""
     env_file = PROJECT_ROOT / ".env"
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
     if env_file.exists():
         with open(env_file, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
-                if line.startswith("OPENROUTER_API_KEY="):
-                    return line.split("=", 1)[1].strip().strip('"').strip("'")
-    return ""
+                if line.startswith("GEMINI_API_KEY=") and not gemini_key:
+                    gemini_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                elif line.startswith("OPENROUTER_API_KEY=") and not openrouter_key:
+                    openrouter_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if gemini_key:
+        print(" [AI Engine] Đang kết nối Google Gemini API (gemini-3-flash-preview)...")
+        client = OpenAI(
+            base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+            api_key=gemini_key
+        )
+        return client, "gemini-3-flash-preview"
+    elif openrouter_key:
+        print(" [AI Engine] Đang kết nối OpenRouter API (qwen/qwen3-14b)...")
+        client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=openrouter_key
+        )
+        return client, "qwen/qwen3-14b"
+    else:
+        raise ValueError("Chưa thiết lập GEMINI_API_KEY hoặc OPENROUTER_API_KEY trong file .env!")
 
 def run_sine_trial(seed_filename: str = "seed_media_vi_01.json", max_fix_iterations: int = 3):
     seed_path = SEEDS_DIR / seed_filename
@@ -45,16 +62,11 @@ def run_sine_trial(seed_filename: str = "seed_media_vi_01.json", max_fix_iterati
     print(f" File Seed đầu vào: {seed_filename} ({seed.get('topic', 'Chung')})")
     print(f" Số địa điểm: {len(seed.get('locations', []))} | Số câu hỏi: {len(seed.get('tasks', []))}")
     print("=" * 65)
-    api_key = get_openrouter_api_key()
-    if not api_key:
-        print("❌ Chưa cấu hình OPENROUTER_API_KEY. Vui lòng thiết lập biến môi trường hoặc ghi vào file .env!")
+    try:
+        client, model_name = get_api_client_and_model()
+    except Exception as e:
+        print(f"❌ {e}")
         return
-    print(" Đang kết nối tới API...")
-    client = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=api_key
-    )
-    model_name = "qwen/qwen3-14b"
     print(f" Đã kết nối API! Model đang sử dụng: {model_name}")
     validator = SINEValidator(INKLECATE_PATH)
     generator = SINEGenerator(client, model_name)

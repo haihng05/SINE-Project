@@ -52,23 +52,32 @@ class SINEApp:
         threading.Thread(target=self.run_pipeline, args=(self.selected_file, topic), daemon=True).start()
     def run_pipeline(self, filepath, topic):
         try:
-            self.log(f"\n[BƯỚC 1/3] AI Đang đọc đề thi và tách câu hỏi...")
-            cmd_extract = [sys.executable, "extract_seed_from_doc.py", filepath, "--topic", topic]
-            self.run_command(cmd_extract)
             seed_filename = f"seed_{topic}_auto.json"
             seed_path = os.path.join("seeds", seed_filename)
-            if not os.path.exists(seed_path):
-                self.log(" Lỗi: Không tìm thấy file seed được tạo ra. Quá trình thất bại.")
+            ink_filename = f"game_seed_{topic}_auto.ink"
+            ink_path = os.path.join("output", ink_filename)
+
+            # Xóa các file cũ của chủ đề này trước để tránh nhận nhầm file cũ nếu có lỗi
+            if os.path.exists(seed_path):
+                try: os.remove(seed_path)
+                except Exception: pass
+            if os.path.exists(ink_path):
+                try: os.remove(ink_path)
+                except Exception: pass
+
+            self.log(f"\n[BƯỚC 1/3] AI Đang đọc đề thi và tách câu hỏi...")
+            cmd_extract = [sys.executable, "extract_seed_from_doc.py", filepath, "--topic", topic]
+            ret_extract = self.run_command(cmd_extract)
+            if ret_extract != 0 or not os.path.exists(seed_path):
+                self.log("❌ Lỗi: Bước 1 trích xuất câu hỏi thất bại. Đã dừng tiến trình!")
                 self.btn_gen.config(state="normal", bg="green")
                 return
             self.log(f" Đã trích xuất xong bộ câu hỏi: {seed_filename}")
             self.log(f"\n[BƯỚC 2/3] AI Đang sáng tác cốt truyện và lập trình game (Quá trình này có thể mất 1-2 phút)...")
             cmd_generate = [sys.executable, "run_single_test.py", "--seed", seed_filename]
-            self.run_command(cmd_generate)
-            ink_filename = f"game_seed_{topic}_auto.ink"
-            ink_path = os.path.join("output", ink_filename)
-            if not os.path.exists(ink_path):
-                self.log(" Lỗi: Không tìm thấy file game (.ink) được tạo ra.")
+            ret_generate = self.run_command(cmd_generate)
+            if ret_generate != 0 or not os.path.exists(ink_path):
+                self.log("❌ Lỗi: Không tìm thấy file game (.ink) được tạo ra.")
                 self.btn_gen.config(state="normal", bg="green")
                 return
             self.log(f"\n[BƯỚC 3/3] Đang đóng gói thành bản Game độc lập...")
@@ -76,6 +85,19 @@ class SINEApp:
             os.makedirs(export_dir, exist_ok=True)
             self.log(" Đang biên dịch kịch bản sang định dạng Web (JSON)...")
             subprocess.run([os.path.join("tools", "inklecate.exe"), "-o", os.path.join(export_dir, "story.json"), ink_path], capture_output=True)
+            # Tự động tạo thư mục images và sao chép kho ảnh bối cảnh mẫu nếu có
+            images_export_dir = os.path.join(export_dir, "images")
+            os.makedirs(images_export_dir, exist_ok=True)
+            default_images_dir = os.path.join("Game_Export", "Game_toanhoc", "images")
+            if os.path.exists(default_images_dir):
+                for img_file in os.listdir(default_images_dir):
+                    dest_img = os.path.join(images_export_dir, img_file)
+                    if not os.path.exists(dest_img):
+                        try:
+                            shutil.copy2(os.path.join(default_images_dir, img_file), dest_img)
+                        except Exception:
+                            pass
+
             html_content = """<!DOCTYPE html>
 <html>
 <head>
@@ -86,6 +108,7 @@ class SINEApp:
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #f0f0f0; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         #game-container { max-width: 800px; width: 100%; margin-top: 20px; background: #2a2a2a; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         #story { padding: 20px; min-height: 150px; font-size: 18px; line-height: 1.6; }
+        .story-img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); display: block; }
         .choice { display: block; margin: 10px 20px; padding: 15px; background: #3a5a7a; color: #fff; text-decoration: none; border-radius: 8px; cursor: pointer; transition: 0.2s; font-weight: bold; }
         .choice:hover { background: #4a7a9a; transform: translateX(5px); }
         .math-tex { font-family: 'Courier New', Courier, monospace; background: #333; padding: 2px 5px; border-radius: 3px; }
@@ -93,7 +116,7 @@ class SINEApp:
 </head>
 <body>
     <div id="game-container">
-                <div id="story"></div>
+        <div id="story"></div>
         <div id="choices"></div>
     </div>
     <script>
@@ -116,9 +139,36 @@ class SINEApp:
                         storyContainer.appendChild(p);
                     }
                 }
+                
+                // Hiển thị ảnh bối cảnh từ thẻ tag # image: ...
+                var imageTag = allTags.find(function(tag) { return tag.toLowerCase().indexOf('image:') !== -1; });
+                if (imageTag) {
+                    var imageName = imageTag.split(':')[1].trim();
+                    var img = document.createElement('img');
+                    img.src = 'images/' + imageName;
+                    img.className = 'story-img';
+                    img.alt = 'Minh họa';
+                    storyContainer.insertBefore(img, storyContainer.firstChild);
+                }
+
+                if (story.currentChoices.length === 0 && !story.canContinue) {
+                    var endP = document.createElement('p');
+                    endP.style.textAlign = 'center';
+                    endP.style.color = '#4CAF50';
+                    endP.style.fontWeight = 'bold';
+                    endP.style.fontSize = '20px';
+                    endP.innerHTML = '🎉 Chúc mừng bạn đã hoàn thành bài học!';
+                    storyContainer.appendChild(endP);
+                }
+
                 story.currentChoices.forEach(function(choice) {
                     var button = document.createElement('a');
-                    button.innerHTML = choice.text.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
+                    var label = choice.text.trim();
+                    if (!label) {
+                        var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+                        label = 'Lựa chọn ' + (letters[choice.index] || (choice.index + 1));
+                    }
+                    button.innerHTML = label.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
                     button.className = 'choice';
                     button.onclick = function(e) {
                         e.preventDefault();
@@ -163,6 +213,7 @@ class SINEApp:
             self.log(line.strip())
             self.root.update_idletasks()
         process.wait()
+        return process.returncode
 if __name__ == "__main__":
     root = tk.Tk()
     app = SINEApp(root)
