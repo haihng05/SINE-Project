@@ -1,0 +1,194 @@
+{
+  "topic": "hoahoc",
+  "locations": [
+    {
+      "id": "location_hoahoc_001"
+    },
+    {
+      "id": "location_hoahoc_002"
+    },
+    {
+      "id": "location_hoahoc_003"
+    },
+    {
+      "id": "location_hoahoc_004"
+    },
+    {
+      "id": "location_hoahoc_005"
+    },
+    {
+      "id": "location_hoahoc_006"
+    },
+    {
+      "id": "location_hoahoc_007"
+    },
+    {
+      "id": "location_hoahoc_008"
+    },
+    {
+      "id": "location_hoahoc_009"
+    },
+    {
+      "id": "location_hoahoc_010"
+    },
+    {
+      "id": "location_hoahoc_011"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_hoahoc_001",
+      "seq": 1,
+      "question": {
+        "stem": "Phát biểu nào sau đây không đúng về protein?",
+        "options": [
+          "Protein trong lòng trắng trứng có phản ứng màu biuret.",
+          "Protein bị thủy phân bởi acid hoặc base.",
+          "Protein đơn giản tạo nên từ các gốc β- hoặc γ-amino acid.",
+          "Trong thành phần protein luôn có nguyên tố nitrogen."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_002",
+      "seq": 2,
+      "question": {
+        "stem": "Polypropylene được điều chế bằng phản ứng trùng hợp chất nào sau đây?",
+        "options": [
+          "CH2=CH-Cl",
+          "CH2=CH2",
+          "CH3-CH2-Cl",
+          "CH2=CH-CH3"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_003",
+      "seq": 3,
+      "question": {
+        "stem": "Cho công thức cấu tạo và kí hiệu của bốn amino acid: Gly, Glu, Lys, Ala. Công thức cấu tạo của amino acid nào biểu diễn nhiều nhóm carboxyl nhất?",
+        "options": [
+          "Gly",
+          "Ala",
+          "Lys",
+          "Glu"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoahoc_004",
+      "seq": 4,
+      "question": {
+        "stem": "Điện phân nóng chảy NaCl với các điện cực trơ để sản xuất kim loại natri (sodium, Na). Quá trình nào sau đây xảy ra ở cathode (cực âm) của bể điện phân?",
+        "options": [
+          "2H2O + 2e -> H2 + 2OH-",
+          "2Cl- -> Cl2 + 2e",
+          "Na+ + 1e -> Na",
+          "2H2O -> O2 + 4H+ + 4e"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_005",
+      "seq": 5,
+      "question": {
+        "stem": "Amine nào sau đây là amine bậc hai?",
+        "options": [
+          "(CH3)3N",
+          "CH3NH2",
+          "CH3NHCH3",
+          "C6H5NH2"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_006",
+      "seq": 6,
+      "question": {
+        "stem": "Ăn mòn kim loại là quá trình phá hủy kim loại hoặc hợp kim do tác dụng với các chất trong môi trường, trong đó kim loại đóng vai trò là",
+        "options": [
+          "base",
+          "chất điện li",
+          "chất khử",
+          "chất oxi hoá"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoahoc_007",
+      "seq": 7,
+      "question": {
+        "stem": "Xu hướng biến đổi tính chất của các nguyên tố và đơn chất, cũng như thành phần và tính chất của các hợp chất tạo nên từ các nguyên tố đó được nêu trong",
+        "options": [
+          "định luật tuần hoàn các nguyên tố hoá học",
+          "nguyên lí chuyển dịch cân bằng",
+          "quy tắc Zaitsev",
+          "phương pháp Solvay"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoahoc_008",
+      "seq": 8,
+      "question": {
+        "stem": "Phản ứng với thuốc thử Tollens (phản ứng tráng bạc) thể hiện tính chất của nhóm chức nào trong phân tử ethanal?",
+        "options": [
+          "-CHO",
+          "-COOH",
+          "-OH",
+          "-CH3"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoahoc_009",
+      "seq": 9,
+      "question": {
+        "stem": "Hình bên minh họa một số dụng cụ thí nghiệm với kí hiệu tương ứng (I, II, III, IV). Kí hiệu nào ứng với dụng cụ bình cầu?",
+        "options": [
+          "(I)",
+          "(II)",
+          "(III)",
+          "(IV)"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoahoc_010",
+      "seq": 10,
+      "question": {
+        "stem": "Công thức cấu tạo thu gọn nào sau đây là của butane?",
+        "options": [
+          "CH3-CH2-CHO",
+          "CH3-CH2-CH2-CH3",
+          "CH3-CH2-CH3",
+          "CH3-CH2-CH=CH2"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoahoc_011",
+      "seq": 11,
+      "question": {
+        "stem": "Khi nghiên cứu về phản ứng điều chế ethyl acetate từ cồn 96° và acetic acid với sự có mặt của H2SO4 đặc để khảo sát ảnh hưởng của nhiệt độ (50°C, 60°C, 70°C). Những yếu tố nào sau đây cần được thiết lập giống nhau ở cả ba thí nghiệm: (1) Thời gian phản ứng; (2) Nồng độ, thể tích ban đầu của các chất; (3) Màu sắc hỗn hợp; (4) Nhiệt độ tiến hành?",
+        "options": [
+          "(1), (2)",
+          "(2), (3)",
+          "(1), (4)",
+          "(3), (4)"
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

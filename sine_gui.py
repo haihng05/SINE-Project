@@ -9,23 +9,24 @@ import sys
 class SINEApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("SINE - AI Game Generator cho Giáo Viên")
-        self.root.geometry("700x550")
-        tk.Label(root, text="HỆ THỐNG TẠO GAME GIÁO DỤC TỰ ĐỘNG", font=("Arial", 14, "bold")).pack(pady=10)
+        self.root.title("SINE - AI Game Generator cho Giáo Viên & DIP Studio")
+        self.root.geometry("740x580")
+        tk.Label(root, text="HỆ THỐNG TẠO GAME GIÁO DỤC TỰ ĐỘNG (HỖ TRỢ DIP & ẢNH ĐỀ THI)", font=("Arial", 13, "bold")).pack(pady=10)
         frame_file = tk.Frame(root)
         frame_file.pack(fill="x", padx=20, pady=5)
-        tk.Label(frame_file, text="1. Chọn Đề Thi (PDF/Word):", font=("Arial", 10)).pack(side="left")
+        tk.Label(frame_file, text="1. Chọn Đề Thi (PDF/Word/Ảnh chụp):", font=("Arial", 10)).pack(side="left")
         self.lbl_file = tk.Label(frame_file, text="Chưa chọn file", fg="blue", font=("Arial", 10, "italic"))
         self.lbl_file.pack(side="left", padx=10)
+        tk.Button(frame_file, text="🔍 DIP Studio (Xem xử lý ảnh)", bg="#3f51b5", fg="white", font=("Arial", 9, "bold"), command=self.open_dip_studio).pack(side="right", padx=5)
         tk.Button(frame_file, text="Duyệt...", command=self.browse_file).pack(side="right")
         self.selected_file = ""
         frame_topic = tk.Frame(root)
         frame_topic.pack(fill="x", padx=20, pady=5)
         tk.Label(frame_topic, text="2. Chủ đề / Tên bài học:", font=("Arial", 10)).pack(side="left")
         self.entry_topic = tk.Entry(frame_topic, width=30)
-        self.entry_topic.insert(0, "toanhoc")
+        self.entry_topic.insert(0, "tienganh")
         self.entry_topic.pack(side="left", padx=10)
-        self.btn_gen = tk.Button(root, text="3.  TỰ ĐỘNG TẠO VÀ ĐÓNG GÓI GAME", font=("Arial", 12, "bold"), bg="green", fg="white", command=self.start_generation)
+        self.btn_gen = tk.Button(root, text="3. 🚀 TỰ ĐỘNG TẠO VÀ ĐÓNG GÓI GAME (1-CLICK)", font=("Arial", 12, "bold"), bg="green", fg="white", command=self.start_generation)
         self.btn_gen.pack(pady=15)
         tk.Label(root, text="Trạng thái hệ thống:", font=("Arial", 10, "bold")).pack(anchor="w", padx=20)
         self.log_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, height=15, font=("Consolas", 9))
@@ -34,10 +35,22 @@ class SINEApp:
         self.log_area.insert(tk.END, message + "\n")
         self.log_area.see(tk.END)
     def browse_file(self):
-        filename = filedialog.askopenfilename(filetypes=[("Documents", "*.pdf *.docx *.doc *.txt")])
+        filename = filedialog.askopenfilename(
+            filetypes=[
+                ("Tất cả định dạng hỗ trợ", "*.pdf *.docx *.doc *.txt *.jpg *.jpeg *.png *.bmp *.webp"),
+                ("Ảnh chụp đề thi (DIP Engine)", "*.jpg *.jpeg *.png *.bmp *.webp"),
+                ("Tài liệu văn bản (PDF, Word)", "*.pdf *.docx *.doc *.txt"),
+                ("Tất cả tập tin", "*.*")
+            ]
+        )
         if filename:
             self.selected_file = filename
             self.lbl_file.config(text=os.path.basename(filename))
+    def open_dip_studio(self):
+        cmd = [sys.executable, os.path.join("tools", "dip_viewer_gui.py")]
+        if self.selected_file and any(self.selected_file.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".bmp", ".webp"]):
+            cmd.extend(["--image", self.selected_file])
+        subprocess.Popen(cmd)
     def start_generation(self):
         if not self.selected_file:
             messagebox.showwarning("Lỗi", "Vui lòng chọn file đề thi trước!")
@@ -98,20 +111,28 @@ class SINEApp:
                         except Exception:
                             pass
 
-            html_content = """<!DOCTYPE html>
+            html_content = r"""<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>SINE Game</title>
+    <!-- Ink Engine -->
     <script src="https://unpkg.com/inkjs/dist/ink.js"></script>
+    
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #f0f0f0; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
-        #game-container { max-width: 800px; width: 100%; margin-top: 20px; background: #2a2a2a; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        #story { padding: 20px; min-height: 150px; font-size: 18px; line-height: 1.6; }
-        .story-img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); display: block; }
-        .choice { display: block; margin: 10px 20px; padding: 15px; background: #3a5a7a; color: #fff; text-decoration: none; border-radius: 8px; cursor: pointer; transition: 0.2s; font-weight: bold; }
-        .choice:hover { background: #4a7a9a; transform: translateX(5px); }
-        .math-tex { font-family: 'Courier New', Courier, monospace; background: #333; padding: 2px 5px; border-radius: 3px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #f0f0f0; margin: 0; padding: 20px 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        #game-container { max-width: 800px; width: 92%; background: #2a2a2a; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+        #story { padding: 25px; min-height: 150px; font-size: 19px; line-height: 1.7; }
+        .story-img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); display: block; }
+        .choice { display: block; margin: 12px 25px; padding: 15px 20px; background: #2b4c6f; color: #fff; text-decoration: none; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; font-size: 17px; font-weight: 500; border: 1px solid rgba(255,255,255,0.1); }
+        .choice:hover { background: #3b6c9f; transform: translateX(6px); border-color: rgba(255,255,255,0.3); }
+        .katex { font-size: 1.12em; }
+        .choice .katex { font-size: 1.05em; }
     </style>
 </head>
 <body>
@@ -120,67 +141,133 @@ class SINEApp:
         <div id="choices"></div>
     </div>
     <script>
-        fetch('story.json').then(response => response.text()).then(storyContent => {
+        function fixMathTokens(mathStr) {
+            var s = mathStr;
+            s = s.replace(/(^|[^\\])(frac|sqrt|infty|perp|parallel|approx|simeq|cong|equiv|leq|geq|neq|alpha|beta|gamma|delta|Delta|pi|theta|sigma|omega|Omega|iint|iiint|oint|prod|lim|dot|ddot|overline|underline|partial|nabla)(?=[^a-zA-Z]|$)/g, '$1\\$2');
+            s = s.replace(/(^|[^a-zA-Z\\])(int|sum|sin|cos|tan|cot|log|ln|exp|bar|vec|hat|begin|end|subset|supset|in|notin|cup|cap|emptyset|forall|exists|to|iff|cdot|ldots|cdots|pm|mp|times|div|le|ge)(?=[^a-zA-Z]|$)/g, '$1\\$2');
+            return s;
+        }
+
+        function prepareParagraph(text) {
+            if (!text) return "";
+            try {
+                // Chỉ chuẩn hóa các công thức nằm trong $...$ hoặc \(...\)
+                return text.replace(/\$([^$]+)\$/g, function(match, inner) {
+                    return '$' + fixMathTokens(inner) + '$';
+                }).replace(/\\\(([\s\S]*?)\\\)/g, function(match, inner) {
+                    return '\\(' + fixMathTokens(inner) + '\\)';
+                });
+            } catch(e) {
+                return text;
+            }
+        }
+
+        function prepareChoice(label) {
+            if (!label) return "";
+            var s = label.trim();
+            try {
+                if (s.indexOf('$') !== -1 || s.indexOf('\\(') !== -1) {
+                    return prepareParagraph(s);
+                }
+                if (/(frac|sqrt|infty|cases|lim|\\frac|\\sqrt|\^|_)/.test(s)) {
+                    return '$' + fixMathTokens(s) + '$';
+                }
+            } catch(e) {
+                return s;
+            }
+            return s;
+        }
+
+        function renderAllMath() {
+            try {
+                if (window.renderMathInElement) {
+                    renderMathInElement(document.getElementById('game-container'), {
+                        delimiters: [
+                            {left: '$$', right: '$$', display: true},
+                            {left: '$', right: '$', display: false},
+                            {left: '\\(', right: '\\)', display: false},
+                            {left: '\\[', right: '\\]', display: true}
+                        ],
+                        throwOnError: false
+                    });
+                }
+            } catch(e) {
+                console.warn("Lỗi renderMathInElement:", e);
+            }
+        }
+
+        fetch('story.json').then(response => {
+            if (!response.ok) throw new Error("HTTP " + response.status + ": Không thể đọc file story.json");
+            return response.text();
+        }).then(storyContent => {
             var story = new inkjs.Story(storyContent);
             var storyContainer = document.getElementById('story');
             var choicesContainer = document.getElementById('choices');
             function continueStory() {
-                storyContainer.innerHTML = '';
-                choicesContainer.innerHTML = '';
-                var allTags = [];
-                while(story.canContinue) {
-                    var paragraphText = story.Continue();
-                    if (story.currentTags) {
-                        allTags = allTags.concat(story.currentTags);
+                try {
+                    storyContainer.innerHTML = '';
+                    choicesContainer.innerHTML = '';
+                    var allTags = [];
+                    while(story.canContinue) {
+                        var paragraphText = story.Continue();
+                        if (story.currentTags) {
+                            allTags = allTags.concat(story.currentTags);
+                        }
+                        if(paragraphText.trim() !== '') {
+                            var p = document.createElement('p');
+                            p.textContent = prepareParagraph(paragraphText);
+                            storyContainer.appendChild(p);
+                        }
                     }
-                    if(paragraphText.trim() !== '') {
-                        var p = document.createElement('p');
-                        p.innerHTML = paragraphText.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
-                        storyContainer.appendChild(p);
+                    
+                    var imageTag = allTags.find(function(tag) { return tag.toLowerCase().indexOf('image:') !== -1; });
+                    if (imageTag) {
+                        var imageName = imageTag.split(':')[1].trim();
+                        var img = document.createElement('img');
+                        img.src = 'images/' + imageName;
+                        img.className = 'story-img';
+                        img.alt = 'Minh họa';
+                        storyContainer.insertBefore(img, storyContainer.firstChild);
                     }
-                }
-                
-                // Hiển thị ảnh bối cảnh từ thẻ tag # image: ...
-                var imageTag = allTags.find(function(tag) { return tag.toLowerCase().indexOf('image:') !== -1; });
-                if (imageTag) {
-                    var imageName = imageTag.split(':')[1].trim();
-                    var img = document.createElement('img');
-                    img.src = 'images/' + imageName;
-                    img.className = 'story-img';
-                    img.alt = 'Minh họa';
-                    storyContainer.insertBefore(img, storyContainer.firstChild);
-                }
 
-                if (story.currentChoices.length === 0 && !story.canContinue) {
-                    var endP = document.createElement('p');
-                    endP.style.textAlign = 'center';
-                    endP.style.color = '#4CAF50';
-                    endP.style.fontWeight = 'bold';
-                    endP.style.fontSize = '20px';
-                    endP.innerHTML = '🎉 Chúc mừng bạn đã hoàn thành bài học!';
-                    storyContainer.appendChild(endP);
-                }
-
-                story.currentChoices.forEach(function(choice) {
-                    var button = document.createElement('a');
-                    var label = choice.text.trim();
-                    if (!label) {
-                        var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-                        label = 'Lựa chọn ' + (letters[choice.index] || (choice.index + 1));
+                    if (story.currentChoices.length === 0 && !story.canContinue) {
+                        var endP = document.createElement('p');
+                        endP.style.textAlign = 'center';
+                        endP.style.color = '#4CAF50';
+                        endP.style.fontWeight = 'bold';
+                        endP.style.fontSize = '22px';
+                        endP.style.marginTop = '20px';
+                        endP.innerHTML = '🎉 Chúc mừng bạn đã hoàn thành bài học!';
+                        storyContainer.appendChild(endP);
                     }
-                    button.innerHTML = label.replace(/\$([^$]+)\$/g, '<span class="math-tex">$1</span>');
-                    button.className = 'choice';
-                    button.onclick = function(e) {
-                        e.preventDefault();
-                        story.ChooseChoiceIndex(choice.index);
-                        continueStory();
-                    };
-                    choicesContainer.appendChild(button);
-                });
+
+                    story.currentChoices.forEach(function(choice) {
+                        var button = document.createElement('a');
+                        var label = choice.text.trim();
+                        if (!label) {
+                            var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+                            label = 'Lựa chọn ' + (letters[choice.index] || (choice.index + 1));
+                        }
+                        button.textContent = prepareChoice(label);
+                        button.className = 'choice';
+                        button.onclick = function(e) {
+                            e.preventDefault();
+                            story.ChooseChoiceIndex(choice.index);
+                            continueStory();
+                        };
+                        choicesContainer.appendChild(button);
+                    });
+
+                    renderAllMath();
+                } catch(innerErr) {
+                    console.error("Lỗi thực thi story:", innerErr);
+                    storyContainer.innerHTML += "<p style='color:orange;'>Lỗi hiển thị kịch bản: " + innerErr.message + "</p>";
+                }
             }
             continueStory();
         }).catch(err => {
-            document.getElementById('story').innerHTML = "<p style='color:red;'>Lỗi tải game: Vui lòng click đúp vào file Choi_Game_Truc_Quan.bat để chơi.</p>";
+            console.error("Lỗi nạp game:", err);
+            document.getElementById('story').innerHTML = "<p style='color:red;'>Lỗi tải game: " + err.message + "<br><br>Vui lòng click đúp vào file Choi_Game_Truc_Quan.bat để chơi.</p>";
         });
     </script>
 </body>
@@ -215,6 +302,15 @@ class SINEApp:
         process.wait()
         return process.returncode
 if __name__ == "__main__":
+    print("=" * 60)
+    print("🚀 Đang khởi động Giao diện SINE GUI...")
+    print("💡 Cửa sổ giao diện đang được hiển thị trên màn hình.")
+    print("   (Nếu bị che khuất bởi VS Code, hãy nhìn thanh Taskbar hoặc bấm Alt+Tab).")
+    print("=" * 60)
     root = tk.Tk()
+    root.lift()
+    root.attributes("-topmost", True)
+    root.after(500, lambda: root.attributes("-topmost", False))
+    root.focus_force()
     app = SINEApp(root)
     root.mainloop()

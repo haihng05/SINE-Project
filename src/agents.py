@@ -57,6 +57,8 @@ TUY NHIÊN, trong ngôn ngữ Ink, dấu ngoặc nhọn {  ... }  được dùng
 => BẮT BUỘC TRONG FILE INK: Bạn phải thêm dấu gạch chéo ngược \\ để escape TẤT CẢ các dấu ngoặc nhọn có trong nội dung câu hỏi và đáp án.
 Ví dụ: \frac{ 1} { 2}  PHẢI ĐƯỢC VIẾT THÀNH \frac\{ 1\} \{ 2\} 
 Ví dụ: { -5; 1/5}  PHẢI ĐƯỢC VIẾT THÀNH \{ -5; 1/5\} 
+ĐẶC BIỆT VỚI MÔN HÓA HỌC / CÔNG THỨC CÓ MŨI TÊN -> :
+Trong ngôn ngữ Ink, ký hiệu -> được dành riêng cho lệnh nhảy knot (divert). Nếu trong nội dung câu hỏi hoặc đáp án có mũi tên phản ứng -> (ví dụ: 2H2O + 2e -> H2 + 2OH-), BẮT BUỘC bạn phải viết thành \\-> (ví dụ: + [2H2O + 2e \\-> H2 + 2OH-] -> task_fail) để không bị lỗi cú pháp!
 ĐỊNH DẠNG ĐẦU RA:
 Hãy suy luận ngắn gọn kế hoạch cốt truyện trong <think>...</think>, sau đó xuất toàn bộ mã nguồn trong khối ```ink ... ```.
 """.replace("__SEED_JSON_PLACEHOLDER__", seed_json_str)

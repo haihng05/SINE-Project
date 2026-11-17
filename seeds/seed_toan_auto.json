@@ -1,0 +1,41 @@
+{
+  "topic": "toan",
+  "locations": [
+    {
+      "id": "location_toan_001"
+    },
+    {
+      "id": "location_toan_002"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_toan_025",
+      "seq": 25,
+      "question": {
+        "stem": "Từ một hộp chứa 7 quả cầu màu đỏ và 5 quả cầu màu xanh, lấy ngẫu nhiên đồng thời 3 quả. Xác suất để lấy được 3 quả cầu màu xanh bằng:",
+        "options": [
+          "\\frac{2}{7}",
+          "\\frac{1}{22}",
+          "\\frac{7}{44}",
+          "\\frac{5}{12}"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_toan_026",
+      "seq": 26,
+      "question": {
+        "stem": "Có bao nhiêu giá trị nguyên của tham số m để hàm số $y = \\frac{x+6}{x+5m}$ nghịch biến trên khoảng $(10; +\\infty)$?",
+        "options": [
+          "3",
+          "Vô số",
+          "5",
+          "4"
+        ],
+        "correct": 3
+      }
+    }
+  ]
+}

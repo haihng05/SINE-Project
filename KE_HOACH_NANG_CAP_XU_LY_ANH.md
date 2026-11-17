@@ -68,33 +68,35 @@ flowchart TD
 ### MODULE 1: THUẬT TOÁN XỬ LÝ ẢNH CỐT LÕI
 > **Phụ trách chính:** Thành viên A
 
-- [ ] **Task 1.1: Khởi tạo môi trường & Cấu trúc thư viện**
+- [x] **Task 1.1: Khởi tạo môi trường & Cấu trúc thư viện**
   - Cập nhật [requirements.txt](file:///e:/Chuyên đề nghiên cứu khoa học/SINE-Project/requirements.txt) thêm: `opencv-python`, `numpy`, `matplotlib`, `scikit-image`.
   - Khởi tạo file `src/dip_processor.py` chứa class `ImageDIPProcessor`.
 
-- [ ] **Task 1.2: Tiền xử lý & Nâng cao chất lượng ảnh (Image Enhancement)**
+- [x] **Task 1.2: Tiền xử lý & Nâng cao chất lượng ảnh (Image Enhancement)**
   - Chuyển đổi không gian màu: $RGB \rightarrow Grayscale$.
   - Khử nhiễu: Thử nghiệm `Bilateral Filter` ($d=9, \sigma_{color}=75, \sigma_{space}=75$) để khử nhiễu nền giấy mà không làm nhòe cạnh nét chữ.
   - Cân bằng sáng thích nghi: Cài đặt **CLAHE** (*Contrast Limited Adaptive Histogram Equalization*) với `clipLimit=2.0`, `tileGridSize=(8,8)` để xử lý ảnh bị loang lổ sáng/tối hoặc bóng mờ điện thoại.
 
-- [ ] **Task 1.3: Hiệu chỉnh hình học & Nắn thẳng văn bản (Geometric Deskewing)**
-  - Dùng **Canny Edge Detection** để trích xuất biên mép văn bản.
-  - Sử dụng **Biến đổi Hough (Hough Line Transform)** hoặc `cv2.minAreaRect` để xác định góc nghiêng lệch $\theta$ của các dòng kẻ/dòng văn bản.
-  - Tính ma trận xoay affine `cv2.getRotationMatrix2D` và nắn thẳng ảnh về góc $0^\circ$ (`cv2.warpAffine`).
+- [x] **Task 1.3: Hiệu chỉnh hình học & Nắn thẳng văn bản (Geometric Deskewing)**
+  - Dùng **Black Hat Transform** và **Canny Edge Detection** để trích xuất biên mép văn bản.
+  - Sử dụng **Biến đổi Hough (Hough Line Transform)** để xác định góc nghiêng lệch $\theta$ của các dòng kẻ/dòng văn bản.
+  - Tính ma trận xoay affine `cv2.getRotationMatrix2D`, nắn thẳng ảnh về góc $0^\circ$ (`cv2.warpAffine`) và auto-crop viền ngoài (loại bỏ bàn tay, nền đen).
 
-- [ ] **Task 1.4: Nhị phân hóa thích nghi (Binarization)**
+- [x] **Task 1.4: Nhị phân hóa thích nghi (Binarization)**
   - Cài đặt **Adaptive Gaussian Thresholding** (`cv2.adaptiveThreshold` với `ADAPTIVE_THRESH_GAUSSIAN_C`) và **Otsu Thresholding**.
   - Tách triệt để mực chữ đen trên nền giấy trắng, loại bỏ nền bẩn.
 
-- [ ] **Task 1.5: Phân đoạn khối chữ & Đóng khung câu hỏi (Segmentation & Layout)**
-  - Áp dụng toán tử giãn nở ngang `cv2.dilate` với cấu trúc kernel chữ nhật ngang (ví dụ `(25, 3)`) để gom các ký tự thành từng dòng/khối văn bản.
-  - Sử dụng `cv2.findContours` lọc theo diện tích và tỷ lệ khung hình để trích xuất tọa độ Bounding Boxes $(x, y, w, h)$ bao quanh từng câu hỏi.
+- [x] **Task 1.5: Phân đoạn khối chữ & Đóng khung câu hỏi (Segmentation & Layout)**
+  - Áp dụng toán tử giãn nở ngang `cv2.dilate` với cấu trúc kernel chữ nhật ngang để gom các ký tự thành từng dòng/khối văn bản.
+  - Sử dụng `cv2.findContours` kết hợp Non-Maximum Suppression (NMS) để trích xuất tọa độ Bounding Boxes $(x, y, w, h)$ bao quanh từng câu hỏi.
 
-- [ ] **Task 1.6: Xây dựng công cụ đo lường chất lượng ảnh (Evaluation Metrics)**
+- [x] **Task 1.6: Xây dựng công cụ đo lường chất lượng ảnh (Evaluation Metrics)**
   - Viết hàm tính **PSNR** (*Peak Signal-to-Noise Ratio*):
     $$PSNR = 10 \cdot \log_{10}\left(\frac{MAX_I^2}{MSE}\right)$$
   - Viết hàm tính **SSIM** (*Structural Similarity Index Measure*) bằng `scikit-image`.
-  - Đánh giá chất lượng ảnh trước và sau khi qua module lọc nhiễu & CLAHE.
+  - Đo đạc No-Reference: Michelson Contrast, Tenengrad Gradient Sharpness, Background Uniformity.
+  - Xây dựng công cụ tự động `tools/evaluate_dip_metrics.py` và tích hợp vào DIP Studio.
+  - Tự động xuất báo cáo Markdown (`output/dip_evaluation_report.md`), file CSV và biểu đồ 4 ô (`output/dip_metrics_chart.png`).
 
 ---
 
@@ -107,11 +109,11 @@ flowchart TD
     - Nhóm 2: Ảnh chụp nghiêng góc ($10^\circ - 25^\circ$).
     - Nhóm 3: Ảnh chụp thiếu sáng, ngược sáng, bóng đổ điện thoại đè lên chữ.
 
-- [ ] **Task 2.2: Nâng cấp bộ trích xuất (`extract_seed_from_doc.py`)**
+- [x] **Task 2.2: Nâng cấp bộ trích xuất (`extract_seed_from_doc.py`)**
   - Mở rộng hàm kiểm tra định dạng file: Chấp nhận thêm `.jpg`, `.jpeg`, `.png`, `.bmp`.
-  - Nối luồng xử lý: File ảnh $\rightarrow$ gọi `dip_processor.process_pipeline()` $\rightarrow$ thu được ảnh đã nắn thẳng, làm sạch và tọa độ câu hỏi $\rightarrow$ trích xuất nội dung tạo `seeds/seed_<topic>_auto.json`.
+  - Nối luồng xử lý: File ảnh $\rightarrow$ gọi `dip_processor.process_stage2()` $\rightarrow$ thu được ảnh đã nắn thẳng, làm sạch và tọa độ câu hỏi $\rightarrow$ trích xuất nội dung tạo `seeds/seed_<topic>_auto.json`.
 
-- [ ] **Task 2.3: Nâng cấp Giao diện giáo viên (`sine_gui.py`)**
+- [x] **Task 2.3: Nâng cấp Giao diện giáo viên (`sine_gui.py`)**
   - Mở rộng bộ lọc `filedialog.askopenfilename`: Thêm các định dạng ảnh vào danh sách chọn file.
   - Xây dựng cửa sổ **"DIP Studio / Visualizer" (Xem trước các bước xử lý ảnh)**:
     - Hiển thị song song 4 bước trực quan:
@@ -120,7 +122,7 @@ flowchart TD
       3. *Ảnh sau khi nắn thẳng (Deskewed)*
       4. *Ảnh nhị phân đã phân đoạn đóng khung câu hỏi (ROI Bounding Boxes)*
 
-- [ ] **Task 2.4: Kiểm thử tích hợp toàn trình (End-to-End Pipeline)**
+- [x] **Task 2.4: Kiểm thử tích hợp toàn trình (End-to-End Pipeline)**
   - Đảm bảo quy trình 1-click mượt mà: Người dùng nạp ảnh $\rightarrow$ Xử lý ảnh $\rightarrow$ Trích xuất Seed $\rightarrow$ Sinh kịch bản Ink $\rightarrow$ Đóng gói ra game Web HTML5 trong thư mục `Game_Export/`.
 
 ---

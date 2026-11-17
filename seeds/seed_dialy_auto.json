@@ -2,19 +2,76 @@
   "topic": "dialy",
   "locations": [
     {
-      "id": "location_tram_khi_tuong"
+      "id": "location_dialy_001"
     },
     {
-      "id": "location_dai_quan_sat"
+      "id": "location_dialy_002"
     },
     {
-      "id": "location_bao_tang_dia_chat"
+      "id": "location_dialy_003"
     },
     {
-      "id": "location_tram_thuy_van"
+      "id": "location_dialy_004"
     },
     {
-      "id": "location_phong_ban_do"
+      "id": "location_dialy_005"
+    },
+    {
+      "id": "location_dialy_006"
+    },
+    {
+      "id": "location_dialy_007"
+    },
+    {
+      "id": "location_dialy_008"
+    },
+    {
+      "id": "location_dialy_009"
+    },
+    {
+      "id": "location_dialy_010"
+    },
+    {
+      "id": "location_dialy_011"
+    },
+    {
+      "id": "location_dialy_012"
+    },
+    {
+      "id": "location_dialy_013"
+    },
+    {
+      "id": "location_dialy_014"
+    },
+    {
+      "id": "location_dialy_015"
+    },
+    {
+      "id": "location_dialy_016"
+    },
+    {
+      "id": "location_dialy_017"
+    },
+    {
+      "id": "location_dialy_018"
+    },
+    {
+      "id": "location_dialy_019"
+    },
+    {
+      "id": "location_dialy_020"
+    },
+    {
+      "id": "location_dialy_021"
+    },
+    {
+      "id": "location_dialy_022"
+    },
+    {
+      "id": "location_dialy_023"
+    },
+    {
+      "id": "location_dialy_024"
     }
   ],
   "tasks": [
@@ -24,10 +81,10 @@
       "question": {
         "stem": "Để thể hiện các đối tượng địa lí phân bố theo những điểm cụ thể như sân bay, nhà máy điện, cảng biển trên bản đồ, người ta dùng phương pháp nào?",
         "options": [
-          "Phương pháp kí hiệu điểm",
-          "Phương pháp đường chuyển động",
-          "Phương pháp bản đồ - biểu đồ",
-          "Phương pháp vùng phân bố"
+          "Phương pháp kí hiệu điểm.",
+          "Phương pháp đường chuyển động.",
+          "Phương pháp bản đồ - biểu đồ.",
+          "Phương pháp vùng phân bố."
         ],
         "correct": 0
       }
@@ -38,10 +95,10 @@
       "question": {
         "stem": "Phương pháp đường chuyển động trên bản đồ thường được dùng để biểu hiện đối tượng nào sau đây?",
         "options": [
-          "Hướng di chuyển của bão, hướng gió và dòng biển",
-          "Mật độ dân số các tỉnh",
-          "Các mỏ khoáng sản kim loại",
-          "Diện tích rừng phòng hộ"
+          "Hướng di chuyển của bão, hướng gió và dòng biển.",
+          "Mật độ dân số các tỉnh.",
+          "Các mỏ khoáng sản kim loại.",
+          "Diện tích rừng phòng hộ."
         ],
         "correct": 0
       }
@@ -52,10 +109,10 @@
       "question": {
         "stem": "Hệ thống thông tin địa lí (GIS) có chức năng chính nào sau đây?",
         "options": [
-          "Thu thập, lưu trữ, quản lí, phân tích và hiển thị dữ liệu không gian",
-          "Định vị tọa độ vệ tinh GPS mặt đất đơn thuần",
-          "Đo đạc độ ẩm không khí bằng cơ học",
-          "Vẽ bản đồ tay truyền thống"
+          "Thu thập, lưu trữ, quản lí, phân tích và hiển thị dữ liệu không gian.",
+          "Định vị tọa độ vệ tinh GPS mặt đất đơn thuần.",
+          "Đo đạc độ ẩm không khí bằng cơ học.",
+          "Vẽ bản đồ tay truyền thống."
         ],
         "correct": 0
       }
@@ -66,10 +123,10 @@
       "question": {
         "stem": "Lớp vỏ Trái Đất (vỏ lục địa và vỏ đại dương) được cấu tạo chủ yếu bởi hai tầng đá nào?",
         "options": [
-          "Tầng trầm tích và tầng granit (đá hoa cương) / bazan",
-          "Tầng sắt và niken nóng chảy",
-          "Tầng quặng manhetit nguyên chất",
-          "Tầng bùn lỏng biến chất"
+          "Tầng trầm tích và tầng granit (đá hoa cương) / bazan.",
+          "Tầng sắt và niken nóng chảy.",
+          "Tầng quặng manhetit nguyên chất.",
+          "Tầng bùn lỏng biến chất."
         ],
         "correct": 0
       }
@@ -80,10 +137,10 @@
       "question": {
         "stem": "Thạch quyển bao gồm những bộ phận nào sau đây của Trái Đất?",
         "options": [
-          "Vỏ Trái Đất và phần trên cùng của lớp man-ti (đến độ sâu khoảng 100km)",
-          "Toàn bộ vỏ Trái Đất và nhân Trái Đất",
-          "Chỉ bao gồm lớp vỏ lục địa bên trên mặt nước",
-          "Toàn bộ lớp man-ti trên và man-ti dưới"
+          "Vỏ Trái Đất và phần trên cùng của lớp man-ti (đến độ sâu khoảng 100km).",
+          "Toàn bộ vỏ Trái Đất và nhân Trái Đất.",
+          "Chỉ bao gồm lớp vỏ lục địa bên trên mặt nước.",
+          "Toàn bộ lớp man-ti trên và man-ti dưới."
         ],
         "correct": 0
       }
@@ -94,10 +151,10 @@
       "question": {
         "stem": "Theo thuyết kiến tạo mảng, nguyên nhân làm cho các mảng kiến tạo dịch chuyển liên tục trên lớp man-ti quánh dẻo là do:",
         "options": [
-          "Các dòng đối lưu vật chất nhiệt quyển trong lớp man-ti trên",
-          "Lực hấp dẫn của Mặt Trời và Mặt Trăng",
-          "Tác động của lực Coriolis do Trái Đất tự quay",
-          "Hiện tượng triều cường và sóng thần đáy biển"
+          "Các dòng đối lưu vật chất nhiệt quyển trong lớp man-ti trên.",
+          "Lực hấp dẫn của Mặt Trời và Mặt Trăng.",
+          "Tác động của lực Coriolis do Trái Đất tự quay.",
+          "Hiện tượng triều cường và sóng thần đáy biển."
         ],
         "correct": 0
       }
@@ -108,10 +165,10 @@
       "question": {
         "stem": "Khi hai mảng kiến tạo đại dương và lục địa xô húc (va chạm) vào nhau, kết quả thường hình thành nên:",
         "options": [
-          "Các dãy núi uốn nếp cao đồ sộ và các vực biển sâu kèm theo động đất núi lửa",
-          "Các sống núi ngầm giữa đại dương tách giãn",
-          "Các vùng đồng bằng châu thổ phẳng lặng",
-          "Các bồn trũng yên tĩnh không có địa chấn"
+          "Các dãy núi uốn nếp cao đồ sộ và các vực biển sâu kèm theo động đất núi lửa.",
+          "Các sống núi ngầm giữa đại dương tách giãn.",
+          "Các vùng đồng bằng châu thổ phẳng lặng.",
+          "Các bồn trũng yên tĩnh không có địa chấn."
         ],
         "correct": 0
       }
@@ -122,10 +179,10 @@
       "question": {
         "stem": "Vành đai động đất và núi lửa lớn nhất thế giới chiếm hơn 75% số núi lửa hoạt động trên cạn là:",
         "options": [
-          "Vành đai lửa Thái Bình Dương",
-          "Vành đai Địa Trung Hải",
-          "Vành đai Đại Tây Dương",
-          "Vành đai Ấn Độ Dương"
+          "Vành đai lửa Thái Bình Dương.",
+          "Vành đai Địa Trung Hải.",
+          "Vành đai Đại Tây Dương.",
+          "Vành đai Ấn Độ Dương."
         ],
         "correct": 0
       }
@@ -136,10 +193,10 @@
       "question": {
         "stem": "Càng lên cao, nhiệt độ không khí càng giảm vì nguyên nhân chủ yếu nào sau đây?",
         "options": [
-          "Không khí càng loãng, bức xạ nhiệt từ mặt đất lên càng yếu dần",
-          "Gần Mặt Trời hơn nên không khí bị đóng băng",
-          "Gió trên cao thổi quá mạnh làm mát không khí",
-          "Tầng ôzôn hấp thụ hết nhiệt năng"
+          "Không khí càng loãng, bức xạ nhiệt từ mặt đất lên càng yếu dần.",
+          "Gần Mặt Trời hơn nên không khí bị đóng băng.",
+          "Gió trên cao thổi quá mạnh làm mát không khí.",
+          "Tầng ôzôn hấp thụ hết nhiệt năng."
         ],
         "correct": 0
       }
@@ -148,12 +205,12 @@
       "id": "task_dialy_010",
       "seq": 10,
       "question": {
-        "stem": "Biên độ nhiệt độ năm có xu hướng thay đổi như thế nào từ Xích đạo về Cực?",
+        "stem": "Biên độ nhiệt độ năm (sự chênh lệch giữa nhiệt độ tháng cao nhất và tháng thấp nhất) có xu hướng thay đổi như thế nào từ Xích đạo về Cực?",
         "options": [
-          "Tăng dần từ Xích đạo về hai Cực",
-          "Giảm dần từ Xích đạo về hai Cực",
-          "Không thay đổi trên toàn Trái Đất",
-          "Ở Xích đạo là lớn nhất, ở Cực bằng không"
+          "Tăng dần từ Xích đạo về hai Cực.",
+          "Giảm dần từ Xích đạo về hai Cực.",
+          "Không thay đổi trên toàn Trái Đất.",
+          "Ở Xích đạo là lớn nhất, ở Cực bằng không."
         ],
         "correct": 0
       }
@@ -164,10 +221,10 @@
       "question": {
         "stem": "Các đai khí áp cao và áp thấp trên bề mặt Trái Đất phân bố theo quy luật nào?",
         "options": [
-          "Phân bố xen kẽ và đối xứng nhau qua đai áp thấp Xích đạo",
-          "Áp cao tập trung toàn bộ ở bán cầu Bắc, áp thấp ở bán cầu Nam",
-          "Phân bố lộn xộn không theo quy luật nào",
-          "Chỉ có áp cao ở các cực, toàn bộ phần còn lại là áp thấp"
+          "Phân bố xen kẽ và đối xứng nhau qua đai áp thấp Xích đạo.",
+          "Áp cao tập trung toàn bộ ở bán cầu Bắc, áp thấp ở bán cầu Nam.",
+          "Phân bố lộn xộn không theo quy luật nào.",
+          "Chỉ có áp cao ở các cực, toàn bộ phần còn lại là áp thấp."
         ],
         "correct": 0
       }
@@ -178,10 +235,10 @@
       "question": {
         "stem": "Gió Mậu dịch (Tín phong) thổi quanh năm từ khu vực nào về khu vực nào?",
         "options": [
-          "Từ áp cao cận chí tuyến về áp thấp Xích đạo",
-          "Từ áp cao cận chí tuyến về áp thấp ôn đới",
-          "Từ áp cao cực về áp thấp ôn đới",
-          "Từ biển vào đất liền vào mùa hạ"
+          "Từ áp cao cận chí tuyến về áp thấp Xích đạo.",
+          "Từ áp cao cận chí tuyến về áp thấp ôn đới.",
+          "Từ áp cao cực về áp thấp ôn đới.",
+          "Từ biển vào đất liền vào mùa hạ."
         ],
         "correct": 0
       }
@@ -192,10 +249,10 @@
       "question": {
         "stem": "Gió Phơn (gió lào khô nóng) hình thành khi luồng không khí ẩm vượt qua dãy núi cao do hiện tượng nào?",
         "options": [
-          "Không khí ẩm gặp sườn đón gió trút hết mưa, khi vượt qua sườn khuất gió bị nén nhiệt độ tăng nhanh",
-          "Gió mang theo cát sa mạc nóng thổi qua",
-          "Tầng đối lưu bị thủng cục bộ làm ánh nắng chiếu rọi",
-          "Mặt đất hấp thụ nhiệt từ nham thạch núi lửa"
+          "Không khí ẩm gặp sườn đón gió trút hết mưa, khi vượt qua sườn khuất gió bị nén nhiệt độ tăng nhanh theo đoạn nhiệt khô.",
+          "Gió mang theo cát sa mạc nóng thổi qua.",
+          "Tầng đối lưu bị thủng cục bộ làm ánh nắng chiếu rọi.",
+          "Mặt đất hấp thụ nhiệt từ nham thạch núi lửa."
         ],
         "correct": 0
       }
@@ -206,10 +263,10 @@
       "question": {
         "stem": "Thủy quyển là lớp vỏ lỏng liên tục bao quanh Trái Đất, trong đó nước mặn ở đại dương chiếm khoảng bao nhiêu phần trăm?",
         "options": [
-          "Khoảng 97,5% tổng lượng nước toàn cầu",
-          "Khoảng 50% tổng lượng nước",
-          "Khoảng 70% tổng lượng nước",
-          "Khoảng 85% tổng lượng nước"
+          "Khoảng 97,5% tổng lượng nước toàn cầu.",
+          "Khoảng 50% tổng lượng nước.",
+          "Khoảng 70% tổng lượng nước.",
+          "Khoảng 85% tổng lượng nước."
         ],
         "correct": 0
       }
@@ -220,10 +277,10 @@
       "question": {
         "stem": "Nguyên nhân chủ yếu sinh ra hiện tượng sóng biển là do:",
         "options": [
-          "Tác động của gió thổi trên mặt nước biển",
-          "Lực hấp dẫn của Mặt Trời",
-          "Nhiệt độ nước biển thay đổi đột ngột",
-          "Động đất dưới đáy biển sinh ra sóng thường"
+          "Tác động của gió thổi trên mặt nước biển.",
+          "Lực hấp dẫn của Mặt Trời.",
+          "Nhiệt độ nước biển thay đổi đột ngột.",
+          "Động đất dưới đáy biển sinh ra sóng thường."
         ],
         "correct": 0
       }
@@ -234,10 +291,10 @@
       "question": {
         "stem": "Hiện tượng dao động thủy triều đạt mức nước lớn nhất (triều cường) xảy ra vào những ngày nào trong tháng âm lịch?",
         "options": [
-          "Ngày không trăng (mồng 1) và ngày trăng tròn (rằm 15)",
-          "Ngày trăng khuyết đầu tháng (mồng 7) và cuối tháng (23)",
-          "Vào tất cả các ngày chủ nhật trong tháng",
-          "Chỉ xảy ra duy nhất vào ngày rằm tháng tám"
+          "Ngày không trăng (mồng 1) và ngày trăng tròn (rằm 15).",
+          "Ngày trăng khuyết đầu tháng (mồng 7) và cuối tháng (23).",
+          "Vào tất cả các ngày chủ nhật trong tháng.",
+          "Chỉ xảy ra duy nhất vào ngày rằm tháng tám."
         ],
         "correct": 0
       }
@@ -248,10 +305,10 @@
       "question": {
         "stem": "Dòng biển nóng và dòng biển lạnh có ảnh hưởng rất lớn đến khí hậu ven bờ nơi chúng đi qua như thế nào?",
         "options": [
-          "Dòng biển nóng làm tăng nhiệt độ và gây mưa nhiều; dòng biển lạnh làm khí hậu khô hạn ít mưa",
-          "Cả hai dòng biển đều làm khí hậu ven bờ trở nên băng giá quanh năm",
-          "Dòng biển lạnh mang lại mưa bão cực lớn; dòng biển nóng làm hình thành hoang mạc",
-          "Không có tác động nào đáng kể đối với đất liền"
+          "Dòng biển nóng làm tăng nhiệt độ và gây mưa nhiều; dòng biển lạnh làm khí hậu khô hạn ít mưa.",
+          "Cả hai dòng biển đều làm khí hậu ven bờ trở nên băng giá quanh năm.",
+          "Dòng biển lạnh mang lại mưa bão cực lớn; dòng biển nóng làm hình thành hoang mạc.",
+          "Không có tác động nào đáng kể đối với đất liền."
         ],
         "correct": 0
       }
@@ -262,10 +319,10 @@
       "question": {
         "stem": "Thổ nhưỡng (đất) là gì?",
         "options": [
-          "Lớp vật chất tơi xốp nằm ở bề mặt lục địa, có độ phì",
-          "Tất cả các loại đá vụn trên sườn núi dốc",
-          "Cát và sỏi vô cơ dưới đáy sông ngòi",
-          "Lớp khoáng sản kim loại dưới sâu vỏ Trái Đất"
+          "Lớp vật chất tơi xốp nằm ở bề mặt lục địa, có độ phì (khả năng cung cấp nước, nhiệt, khí và dinh dưỡng cho cây).",
+          "Tất cả các loại đá vụn trên sườn núi dốc.",
+          "Cát và sỏi vô cơ dưới đáy sông ngòi.",
+          "Lớp khoáng sản kim loại dưới sâu vỏ Trái Đất."
         ],
         "correct": 0
       }
@@ -276,10 +333,10 @@
       "question": {
         "stem": "Nhân tố nào sau đây đóng vai trò cung cấp chất vô cơ cho đất và quyết định thành phần khoáng vật, cơ giới của đất?",
         "options": [
-          "Đá mẹ",
-          "Khí hậu",
-          "Sinh vật",
-          "Địa hình"
+          "Đá mẹ.",
+          "Khí hậu.",
+          "Sinh vật.",
+          "Địa hình."
         ],
         "correct": 0
       }
@@ -290,10 +347,10 @@
       "question": {
         "stem": "Sinh vật đóng vai trò chủ đạo nào trong quá trình hình thành đất?",
         "options": [
-          "Cung cấp chất hữu cơ, phá hủy đá bằng cơ - sinh học và tái tạo độ phì cho đất",
-          "Cung cấp các hạt khoáng sét vô cơ nặng",
-          "Điều hòa nhiệt độ và áp suất nén lòng đất",
-          "Tạo ra các đứt gãy kiến tạo"
+          "Cung cấp chất hữu cơ, phá hủy đá bằng cơ - sinh học và tái tạo độ phì cho đất.",
+          "Cung cấp các hạt khoáng sét vô cơ nặng.",
+          "Điều hòa nhiệt độ và áp suất nén lòng đất.",
+          "Tạo ra các đứt gãy kiến tạo."
         ],
         "correct": 0
       }
@@ -304,10 +361,10 @@
       "question": {
         "stem": "Giới hạn trên của sinh quyển tiếp giáp với tầng nào của khí quyển?",
         "options": [
-          "Nơi tiếp giáp với tầng ôzôn (khoảng 20 - 25km)",
-          "Tầng ion nhiệt quyển cao 100km",
-          "Tầng đối lưu ở độ cao 8km",
-          "Vượt ra ngoài vũ trụ không gian"
+          "Nơi tiếp giáp với tầng ôzôn (khoảng 20 - 25km).",
+          "Tầng ion nhiệt quyển cao 100km.",
+          "Tầng đối lưu ở độ cao 8km.",
+          "Vượt ra ngoài vũ trụ không gian."
         ],
         "correct": 0
       }
@@ -318,10 +375,10 @@
       "question": {
         "stem": "Quy luật địa đới là sự thay đổi có quy luật của tất cả các thành phần địa lí và cảnh quan địa lí theo yếu tố nào?",
         "options": [
-          "Theo vĩ độ (từ Xích đạo về hai Cực)",
-          "Theo độ cao từ thấp lên đỉnh núi",
-          "Theo khoảng cách từ biển vào sâu trong nội địa",
-          "Theo chiều sâu dưới đáy biển"
+          "Theo vĩ độ (từ Xích đạo về hai Cực).",
+          "Theo độ cao từ thấp lên đỉnh núi.",
+          "Theo khoảng cách từ biển vào sâu trong nội địa.",
+          "Theo chiều sâu dưới đáy biển."
         ],
         "correct": 0
       }
@@ -332,10 +389,10 @@
       "question": {
         "stem": "Nguyên nhân căn bản tạo nên quy luật địa đới trên Trái Đất là gì?",
         "options": [
-          "Trái Đất hình cầu làm cho góc chiếu của tia sáng Mặt Trời thay đổi giảm dần từ Xích đạo về hai Cực",
-          "Trái Đất nghiêng 66 độ 33 phút khi quay",
-          "Sự phân bố đan xen giữa lục địa và đại dương",
-          "Tác động của các dòng biển nóng lạnh"
+          "Trái Đất hình cầu làm cho góc chiếu của tia sáng Mặt Trời thay đổi giảm dần từ Xích đạo về hai Cực.",
+          "Trái Đất nghiêng 66 độ 33 phút khi quay.",
+          "Sự phân bố đan xen giữa lục địa và đại dương.",
+          "Tác động của các dòng biển nóng lạnh."
         ],
         "correct": 0
       }
@@ -346,10 +403,10 @@
       "question": {
         "stem": "Quy luật đai cao là sự thay đổi của các thành phần tự nhiên và cảnh quan theo yếu tố nào?",
         "options": [
-          "Theo độ cao địa hình (càng lên cao nhiệt độ càng giảm, độ ẩm thay đổi)",
-          "Theo vĩ tuyến trải dài từ Đông sang Tây",
-          "Theo thời gian bốn mùa xuân hạ thu đông",
-          "Theo chu kì hoạt động của vết đen Mặt Trời"
+          "Theo độ cao địa hình (càng lên cao nhiệt độ càng giảm, độ ẩm thay đổi).",
+          "Theo vĩ tuyến trải dài từ Đông sang Tây.",
+          "Theo thời gian bốn mùa xuân hạ thu đông.",
+          "Theo chu kì hoạt động của vết đen Mặt Trời."
         ],
         "correct": 0
       }

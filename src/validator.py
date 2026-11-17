@@ -2,13 +2,20 @@ import re
 import json
 import subprocess
 import unicodedata
+import difflib
 from pathlib import Path
 from collections import deque
 def normalize_text(text: str) -> str:
-    """Chuẩn hóa chuỗi văn bản (Unicode NFC, lowercase, loại bỏ khoảng trắng thừa)."""
+    """Chuẩn hóa chuỗi văn bản (Unicode NFC, lowercase, gỡ bỏ escape Ink, loại bỏ khoảng trắng thừa)."""
     if not text:
         return ""
-    text = str(text).replace('\\{', '{').replace('\\}', '}')
+    text = str(text)
+    # Gỡ bỏ các ký tự escape của Ink
+    text = text.replace('\\{', '{').replace('\\}', '}')
+    text = text.replace('\\->', '->').replace('\\<', '<').replace('\\>', '>')
+    # Chuẩn hóa các dạng mũi tên hóa học / toán học
+    text = text.replace('→', '->').replace('\\rightarrow', '->')
+    text = text.replace('–', '-').replace('—', '-')
     text = unicodedata.normalize("NFC", text)
     return " ".join(text.strip().lower().split())
 class SINEValidator:
@@ -72,11 +79,45 @@ class SINEValidator:
             task_id = task.get("id", "unknown_task")
             stem = task["question"]["stem"]
             norm_stem = normalize_text(stem)
-            if norm_stem not in norm_script:
+            
+            # Trích xuất knot của task để kiểm tra ngữ cảnh cục bộ
+            knot_pattern = rf"===\s*{re.escape(task_id)}\s*===\s*\n(.*?)(?=\n\s*\+[\s\[]|\n\s*===|\Z)"
+            knot_match = re.search(knot_pattern, ink_text, re.DOTALL)
+            knot_text = knot_match.group(1).strip() if knot_match else ""
+            norm_knot = normalize_text(knot_text)
+            
+            # 1. Kiểm tra stem (câu hỏi)
+            stem_found = False
+            if norm_stem in norm_script:
+                stem_found = True
+            elif norm_knot:
+                sim = difflib.SequenceMatcher(None, norm_stem, norm_knot).ratio()
+                if sim >= 0.85:
+                    stem_found = True
+                else:
+                    words_stem = set(norm_stem.split())
+                    words_knot = set(norm_knot.split())
+                    if len(words_stem) > 0 and len(words_stem.intersection(words_knot)) / len(words_stem) >= 0.85:
+                        stem_found = True
+            
+            if not stem_found:
                 missing_errors.append(f"Task '{task_id}': Thiếu nội dung câu hỏi ('{stem}').")
+                
+            # 2. Kiểm tra options (các lựa chọn)
             for opt in task["question"]["options"]:
                 norm_opt = normalize_text(opt)
-                if norm_opt not in norm_script:
+                opt_found = False
+                if norm_opt in norm_script:
+                    opt_found = True
+                elif knot_match:
+                    remaining = ink_text[knot_match.end(): knot_match.end() + 1500]
+                    knot_choices = re.findall(r"\+[\s]*\[(.*?)\]", knot_text + "\n" + remaining)
+                    for c in knot_choices:
+                        norm_c = normalize_text(c)
+                        if norm_opt == norm_c or difflib.SequenceMatcher(None, norm_opt, norm_c).ratio() >= 0.85:
+                            opt_found = True
+                            break
+                if not opt_found:
                     missing_errors.append(f"Task '{task_id}': Thiếu lựa chọn đáp án ('{opt}').")
         if not missing_errors:
             return True, ""
