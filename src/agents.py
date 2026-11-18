@@ -1,8 +1,37 @@
 import re
 import json
 from openai import OpenAI
+def auto_sanitize_ink(ink_text: str) -> str:
+    """Tự động chuẩn hóa kịch bản Ink: escape các dấu ngoặc nhọn { } trong LaTeX và mũi tên -> trong nhãn lựa chọn."""
+    if not ink_text:
+        return ""
+    lines = []
+    for line in ink_text.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("+") or stripped.startswith("*"):
+            m_choice = re.match(r"^(\s*[\+\*]\s*\[)(.*?)(\]\s*->.*)$", line)
+            if m_choice:
+                prefix, label, suffix = m_choice.groups()
+                label = re.sub(r"(?<!\\)->", r"\\->", label)
+                label = re.sub(r"(?<!\\)\{", r"\\{", label)
+                label = re.sub(r"(?<!\\)\}", r"\\}", label)
+                line = f"{prefix}{label}{suffix}"
+        else:
+            def repl_math(m):
+                s = m.group(0)
+                s = re.sub(r"(?<!\\)\{", r"\\{", s)
+                s = re.sub(r"(?<!\\)\}", r"\\}", s)
+                return s
+            line = re.sub(r"\$[^$]+\$", repl_math, line)
+            if "\\" in line and not ("{" in line and ":" in line):
+                line = re.sub(r"(?<!\\)\{", r"\\{", line)
+                line = re.sub(r"(?<!\\)\}", r"\\}", line)
+        lines.append(line)
+    return "\n".join(lines)
+
+
 def extract_ink_code(text: str) -> str:
-    """Trích xuất khối mã ```ink ... ``` từ phản hồi của LLM."""
+    """Trích xuất khối mã ```ink ... ``` từ phản hồi của LLM và tự động làm sạch cú pháp."""
     if text is None:
         return ""
     match = re.search(r"```(?:ink)?\s*(.*?)\s*```", text, re.DOTALL | re.IGNORECASE)
@@ -10,7 +39,7 @@ def extract_ink_code(text: str) -> str:
         code = match.group(1).strip()
     else:
         code = text.strip()
-    return code
+    return auto_sanitize_ink(code)
 class SINEGenerator:
     def __init__(self, client: OpenAI, model_name: str):
         self.client = client
@@ -26,31 +55,37 @@ VÍ DỤ CẤU TRÚC KỊCH BẢN INK CHUẨN MẪU:
 ```ink
 -> location_start
 === location_start ===
-Bạn bước vào căn phòng âm thanh cũ kỹ. Không gian tĩnh lặng, chỉ có tiếng kim đĩa than rè rè.
-+ [Kiểm tra bàn điều khiển] -> task_01_knot
+Bạn bước vào căn phòng thí nghiệm quang học cổ kính. Ánh nắng rọi qua lăng kính pha lê tạo nên những dải cầu vồng rực rỡ trên mặt bàn gỗ. Trên giá sách là một cơ chế cơ học đang chờ được kích hoạt.
++ [Tiến lại gần kiểm tra bảng điều khiển] -> task_01_knot
+
 === task_01_knot ===
 Hệ màu nào sau đây được sử dụng chủ yếu trong kỹ thuật in ấn thương mại?
 + [RGB] -> task_01_fail
 + [CMYK] -> task_01_success
 + [HSV] -> task_01_fail
 + [Lab] -> task_01_fail
+
 === task_01_success ===
-Chính xác! Bàn điều khiển bật sáng đèn xanh, mở ra cánh cửa dẫn đến phòng tiếp theo.
--> location_next
+Chính xác! Hệ màu CMYK với 4 màu mực cơ bản đã kích hoạt cơ chế khóa. Bảng điều khiển bật sáng đèn xanh, cánh cửa cơ học từ từ mở ra dẫn lối tới phòng nghiên cứu tiếp theo.
++ [Tiếp tục bước vào khu vực tiếp theo] -> location_next
+
 === task_01_fail ===
-Sai rồi! Báo động đỏ kêu vang.
-+ [Thử lại câu hỏi này] -> task_01_knot
+Chưa chính xác! Cơ chế phát ra tiếng bíp cảnh báo hệ màu bạn chọn không phù hợp với mực in vật lý. Hãy nhớ lại kiến thức về tổng hợp màu trừ trong in ấn và thử lại.
++ [Quan sát lại bài toán và Thử lại] -> task_01_knot
+
 === location_next ===
-... (tiếp tục dẫn tới câu hỏi tiếp theo) ...
+... (tiếp tục dẫn dắt bối cảnh sống động tới câu hỏi tiếp theo) ...
 -> END
 ```
 CÁC NGUYÊN TẮC BẮT BUỘC:
-1. Viết toàn bộ câu chuyện và lời thoại bằng TIẾNG VIỆT tự nhiên, hấp dẫn.
+1. Viết toàn bộ câu chuyện và lời thoại bằng TIẾNG VIỆT tự nhiên, cuốn hút, giàu tính văn học và hình tượng trực quan (2-3 câu mô tả bối cảnh sinh động cho mỗi địa điểm).
 2. BẮT BUỘC in NGUYÊN VĂN câu hỏi (stem) và tất cả phương án lựa chọn (options) từ Seed, không được tự ý tóm tắt hay bỏ bớt.
-3. Đáp án đúng (correct index) phải chuyển tới knot thành công (`_success`), đáp án sai chuyển tới knot thất bại (`_fail`) cho phép thử lại.
-4. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt khi chọn sai nhiều lần.
-5. Cuối game phải có đường dẫn tới `-> END`.
-6. BẮT BUỘC đặt tên knot của câu hỏi CHÍNH XÁC theo id của task trong Seed (ví dụ: task id là task_lichsu_001 thì knot là `=== task_lichsu_001 ===`, chuyển tiếp đúng là `task_lichsu_001_success` và sai là `task_lichsu_001_fail`), KHÔNG được tự ý bỏ số 0 hay thay đổi tiền tố.
+3. Đáp án đúng (correct index) phải chuyển tới knot thành công (`_success`), đáp án sai chuyển tới knot thất bại (`_fail`).
+4. BẮT BUỘC TẠI KNOT THÀNH CÔNG (`_success`): Phải có câu dẫn chúc mừng + mô tả diễn biến mở đường, và BẮT BUỘC PHẢI CÓ NÚT LỰA CHỌN `+ [Tiếp tục cuộc hành trình] -> location_next` (TUYỆT ĐỐI KHÔNG nhảy thẳng `-> location_next` mà không có nút choice, để người chơi có thời gian đọc phản hồi).
+5. BẮT BUỘC TẠI KNOT THẤT BẠI (`_fail`): Phải có lời nhận xét sư phạm gợi ý tư duy vì sao sai, và nút `+ [Thử lại] -> task_current`.
+6. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt khi chọn sai nhiều lần.
+7. Cuối game phải có đường dẫn tới `-> END`.
+8. BẮT BUỘC đặt tên knot của câu hỏi CHÍNH XÁC theo id của task trong Seed (ví dụ: task id là task_lichsu_001 thì knot là `=== task_lichsu_001 ===`, chuyển tiếp đúng là `task_lichsu_001_success` và sai là `task_lichsu_001_fail`), KHÔNG được tự ý bỏ số 0 hay thay đổi tiền tố.
 LƯU Ý CỰC KỲ QUAN TRỌNG CHO CÁC MÔN CÓ CÔNG THỨC:
 Trong công thức LaTeX Toán học, bạn sẽ thấy rất nhiều dấu ngoặc nhọn {  và } . 
 TUY NHIÊN, trong ngôn ngữ Ink, dấu ngoặc nhọn {  ... }  được dùng cho logic code. Nếu bạn viết nguyên si {  hoặc }  vào file Ink, trình biên dịch sẽ LỖI NGAY LẬP TỨC!
@@ -107,7 +142,10 @@ HƯỚNG DẪN SỬA LỖI:
 1. Hãy đảm bảo IN ĐẦY ĐỦ VÀ CHÍNH XÁC TỪNG CHỮ của các câu hỏi (stem) và các lựa chọn (options) trong Seed.
 2. Đảm bảo mọi nhánh lựa chọn đều có đích đến hợp lệ và có đường đi đến `-> END`.
 3. SỬ DỤNG DẤU `+` (sticky choice) THAY VÌ DẤU `*` để người chơi không bị kẹt (hết content) khi chọn sai nhiều lần.
-4. Xuất kịch bản đã sửa hoàn chỉnh trong khối ```ink ... ```.
+4. LƯU Ý CÚ PHÁP: Dấu ngoặc nhọn {{ và }} trong công thức LaTeX Toán học PHẢI ĐƯỢC ESCAPE thành \\{{ và \\}}. Mũi tên phản ứng Hóa học -> trong lựa chọn PHẢI ĐƯỢC ESCAPE thành \\->.
+5. Knot thành công (_success) BẮT BUỘC phải có câu dẫn chúc mừng và nút lựa chọn `+ [Tiếp tục cuộc hành trình] -> location_next`, TUYỆT ĐỐI KHÔNG nhảy thẳng `-> location_next` mà không qua lựa chọn.
+6. Knot thất bại (_fail) BẮT BUỘC có lời giải thích/nhận xét sư phạm và nút `+ [Thử lại] -> location_current`.
+7. Xuất kịch bản đã sửa hoàn chỉnh trong khối ```ink ... ```.
 """
         import time
         max_tokens_val = 32768 if "gemini" in self.model_name.lower() else 8192

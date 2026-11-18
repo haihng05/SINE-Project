@@ -2,10 +2,37 @@
   "topic": "toan",
   "locations": [
     {
-      "id": "location_toan_001"
+      "id": "location_toan_025"
     },
     {
-      "id": "location_toan_002"
+      "id": "location_toan_026"
+    },
+    {
+      "id": "location_toan_027"
+    },
+    {
+      "id": "location_toan_028"
+    },
+    {
+      "id": "location_toan_029"
+    },
+    {
+      "id": "location_toan_030"
+    },
+    {
+      "id": "location_toan_031"
+    },
+    {
+      "id": "location_toan_032"
+    },
+    {
+      "id": "location_toan_033"
+    },
+    {
+      "id": "location_toan_034"
+    },
+    {
+      "id": "location_toan_035"
     }
   ],
   "tasks": [
@@ -13,12 +40,12 @@
       "id": "task_toan_025",
       "seq": 25,
       "question": {
-        "stem": "Từ một hộp chứa 7 quả cầu màu đỏ và 5 quả cầu màu xanh, lấy ngẫu nhiên đồng thời 3 quả. Xác suất để lấy được 3 quả cầu màu xanh bằng:",
+        "stem": "Từ một hộp chứa 7 quả cầu màu đỏ và 5 quả cầu màu xanh, lấy ngẫu nhiên đồng thời 3 quả cầu. Xác suất để lấy được 3 quả cầu màu xanh bằng:",
         "options": [
-          "\\frac{2}{7}",
-          "\\frac{1}{22}",
-          "\\frac{7}{44}",
-          "\\frac{5}{12}"
+          "2/7",
+          "1/22",
+          "7/44",
+          "5/12"
         ],
         "correct": 1
       }
@@ -34,7 +61,133 @@
           "5",
           "4"
         ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_toan_027",
+      "seq": 27,
+      "question": {
+        "stem": "Một chiếc bút chì dạng khối lăng trụ lục giác đều cạnh đáy 3 mm, chiều cao 200 mm. Vỏ bút bằng gỗ, lõi bằng than chì dạng khối trụ bán kính 1 mm. Giá $1m^3$ gỗ là $a$ (triệu đồng), $1m^3$ than chì là $6a$ (triệu đồng). Giá nguyên vật liệu làm một chiếc bút chì gần nhất với kết quả nào?",
+        "options": [
+          "84,5.a",
+          "78,2.a",
+          "7,82.a",
+          "8,45.a"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_toan_028",
+      "seq": 28,
+      "question": {
+        "stem": "Hệ số của $x^5$ trong khai triển biểu thức $x(3x-1)^6 + (2x-1)^8$ bằng:",
+        "options": [
+          "-577",
+          "3007",
+          "577",
+          "-3007"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_toan_029",
+      "seq": 29,
+      "question": {
+        "stem": "Cho $\\int_{5}^{21} \\frac{dx}{x\\sqrt{x+4}} = a\\ln3 + b\\ln5 + c\\ln7$ với $a, b, c$ là các số hữu tỉ. Mệnh đề nào dưới đây đúng?",
+        "options": [
+          "a + b = -2c",
+          "a - b = -2c",
+          "a + b = c",
+          "a - b = -c"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_toan_030",
+      "seq": 30,
+      "question": {
+        "stem": "Cho hình chóp $S.ABCD$ đáy là hình chữ nhật, $AB=a, BC=2a, SA \\perp (ABCD)$ và $SA=a$. Khoảng cách giữa hai đường thẳng $BD$ và $SC$ bằng:",
+        "options": [
+          "\\frac{\\sqrt{30}a}{12}",
+          "\\frac{4\\sqrt{21}a}{21}",
+          "\\frac{\\sqrt{30}a}{6}",
+          "\\frac{2\\sqrt{21}a}{21}"
+        ],
         "correct": 3
+      }
+    },
+    {
+      "id": "task_toan_031",
+      "seq": 31,
+      "question": {
+        "stem": "Chất điểm A xuất phát từ O, vận tốc $v(t) = \\frac{1}{150}t^2 + \\frac{59}{75}t$ (m/s). Chất điểm B xuất phát từ O, chậm hơn A 3 giây, gia tốc $a(m/s^2)$. Sau khi B xuất phát 12 giây thì đuổi kịp A. Vận tốc của B tại thời điểm đuổi kịp A bằng:",
+        "options": [
+          "20 m/s",
+          "15 m/s",
+          "16 m/s",
+          "13 m/s"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_toan_032",
+      "seq": 32,
+      "question": {
+        "stem": "Trong không gian Oxyz, cho $A(2; 1; 3)$ và đường thẳng $d: \\frac{x+1}{1} = \\frac{y-1}{-2} = \\frac{z-2}{2}$. Đường thẳng đi qua A, vuông góc với d và cắt trục Oy có phương trình là:",
+        "options": [
+          "x=2t, y=-3+3t, z=2t",
+          "x=2t, y=-3+4t, z=3t",
+          "x=2+2t, y=1+3t, z=3+2t",
+          "x=2+2t, y=1+t, z=3+3t"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_toan_033",
+      "seq": 33,
+      "question": {
+        "stem": "Xét các số phức z thỏa mãn $(z+3i)(\\bar{z}-3)$ là số thuần ảo. Trên mặt phẳng tọa độ, tập hợp tất cả các điểm biểu diễn các số phức z là một đường tròn có bán kính bằng:",
+        "options": [
+          "9/2",
+          "3\\sqrt{2}",
+          "\\frac{3\\sqrt{2}}{2}",
+          "3"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_toan_034",
+      "seq": 34,
+      "question": {
+        "stem": "Gọi S là tập hợp tất cả các giá trị nguyên của tham số m sao cho phương trình $25^x - m.5^{x+1} + 7m^2 - 7 = 0$ có hai nghiệm phân biệt. Hỏi S có bao nhiêu phần tử?",
+        "options": [
+          "3",
+          "1",
+          "7",
+          "2"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_toan_035",
+      "seq": 35,
+      "question": {
+        "stem": "Ông A dự định dùng hết $6,7 m^2$ kính để làm một bể cá hình hộp chữ nhật không nắp, chiều dài gấp đôi chiều rộng. Bể cá có thể tích lớn nhất bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+        "options": [
+          "2,48 m³",
+          "1,57 m³",
+          "1,23 m³",
+          "1,11 m³"
+        ],
+        "correct": 1
       }
     }
   ]

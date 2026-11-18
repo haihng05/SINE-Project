@@ -34,12 +34,13 @@ def get_api_client_and_model():
                 elif line.startswith("OPENROUTER_API_KEY=") and not openrouter_key:
                     openrouter_key = line.split("=", 1)[1].strip().strip('"').strip("'")
     if gemini_key:
-        print(" [AI Engine] Đang kết nối Google Gemini API (gemini-3-flash-preview)...")
+        model = "gemini-3.1-flash-lite"
+        print(f" [AI Engine] Đang kết nối Google Gemini API ({model})...")
         client = OpenAI(
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
             api_key=gemini_key
         )
-        return client, "gemini-3-flash-preview"
+        return client, model
     elif openrouter_key:
         print(" [AI Engine] Đang kết nối OpenRouter API (qwen/qwen3-14b)...")
         client = OpenAI(

@@ -90,6 +90,7 @@
             var story = new inkjs.Story(storyContent);
             var storyContainer = document.getElementById('story');
             var choicesContainer = document.getElementById('choices');
+            var activeImage = "";
             function continueStory() {
                 try {
                     storyContainer.innerHTML = '';
@@ -109,9 +110,11 @@
                     
                     var imageTag = allTags.find(function(tag) { return tag.toLowerCase().indexOf('image:') !== -1; });
                     if (imageTag) {
-                        var imageName = imageTag.split(':')[1].trim();
+                        activeImage = imageTag.split(':')[1].trim();
+                    }
+                    if (activeImage) {
                         var img = document.createElement('img');
-                        img.src = 'images/' + imageName;
+                        img.src = 'images/' + activeImage;
                         img.className = 'story-img';
                         img.alt = 'Minh họa';
                         storyContainer.insertBefore(img, storyContainer.firstChild);

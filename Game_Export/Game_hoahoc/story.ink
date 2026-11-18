@@ -5,6 +5,7 @@
 -> location_hoahoc_001
 
 === location_hoahoc_001 ===
+# image: location_hoahoc_001.jpg
 Bạn đứng trước cổng Viện Nghiên cứu Hóa học Tương lai. Để bước vào sảnh chính, hệ thống an ninh yêu cầu bạn xác nhận kiến thức cơ bản về hợp chất sinh học.
 + [Bắt đầu bài kiểm tra an ninh] -> task_hoahoc_001
 
@@ -24,6 +25,7 @@ Sai rồi. Hệ thống an ninh báo động đỏ. Hãy suy nghĩ kỹ lại v�
 + [Thử lại] -> task_hoahoc_001
 
 === location_hoahoc_002 ===
+# image: location_hoahoc_002.jpg
 Bạn tiến vào Khu vực Polymer. Những sợi vật liệu siêu bền đang được tổng hợp tại đây. Một kỹ sư yêu cầu bạn giúp kiểm tra nguyên liệu cho dây chuyền sản xuất nhựa PP.
 + [Kiểm tra công thức] -> task_hoahoc_002
 
@@ -43,6 +45,7 @@ Không đúng. Chất này sẽ tạo ra một loại polymer khác. Hãy nhớ 
 + [Thử lại] -> task_hoahoc_002
 
 === location_hoahoc_003 ===
+# image: location_hoahoc_003.jpg
 Tiếp theo là Phòng thí nghiệm Hóa sinh. Trên bàn có 4 lọ chứa các amino acid: Gly, Glu, Lys, Ala. Bạn cần tìm ra lọ có tính acid mạnh nhất để tiến hành thí nghiệm.
 + [Phân tích cấu tạo các amino acid] -> task_hoahoc_003
 
@@ -62,6 +65,7 @@ Sai rồi. Hãy nhớ lại cấu tạo của các amino acid quen thuộc này,
 + [Thử lại] -> task_hoahoc_003
 
 === location_hoahoc_004 ===
+# image: location_hoahoc_004.jpg
 Bạn bước vào Khu vực Điện hóa. Một bể điện phân nóng chảy NaCl đang hoạt động để sản xuất Natri kim loại. Bạn cần kiểm tra xem quá trình nào đang diễn ra ở cực âm.
 + [Quan sát cực âm (cathode)] -> task_hoahoc_004
 
@@ -81,6 +85,7 @@ Sai rồi. Lưu ý đây là điện phân "nóng chảy" chứ không phải du
 + [Thử lại] -> task_hoahoc_004
 
 === location_hoahoc_005 ===
+# image: location_hoahoc_005.jpg
 Tại Phòng Hợp chất Nitrogen, một nhóm nghiên cứu đang phân loại các amine. Họ cần bạn xác định đâu là amine bậc hai để làm dung môi.
 + [Xác định bậc amine] -> task_hoahoc_005
 
@@ -100,6 +105,7 @@ Sai rồi. Hãy đếm số nguyên tử H của NH3 đã bị thay thế bởi 
 + [Thử lại] -> task_hoahoc_005
 
 === location_hoahoc_006 ===
+# image: location_hoahoc_006.jpg
 Bạn đi ngang qua khu vực thử nghiệm độ bền vật liệu. Một tấm kim loại đang bị rỉ sét. Bạn cần giải thích bản chất hóa học của hiện tượng này.
 + [Giải thích hiện tượng ăn mòn] -> task_hoahoc_006
 
@@ -119,6 +125,7 @@ Chưa chính xác. Trong phản ứng hóa học, khi kim loại biến thành i
 + [Thử lại] -> task_hoahoc_006
 
 === location_hoahoc_007 ===
+# image: location_hoahoc_007.jpg
 Bạn bước vào Thư viện Trung tâm của Viện. Một bức tường lớn ghi lại lịch sử các phát minh hóa học. Thủ thư hỏi bạn về quy luật quan trọng nhất của bảng tuần hoàn.
 + [Trả lời thủ thư] -> task_hoahoc_007
 
@@ -138,6 +145,7 @@ Sai rồi. Hãy đọc kỹ nội dung câu hỏi, nó mô tả sự biến đ�
 + [Thử lại] -> task_hoahoc_007
 
 === location_hoahoc_008 ===
+# image: location_hoahoc_008.jpg
 Trong phòng phân tích, một mẫu ethanal đang được thử nghiệm với thuốc thử Tollens để tạo ra lớp bạc sáng bóng.
 + [Kiểm tra nhóm chức phản ứng] -> task_hoahoc_008
 
@@ -157,6 +165,7 @@ Sai rồi. Ethanal là một aldehyde, hãy chọn nhóm chức đặc trưng c�
 + [Thử lại] -> task_hoahoc_008
 
 === location_hoahoc_009 ===
+# image: location_hoahoc_009.jpg
 Bạn vào kho dụng cụ để chuẩn bị cho thí nghiệm chưng cất. Bạn cần tìm đúng chiếc bình cầu.
 + [Tìm dụng cụ] -> task_hoahoc_009
 
@@ -176,6 +185,7 @@ Nhầm rồi. Hãy nhớ lại hình dáng của bình cầu so với bình tam 
 + [Thử lại] -> task_hoahoc_009
 
 === location_hoahoc_010 ===
+# image: location_hoahoc_010.jpg
 Tại khu vực nhiên liệu, một bình chứa khí butane bị mờ nhãn. Bạn cần nhận diện công thức đúng của nó để dán lại nhãn.
 + [Nhận diện Butane] -> task_hoahoc_010
 
@@ -195,6 +205,7 @@ Sai rồi. "But-" tương ứng với mạch có 4 carbon, và đuôi "-ane" ch�
 + [Thử lại] -> task_hoahoc_010
 
 === location_hoahoc_011 ===
+# image: location_hoahoc_011.jpg
 Thử thách cuối cùng! Bạn tham gia vào một nghiên cứu tối ưu hóa phản ứng ester hóa để tạo mùi thơm chuối chín (ethyl acetate).
 + [Thiết lập thông số thí nghiệm] -> task_hoahoc_011
 

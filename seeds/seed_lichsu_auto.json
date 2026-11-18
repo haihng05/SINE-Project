@@ -1,40 +1,176 @@
 {
-  "topic": "toanhoc",
+  "topic": "lichsu",
   "locations": [
     {
       "id": "location_lichsu_001"
     },
     {
       "id": "location_lichsu_002"
+    },
+    {
+      "id": "location_lichsu_003"
+    },
+    {
+      "id": "location_lichsu_004"
+    },
+    {
+      "id": "location_lichsu_005"
+    },
+    {
+      "id": "location_lichsu_006"
+    },
+    {
+      "id": "location_lichsu_007"
+    },
+    {
+      "id": "location_lichsu_008"
+    },
+    {
+      "id": "location_lichsu_009"
+    },
+    {
+      "id": "location_lichsu_010"
     }
   ],
   "tasks": [
     {
-      "id": "task_toanhoc_025",
+      "id": "task_lichsu_001",
       "seq": 1,
       "question": {
-        "stem": "Từ một hộp chứa 7 quả cầu màu đỏ và 5 quả cầu màu xanh, lấy ngẫu nhiên đồng thời 3 quả cầu. Xác suất để lấy được 3 quả cầu màu xanh bằng:",
+        "stem": "Đỉnh cao của phong trào cách mạng 1930 - 1931 là",
         "options": [
-          "2/7",
-          "1/22",
-          "7/44",
-          "5/12"
+          "sự ra đời của Xô viết Nghệ - Tĩnh.",
+          "cuộc biểu tình của nông dân huyện Hưng Nguyên (Nghệ An).",
+          "cuộc bãi công của công nhân đồn điền cao su Phú Riềng.",
+          "hình thành được liên minh công - nông."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_002",
+      "seq": 2,
+      "question": {
+        "stem": "Đầu năm 1930, tại Cửu Long (Hương Cảng, Trung Quốc) đã diễn ra sự kiện nào?",
+        "options": [
+          "Đại hội lần thứ nhất của Đảng.",
+          "Hội nghị hợp nhất các tổ chức cộng sản thành một đảng duy nhất.",
+          "Đại hội lần thứ nhất của Hội Việt Nam Cách mạng Thanh niên.",
+          "Thành lập Hội Việt Nam Cách mạng Thanh niên."
         ],
         "correct": 1
       }
     },
     {
-      "id": "task_toanhoc_026",
-      "seq": 2,
+      "id": "task_lichsu_003",
+      "seq": 3,
       "question": {
-        "stem": "Có bao nhiêu giá trị nguyên của tham số m để hàm số y = (x + 6)/(x + 5m) nghịch biến trên khoảng (10; +∞)?",
+        "stem": "Sự kiện báo hiệu sự toàn thắng của Chiến dịch Hồ Chí Minh lịch sử trong cuộc Tổng tiến công và nổi dậy Xuân 1975 là",
         "options": [
-          "3",
-          "Vô số",
-          "5",
-          "4"
+          "xe tăng của ta tiến thẳng vào Dinh Độc lập (10 giờ 45 phút ngày 30 - 4 - 1975).",
+          "Châu Đốc, tỉnh cuối cùng của miền Nam được giải phóng (2 - 5 - 1975).",
+          "lá cờ cách mạng tung bay trên nóc tòa nhà Phủ Tổng thống (11 giờ 30 phút ngày 30 - 4 - 1975).",
+          "nắm cánh quân của ta đồng loạt đánh chiếm cơ quan đầu não của địch (26 - 4 - 1975)."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_lichsu_004",
+      "seq": 4,
+      "question": {
+        "stem": "Năm 1957, việc Liên Xô phóng thành công vệ tinh nhân tạo có ý nghĩa gì?",
+        "options": [
+          "Chứng tỏ nền khoa học - kĩ thuật Liên Xô phát triển hơn Mĩ.",
+          "Đưa Liên Xô thành nước khởi đầu cuộc cách mạng khoa học - kĩ thuật.",
+          "Chứng tỏ tính ưu việt của chế độ xã hội chủ nghĩa.",
+          "Mở đầu kỉ nguyên chinh phục vũ trụ của loài người."
         ],
         "correct": 3
+      }
+    },
+    {
+      "id": "task_lichsu_005",
+      "seq": 5,
+      "question": {
+        "stem": "Bộ Chính trị Trung ương Đảng đề ra phương hướng chiến lược Đông - Xuân 1953 - 1954 là",
+        "options": [
+          "tấn công địch ở rừng núi, nơi ta có lợi thế thực hiện cách đánh du kích.",
+          "tấn công vào các đô thị lớn, trung tâm đầu não chính trị, kinh tế của Pháp.",
+          "tấn công vào những hướng quan trọng về chiến lược mà địch tương đối yếu.",
+          "tấn công địch ở Trung du và đồng bằng Bắc Bộ."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_lichsu_006",
+      "seq": 6,
+      "question": {
+        "stem": "Trước Chiến tranh thế giới thứ hai, khu vực rơi vào vòng lệ thuộc nặng nề và trở thành “sân sau” của Mĩ là",
+        "options": [
+          "Mĩ La-tinh.",
+          "Đông Nam Á.",
+          "Tây Âu.",
+          "Bắc Phi."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_007",
+      "seq": 7,
+      "question": {
+        "stem": "Chiến thắng nào mở ra khả năng quân và dân miền Nam chiến thắng quân Mĩ trong chiến lược “Chiến tranh cục bộ” (1965- 1968)?",
+        "options": [
+          "Vạn Tường.",
+          "Bắc Ái.",
+          "Bình Giã.",
+          "Trà Bồng."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_008",
+      "seq": 8,
+      "question": {
+        "stem": "Trong chương trình khai thác thuộc địa lần thứ hai của thực dân Pháp, nắm quyền chỉ huy các ngành kinh tế ở Đông Dương là",
+        "options": [
+          "ngân hàng Đông Dương.",
+          "thế lực tư bản tài chính Đông Dương.",
+          "ngân hàng Pháp.",
+          "thế lực tư bản tài chính Việt Nam."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_lichsu_009",
+      "seq": 9,
+      "question": {
+        "stem": "Tham dự Hội nghị I-an-ta (2 - 1945) gồm nguyên thủ của những quốc gia nào?",
+        "options": [
+          "Liên Xô, Pháp, Mĩ.",
+          "Các nước thắng trận và bại trận trong Chiến tranh thế giới thứ hai.",
+          "Tất cả các nước thắng trận trong Chiến tranh thế giới thứ hai.",
+          "Liên Xô, Anh, Mĩ."
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_lichsu_010",
+      "seq": 10,
+      "question": {
+        "stem": "Trước Chiến tranh thế giới thứ hai, nước nào ở khu vực Đông Nam Á không phải là thuộc địa của các nước thực dân phương Tây?",
+        "options": [
+          "Xiêm.",
+          "Việt Nam.",
+          "Lào.",
+          "Miến Điện."
+        ],
+        "correct": 0
       }
     }
   ]

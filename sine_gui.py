@@ -96,20 +96,22 @@ class SINEApp:
             self.log(f"\n[BƯỚC 3/3] Đang đóng gói thành bản Game độc lập...")
             export_dir = os.path.join("Game_Export", f"Game_{topic}")
             os.makedirs(export_dir, exist_ok=True)
-            self.log(" Đang biên dịch kịch bản sang định dạng Web (JSON)...")
-            subprocess.run([os.path.join("tools", "inklecate.exe"), "-o", os.path.join(export_dir, "story.json"), ink_path], capture_output=True)
-            # Tự động tạo thư mục images và sao chép kho ảnh bối cảnh mẫu nếu có
+
+            # Sao chép file kịch bản ban đầu vào thư mục game
+            story_ink_target = os.path.join(export_dir, "story.ink")
+            shutil.copy2(ink_path, story_ink_target)
+
+            # Tự động tạo thư mục images
             images_export_dir = os.path.join(export_dir, "images")
             os.makedirs(images_export_dir, exist_ok=True)
-            default_images_dir = os.path.join("Game_Export", "Game_toanhoc", "images")
-            if os.path.exists(default_images_dir):
-                for img_file in os.listdir(default_images_dir):
-                    dest_img = os.path.join(images_export_dir, img_file)
-                    if not os.path.exists(dest_img):
-                        try:
-                            shutil.copy2(os.path.join(default_images_dir, img_file), dest_img)
-                        except Exception:
-                            pass
+
+            # Tự động minh họa bối cảnh qua AI Story Illustrator
+            try:
+                from src.story_illustrator import illustrate_exported_game
+                illustrate_exported_game(export_dir, topic=topic, progress_callback=self.log)
+            except Exception as e_ill:
+                self.log(f"⚠️ Cảnh báo tạo ảnh minh họa: {e_ill}. Tiến hành biên dịch kịch bản dự phòng.")
+                subprocess.run([os.path.join("tools", "inklecate.exe"), "-o", os.path.join(export_dir, "story.json"), story_ink_target], capture_output=True)
 
             html_content = r"""<!DOCTYPE html>
 <html>
@@ -203,6 +205,7 @@ class SINEApp:
             var story = new inkjs.Story(storyContent);
             var storyContainer = document.getElementById('story');
             var choicesContainer = document.getElementById('choices');
+            var activeImage = "";
             function continueStory() {
                 try {
                     storyContainer.innerHTML = '';
@@ -222,9 +225,11 @@ class SINEApp:
                     
                     var imageTag = allTags.find(function(tag) { return tag.toLowerCase().indexOf('image:') !== -1; });
                     if (imageTag) {
-                        var imageName = imageTag.split(':')[1].trim();
+                        activeImage = imageTag.split(':')[1].trim();
+                    }
+                    if (activeImage) {
                         var img = document.createElement('img');
-                        img.src = 'images/' + imageName;
+                        img.src = 'images/' + activeImage;
                         img.className = 'story-img';
                         img.alt = 'Minh họa';
                         storyContainer.insertBefore(img, storyContainer.firstChild);
@@ -274,7 +279,6 @@ class SINEApp:
 </html>"""
             with open(os.path.join(export_dir, "index.html"), "w", encoding="utf-8") as f:
                 f.write(html_content)
-            shutil.copy2(ink_path, os.path.join(export_dir, "story.ink"))
             shutil.copy2(os.path.join("tools", "inklecate.exe"), os.path.join(export_dir, "inklecate.exe"))
             bat_path = os.path.join(export_dir, "Choi_Game_Truc_Quan.bat")
             with open(bat_path, "w", encoding="utf-8") as f:

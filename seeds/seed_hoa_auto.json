@@ -1,0 +1,194 @@
+{
+  "topic": "Hóa học",
+  "locations": [
+    {
+      "id": "location_hoa_001"
+    },
+    {
+      "id": "location_hoa_002"
+    },
+    {
+      "id": "location_hoa_003"
+    },
+    {
+      "id": "location_hoa_004"
+    },
+    {
+      "id": "location_hoa_005"
+    },
+    {
+      "id": "location_hoa_006"
+    },
+    {
+      "id": "location_hoa_007"
+    },
+    {
+      "id": "location_hoa_008"
+    },
+    {
+      "id": "location_hoa_009"
+    },
+    {
+      "id": "location_hoa_010"
+    },
+    {
+      "id": "location_hoa_011"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_hoa_001",
+      "seq": 1,
+      "question": {
+        "stem": "Phát biểu nào sau đây không đúng về protein?",
+        "options": [
+          "Protein trong lòng trắng trứng có phản ứng màu biuret.",
+          "Protein bị thủy phân bởi acid hoặc base.",
+          "Protein đơn giản tạo nên từ các gốc $\\beta$- hoặc $\\gamma$-amino acid.",
+          "Trong thành phần protein luôn có nguyên tố nitrogen."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoa_002",
+      "seq": 2,
+      "question": {
+        "stem": "Polypropylene được điều chế bằng phản ứng trùng hợp chất nào sau đây?",
+        "options": [
+          "$CH_2=CH-Cl$",
+          "$CH_2=CH_2$",
+          "$CH_3-CH_2-Cl$",
+          "$CH_2=CH-CH_3$"
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoa_003",
+      "seq": 3,
+      "question": {
+        "stem": "Công thức cấu tạo của amino acid nào biểu diễn nhiều nhóm carboxyl nhất?",
+        "options": [
+          "Gly.",
+          "Ala.",
+          "Lys.",
+          "Glu."
+        ],
+        "correct": 3
+      }
+    },
+    {
+      "id": "task_hoa_004",
+      "seq": 4,
+      "question": {
+        "stem": "Điện phân nóng chảy $NaCl$ với các điện cực trơ để sản xuất kim loại natri. Quá trình nào sau đây xảy ra tại cathode (cực âm) của bể điện phân?",
+        "options": [
+          "$2H_2O + 2e \\rightarrow H_2 + 2OH^-$",
+          "$2Cl^- \\rightarrow Cl_2 + 2e$",
+          "$Na^+ + 1e \\rightarrow Na$",
+          "$2H_2O \\rightarrow O_2 + 4H^+ + 4e$"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoa_005",
+      "seq": 5,
+      "question": {
+        "stem": "Amine nào sau đây là amine bậc hai?",
+        "options": [
+          "$(CH_3)_3N$",
+          "$CH_3NH_2$",
+          "$CH_3NHCH_3$",
+          "$C_6H_5NH_2$"
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoa_006",
+      "seq": 6,
+      "question": {
+        "stem": "Ăn mòn kim loại là quá trình phá hủy kim loại hoặc hợp kim do tác dụng với các chất trong môi trường, trong đó kim loại đóng vai trò là",
+        "options": [
+          "base.",
+          "chất điện li.",
+          "chất khử.",
+          "chất oxi hóa."
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "id": "task_hoa_007",
+      "seq": 7,
+      "question": {
+        "stem": "Xu hướng biến đổi tính chất của các nguyên tố và đơn chất, cũng như thành phần và tính chất của các hợp chất tạo nên từ các nguyên tố đó được nêu trong",
+        "options": [
+          "định luật tuần hoàn các nguyên tố hóa học.",
+          "nguyên lí chuyển dịch cân bằng.",
+          "quy tắc Zaitsev.",
+          "phương pháp Solvay."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoa_008",
+      "seq": 8,
+      "question": {
+        "stem": "Phản ứng với thuốc thử Tollens (phản ứng tráng bạc) thể hiện tính chất của nhóm chức nào trong phân tử ethanal?",
+        "options": [
+          "$-CHO$",
+          "$-COOH$",
+          "$-OH$",
+          "$-CH_3$"
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoa_009",
+      "seq": 9,
+      "question": {
+        "stem": "Hình bên minh họa một số dụng cụ thí nghiệm với kí hiệu tương ứng. Kí hiệu nào ứng với dụng cụ bình cầu?",
+        "options": [
+          "(I).",
+          "(II).",
+          "(III).",
+          "(IV)."
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "task_hoa_010",
+      "seq": 10,
+      "question": {
+        "stem": "Công thức cấu tạo thu gọn nào sau đây là butane?",
+        "options": [
+          "$CH_3-CH_2-CH_2-CHO$",
+          "$CH_3-CH_2-CH_2-CH_3$",
+          "$CH_3-CH_2-CH_3$",
+          "$CH_3-CH_2-CH=CH_2$"
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "id": "task_hoa_011",
+      "seq": 11,
+      "question": {
+        "stem": "Khi nghiên cứu về phản ứng điều chế ethyl acetate, nhóm học sinh muốn khảo sát ảnh hưởng của nhiệt độ đến khối lượng ester. Những yếu tố nào trong các yếu tố trên cần được thiết lập giống nhau ở cả ba thí nghiệm?",
+        "options": [
+          "(1), (2).",
+          "(2), (3).",
+          "(1), (4).",
+          "(3), (4)."
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

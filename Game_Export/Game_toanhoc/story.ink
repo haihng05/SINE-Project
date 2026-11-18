@@ -1,5 +1,6 @@
 -> location_toanhoc_001
 === location_toanhoc_001 ===
+# image: location_toanhoc_001.jpg
 Bạn bước vào Phòng Toán Học 001. Trên tường là hình ảnh về dấu tích đầu tiên của Người tối cổ. Không gian yên tĩnh, chỉ có tiếng gió thổi qua khe cửa.
 + [Trả lời câu hỏi] -> task_toanhoc_001_knot
 === task_toanhoc_001_knot ===
@@ -16,6 +17,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_001_knot
 
 === location_toanhoc_002 ===
+# image: location_toanhoc_002.jpg
 Bạn bước vào Phòng Toán Học 002. Trên tường là hình ảnh về tổ chức xã hội đầu tiên của loài người. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_002_knot
 === task_toanhoc_002_knot ===
@@ -32,6 +34,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_002_knot
 
 === location_toanhoc_003 ===
+# image: location_toanhoc_003.jpg
 Bạn bước vào Phòng Toán Học 003. Trên tường là hình ảnh về nền văn minh Ai Cập cổ đại. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_003_knot
 === task_toanhoc_003_knot ===
@@ -48,6 +51,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_003_knot
 
 === location_toanhoc_004 ===
+# image: location_toanhoc_004.jpg
 Bạn bước vào Phòng Toán Học 004. Trên tường là hình ảnh về thành tựu văn hóa của cư dân Lưỡng Hà. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_004_knot
 === task_toanhoc_004_knot ===
@@ -64,6 +68,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_004_knot
 
 === location_toanhoc_005 ===
+# image: location_toanhoc_005.jpg
 Bạn bước vào Phòng Toán Học 005. Trên tường là hình ảnh về chế độ phân biệt đẳng cấp Vác-na. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_005_knot
 === task_toanhoc_005_knot ===
@@ -80,6 +85,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_005_knot
 
 === location_toanhoc_006 ===
+# image: location_toanhoc_006.jpg
 Bạn bước vào Phòng Toán Học 006. Trên tường là hình ảnh về Tần Thủy Hoàng. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_006_knot
 === task_toanhoc_006_knot ===
@@ -96,6 +102,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_006_knot
 
 === location_toanhoc_007 ===
+# image: location_toanhoc_007.jpg
 Bạn bước vào Phòng Toán Học 007. Trên tường là hình ảnh về kinh đô Văn Lang. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_007_knot
 === task_toanhoc_007_knot ===
@@ -112,6 +119,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_007_knot
 
 === location_toanhoc_008 ===
+# image: location_toanhoc_008.jpg
 Bạn bước vào Phòng Toán Học 008. Trên tường là hình ảnh về thành tựu quân sự của Âu Lạc. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_008_knot
 === task_toanhoc_008_knot ===
@@ -128,6 +136,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_008_knot
 
 === location_toanhoc_009 ===
+# image: location_toanhoc_009.jpg
 Bạn bước vào Phòng Toán Học 009. Trên tường là hình ảnh về hệ Mặt Trời. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_009_knot
 === task_toanhoc_009_knot ===
@@ -144,6 +153,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_009_knot
 
 === location_toanhoc_010 ===
+# image: location_toanhoc_010.jpg
 Bạn bước vào Phòng Toán Học 010. Trên tường là hình ảnh về hình dạng Trái Đất. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_010_knot
 === task_toanhoc_010_knot ===
@@ -160,6 +170,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_010_knot
 
 === location_toanhoc_011 ===
+# image: location_toanhoc_011.jpg
 Bạn bước vào Phòng Toán Học 011. Trên tường là hình ảnh về hiện tượng ngày đêm. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_011_knot
 === task_toanhoc_011_knot ===
@@ -176,6 +187,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_011_knot
 
 === location_toanhoc_012 ===
+# image: location_toanhoc_012.jpg
 Bạn bước vào Phòng Toán Học 012. Trên tường là hình ảnh về múi giờ. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_012_knot
 === task_toanhoc_012_knot ===
@@ -192,6 +204,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_012_knot
 
 === location_toanhoc_013 ===
+# image: location_toanhoc_013.jpg
 Bạn bước vào Phòng Toán Học 013. Trên tường là hình ảnh về đường xích đạo. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_013_knot
 === task_toanhoc_013_knot ===
@@ -208,6 +221,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_013_knot
 
 === location_toanhoc_014 ===
+# image: location_toanhoc_014.jpg
 Bạn bước vào Phòng Toán Học 014. Trên tường là hình ảnh về cấu tạo Trái Đất. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_014_knot
 === task_toanhoc_014_knot ===
@@ -224,6 +238,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_014_knot
 
 === location_toanhoc_015 ===
+# image: location_toanhoc_015.jpg
 Bạn bước vào Phòng Toán Học 015. Trên tường là hình ảnh về quá trình nội lực. Không gian có mùi đất sét và ánh sáng xanh lục.
 + [Trả lời câu hỏi] -> task_toanhoc_015_knot
 === task_toanhoc_015_knot ===
@@ -240,6 +255,7 @@ Sai rồi! Hãy thử lại.
 + [Thử lại câu hỏi này] -> task_toanhoc_015_knot
 
 === location_toanhoc_016 ===
+# image: location_toanhoc_016.jpg
 Bạn bước vào Phòng Toán Học 016. Trên tường là hình ảnh về kí hiệu bản đồ. Không gian có mùi giấy cổ và ánh sáng vàng óng.
 + [Trả lời câu hỏi] -> task_toanhoc_016_knot
 === task_toanhoc_016_knot ===

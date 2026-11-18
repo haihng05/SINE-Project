@@ -134,12 +134,13 @@ def get_api_client_and_model(force_openrouter: bool = False, is_vision: bool = F
         return client, model
 
     if gemini_key:
-        print(" [AI Engine] Đang kết nối Google Gemini API (gemini-3-flash-preview)...")
+        model = "gemini-3.1-flash-lite"
+        print(f" [AI Engine] Đang kết nối Google Gemini API ({model})...")
         client = OpenAI(
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
             api_key=gemini_key
         )
-        return client, "gemini-3-flash-preview"
+        return client, model
     elif openrouter_key:
         model = "qwen/qwen-2.5-vl-72b-instruct" if is_vision else "qwen/qwen3-14b"
         print(f" [AI Engine] Đang kết nối OpenRouter API ({model})...")
@@ -160,17 +161,15 @@ def generate_seed_with_ai(
     custom_b64_images: list = None
 ) -> dict:
     client, model_to_use = get_api_client_and_model()
-    prompt = f"""Bạn là một trợ lý AI chuyên phân tích đề thi và trích xuất dữ liệu.
-Nhiệm vụ của bạn là đọc nội dung (văn bản hoặc hình ảnh) dưới đây, tự động bỏ qua các phần không phải là câu hỏi trắc nghiệm (ví dụ: tiêu đề, lời mở đầu, hướng dẫn, chữ ký giám thị, số trang). 
-Sau đó, trích xuất tất cả các câu hỏi trắc nghiệm có trong đó và chuyển đổi chúng thành định dạng JSON Seed (SINE format).
-
+    prompt = f"""Bạn là trợ lý AI sư phạm số hóa đề thi thành các thử thách học tập tương tác (SINE Engine).
+Đọc hình ảnh hoặc nội dung tài liệu đính kèm và trích xuất toàn bộ các câu hỏi thành định dạng JSON Seed.
 YÊU CẦU QUAN TRỌNG:
-1. Xác định đúng từng câu hỏi (stem), các lựa chọn (options) và vị trí đáp án đúng (correct index: 0 cho A, 1 cho B, 2 cho C, 3 cho D).
-   - Nếu đề thi có khoanh tròn đáp án (ví dụ khoanh tròn bút bi trên ảnh), hãy ưu tiên chọn đáp án được khoanh tròn đó.
-   - Nếu không có khoanh tròn hoặc không chắc chắn, hãy tự giải và suy luận đáp án chính xác nhất.
-2. Giữ nguyên ngôn ngữ gốc của đề thi (Tiếng Anh hoặc Tiếng Việt).
-3. Tạo danh sách các "locations" (địa điểm trong game) tương ứng. Bạn có thể tự sáng tạo tên địa điểm (ví dụ: "location_s001", "location_thu_vien") sao cho phù hợp với chủ đề "{topic_name}".
-4. Trả về DUY NHẤT một khối JSON theo cấu trúc mẫu sau (nằm trong ```json ... ```):
+1. BẮT BUỘC TRÍCH XUẤT TOÀN BỘ TẤT CẢ CÁC CÂU HỎI XUẤT HIỆN TRÊN TÀI LIỆU/ẢNH (từ câu đầu tiên đến câu cuối cùng trên trang, cấm bỏ sót hay chỉ lấy mẫu 1-2 câu).
+2. Diễn đạt đề bài (stem) súc tích, rõ ràng phù hợp trò chơi tương tác, bảo toàn 100% số liệu, biến số, phương trình toán học dạng LaTeX ($...$) và 4 phương án lựa chọn A, B, C, D.
+3. Xác định đáp án đúng (correct index: 0 cho A, 1 cho B, 2 cho C, 3 cho D). Nếu trên ảnh có khoanh tròn bút bi thì ưu tiên chọn đáp án được khoanh tròn đó.
+4. Giữ nguyên ngôn ngữ gốc của đề thi.
+5. Tạo danh sách các "locations" (địa điểm trong game) tương ứng cho từng câu hỏi (ví dụ: location_{topic_name}_001, location_{topic_name}_002...).
+6. Trả về DUY NHẤT một khối JSON theo cấu trúc sau (nằm trong ```json ... ```):
 
 VÍ DỤ CẤU TRÚC JSON:
 ```json
@@ -184,9 +183,9 @@ VÍ DỤ CẤU TRÚC JSON:
       "id": "task_{topic_name}_001",
       "seq": 1,
       "question": {{ 
-        "stem": "If Lan were taller, she ______ work as a fashion model.",
-        "options": ["will", "would works like", "would", "would have work"],
-        "correct": 2
+        "stem": "Nội dung bài toán...",
+        "options": ["Lựa chọn A", "Lựa chọn B", "Lựa chọn C", "Lựa chọn D"],
+        "correct": 0
       }} 
     }} 
   ]
@@ -211,7 +210,9 @@ VÍ DỤ CẤU TRÚC JSON:
         
     print(f" Đang gửi dữ liệu cho AI (Model: {model_to_use}) để trích xuất...")
     import time
-    for attempt in range(10):
+    gemini_models_pool = ["gemini-3.1-flash-lite", "gemini-flash-lite-latest", "gemini-3.5-flash-lite"]
+    model_idx = 0
+    for attempt in range(6):
         try:
             response = client.chat.completions.create(
                 model=model_to_use,
@@ -225,12 +226,14 @@ VÍ DỤ CẤU TRÚC JSON:
             break
         except Exception as e:
             if '503' in str(e) or '429' in str(e):
-                print(f" Server bận (lần {attempt+1}/10), đang thử lại sau 10 giây...")
-                time.sleep(10)
+                model_idx = (model_idx + 1) % len(gemini_models_pool)
+                model_to_use = gemini_models_pool[model_idx]
+                print(f" 🔄 Server bận/hạn mức, tự động chuyển sang mô hình dự phòng ({model_to_use})...")
+                time.sleep(2)
             else:
                 raise e
     else:
-        raise Exception("Server quá tải, đã thử lại 10 lần không thành công.")
+        raise Exception("Server quá tải, đã thử lại với các mô hình dự phòng không thành công.")
         
     full_response = response.choices[0].message.content if response.choices else None
     finish_reason = getattr(response.choices[0], "finish_reason", "") if response.choices else ""
@@ -269,13 +272,14 @@ VÍ DỤ CẤU TRÚC JSON:
 
         if not fallback_success:
             print(" 🔄 Kích hoạt chế độ thích ứng giáo dục: Bảo toàn 100% số liệu Toán học & Đáp án...")
-            edu_prompt = f"""Bạn là một chuyên gia số hóa bài tập giáo dục.
-Nhiệm vụ của bạn là đọc ảnh đề thi dưới đây và trích xuất thành định dạng JSON Seed (SINE format).
+            edu_prompt = f"""Bạn là một chuyên gia số hóa bài tập giáo dục tương tác (SINE Engine).
+Nhiệm vụ của bạn là đọc toàn bộ ảnh đề thi dưới đây và trích xuất ĐẦY ĐỦ TẤT CẢ các câu hỏi trắc nghiệm có trên trang thành định dạng JSON Seed (từ câu đầu tiên đến câu cuối cùng trên trang, cấm bỏ sót bất kỳ câu nào).
 YÊU CẦU QUAN TRỌNG:
-1. Bảo toàn 100% bản chất toán học: Giữ nguyên vẹn toàn bộ số liệu, biến số, biểu thức Toán học và 4 phương án lựa chọn A, B, C, D.
-2. Xác định chính xác đáp án đúng (correct index: 0 cho A, 1 cho B, 2 cho C, 3 cho D).
-3. Diễn đạt đề bài ngắn gọn, mạch lạc phù hợp giao diện trò chơi, tuyệt đối không làm thay đổi bài toán gốc.
-4. Trả về DUY NHẤT một khối ```json ... ```:
+1. BẮT BUỘC trích xuất TOÀN BỘ tất cả các câu hỏi có trong tài liệu/ảnh (không được lấy mẫu 1-2 câu).
+2. Bảo toàn 100% bản chất toán học: Giữ nguyên vẹn toàn bộ số liệu, biến số, biểu thức Toán học dạng LaTeX và 4 phương án lựa chọn A, B, C, D.
+3. Xác định chính xác đáp án đúng (correct index: 0 cho A, 1 cho B, 2 cho C, 3 cho D).
+4. Diễn đạt đề bài rõ ràng, mạch lạc phù hợp giao diện trò chơi, tuyệt đối không làm thay đổi bài toán gốc.
+5. Trả về DUY NHẤT một khối ```json ... ```:
 ```json
 {{
   "topic": "{topic_name}",
